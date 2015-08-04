@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>PCuervo frameework</title>
+		<title>Beta Leasing</title>
 		<!-- Sets initial viewport load and disables zooming -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- SEO -->
@@ -54,796 +54,106 @@
 			<p class="[ chromeframe ]">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
 		<div class="[ container ]">
+
 			<header class="[ xmall-12 ][ padding--top-bottom--small ][ bg-primary ]">
-				<div class="[ wrapper ]">
-					<div class="[ row ]">
-						<div class="[ column xmall-6 ][ inline-block align-middle ][ menu__item ]">
-							<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ]">
-								<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="#"></a>
-							</div>
-						</div>
-						<div class="[ column xmall-6 ][ inline-block align-middle ][ text-center ]">
-							<a class="[ block ][ button--hollow ][ pull-right ][ js-modal-opener ]" data-modal="nav" href="#">
-								<img class="[ svg icon icon--small ][ color-light ]" src="icons/hamburger.svg" alt="menu">
-							</a>
-						</div>
-					</div>
-				</div>
+				
 			</header>
+
 			<div class="[ main ]">
 
 				<!-- =================================================
-				==== FORMS
+				==== COTIZADOR
 				================================================== -->
 				<section class="[ margin-bottom--large ]">
 					<div class="[ margin-bottom ]">
 						<div class="[ wrapper ]">
-							<h2>Forms</h2>
+							<h2 class="[ text-center ]">Cotizador</h2>
 							<article class="[ form ]">
+
+								<h3 class="[ text-center ]">Quiero cotizar:</h3>
 								<form method="post" action="" id="form-ui">
-									<fieldset class="[ margin-bottom ]">
-										<label class="field">
-											<input type="text" name="from" id="from" class="gui-input" placeholder="Input no icon">
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field prepend-icon">
-											<input type="text" name="firstname" id="firstname" class="gui-input" placeholder="Text input icon left">
-											<span class="field-icon"><i class="fa fa-user"></i></span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field prepend-icon">
-											<input type="text" name="firstname" id="firstname" class="gui-input" placeholder="Text input icon left">
-											<span class="field-icon"><i class="fa fa-user"></i></span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field append-icon">
-											<input type="text" name="lastname" id="lastname" class="gui-input" placeholder="Text input icon right">
-											<span class="field-icon"><i class="fa fa-user"></i></span>
-										</label>
-									</fieldset>
-
-									<!-- <fieldset class="[ margin-bottom ]">
-										<label class="field prepend-icon">
-											<input type="search" name="s" id="s" class="gui-input" placeholder="search input">
-											<span class="field-icon"><i class="fa fa-search"></i></span>
-										</label>
-									</fieldset> -->
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field prepend-icon">
-											<input type="url" name="website" id="website" class="gui-input" placeholder="URL input">
-											<span class="field-icon"><i class="fa fa-globe"></i></span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field prepend-icon">
-											<input type="email" name="email" id="email" class="gui-input" placeholder="Email input">
-											<span class="field-icon"><i class="fa fa-envelope"></i></span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field prepend-icon">
-											<input type="tel" name="mobile" id="mobile" class="gui-input" placeholder="Telephone input">
-											<span class="field-icon"><i class="fa fa-phone-square"></i></span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field prepend-icon">
-											<input type="password" name="password" id="password" class="gui-input" placeholder="Password input">
-											<span class="field-icon"><i class="fa fa-lock"></i></span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field select">
-											<select id="country" name="country">
-												<option value="">Select with single arrow</option>
-												<option value="AL">Albania</option>
-												<option value="DZ">Algeria</option>
-												<option value="AD">Andorra</option>
-												<option value="AO">Angola</option>
-												<option value="AI">Anguilla</option>
-												<option value="AG">Antigua and Barbuda</option>
-												<option value="AR">Argentina</option>
-												<option value="AM">Armenia</option>
-												<option value="AW">Aruba</option>
-												<option value="AU">Australia</option>
-												<option value="AT">Austria</option>
-												<option value="AZ">Azerbaijan Republic</option>
-												<option value="BS">Bahamas</option>
-												<option value="BH">Bahrain</option>
-												<option value="BB">Barbados</option>
-												<option value="BE">Belgium</option>
-												<option value="BZ">Belize</option>
-												<option value="BJ">Benin</option>
-												<option value="BM">Bermuda</option>
-											</select>
-											<i class="arrow"></i>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field select">
-											<select id="location" name="location">
-												<option value="">Select with double arrows</option>
-												<option value="AL">Albania</option>
-												<option value="DZ">Algeria</option>
-												<option value="AD">Andorra</option>
-												<option value="AO">Angola</option>
-												<option value="AI">Anguilla</option>
-												<option value="AG">Antigua and Barbuda</option>
-												<option value="AR">Argentina</option>
-												<option value="AM">Armenia</option>
-												<option value="AW">Aruba</option>
-												<option value="AU">Australia</option>
-												<option value="AT">Austria</option>
-												<option value="AZ">Azerbaijan Republic</option>
-												<option value="BS">Bahamas</option>
-												<option value="BH">Bahrain</option>
-												<option value="BB">Barbados</option>
-												<option value="BE">Belgium</option>
-												<option value="BZ">Belize</option>
-												<option value="BJ">Benin</option>
-												<option value="BM">Bermuda</option>
-											</select>
-											<i class="arrow double"></i>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field prepend-icon">
-											<textarea class="gui-textarea" id="comment" name="comment" placeholder="Text area"></textarea>
-											<span class="field-icon"><i class="fa fa-comments"></i></span>
-											<span class="input-hint">
-												<strong>Hint:</strong> Don't be negative or off topic! just be awesome...
-											</span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field prepend-icon file">
-											<span class="button"> Choose File </span>
-											<input type="file" class="gui-file" name="file1" id="file1"
-											onChange="document.getElementById('uploader1').value = this.value;">
-											<input type="text" class="gui-input" id="uploader1" placeholder="no file selected" readonly>
-											<span class="field-icon"><i class="fa fa-upload"></i></span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field prepend-icon file">
-											<span class="button btn-primary"> Choose File </span>
-											<input type="file" class="gui-file" name="file2" id="file2"
-											onChange="document.getElementById('uploader2').value = this.value;">
-											<input type="text" class="gui-input" id="uploader2" placeholder="no file selected" readonly>
-											<span class="field-icon"><i class="fa fa-upload"></i></span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="smart-widget sm-left sml-120">
+									<div class="[ row ]">
+										<fieldset class="[ column xmall-12 ][ margin-bottom ]">
+											<label class="[ field select ]">
+												<select id="tipo" name="tipo">
+													<option value="vehiculo" selected>Vehículo</option>
+													<option value="maquinaria">Maquinaria</option>
+													<option value="mobiliario">Mobiliario</option>
+												</select>
+												<i class="arrow"></i>
+											</label>
+										</fieldset>
+										<fieldset class="[ column xmall-6 ][ margin-bottom ]">
 											<label class="field">
-												<input type="text" name="sm" id="sm" class="gui-input" placeholder="Smart widget left 120">
+												<input type="text" name="marca" class="gui-input" placeholder="Marca">
 											</label>
-											<label for="sm" class="button"> Public URL </label>
-										</div><!-- end .smart-widget section -->
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="smart-widget sm-left sml-80">
+										</fieldset>
+										<fieldset class="[ column xmall-6 ][ margin-bottom ]">
 											<label class="field">
-												<input type="text" name="sm2" id="sm2" class="gui-input" placeholder="Smart widget left 80">
+												<input type="text" name="modelo" class="gui-input" placeholder="Modelo">
 											</label>
-											<label for="sm2" class="button"> Search </label>
-										</div><!-- end .smart-widget section -->
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="smart-widget sm-left sml-50">
+										</fieldset>
+										<fieldset class="[ column xmall-4 ][ margin-bottom ]">
 											<label class="field">
-												<input type="text" name="sm3" id="sm3" class="gui-input" placeholder="Smart widget left 50">
+												<p><small>Valor total</small></p>
+												<input type="text" name="valor_total" class="gui-input" placeholder="$0.00"> 
 											</label>
-											<label for="sm3" class="button"> <i class="fa fa-search"></i> </label>
-										</div><!-- end .smart-widget section -->
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="smart-widget sm-right smr-50">
+										</fieldset>
+										<fieldset class="[ column xmall-4 ][ margin-bottom ]">
 											<label class="field">
-												<input type="text" name="sub" id="sub" class="gui-input" placeholder="Smart widget right 50">
+												<p><small>IVA</small></p>
+												<input type="text" name="iva" class="gui-input" placeholder="" value="$0.00"> 
 											</label>
-											<button type="submit" class="button"> <i class="fa fa-search"></i> </button>
-										</div><!-- end .smart-widget section -->
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="smart-widget sm-right smr-80">
-											<label class="field prepend-icon">
-												<input type="text" name="sub2" id="sub2" class="gui-input" placeholder="Smart widget right 80">
-												<span class="field-icon"><i class="fa fa-search"></i></span>
-											</label>
-											<button type="submit" class="button"> Search </button>
-										</div><!-- end .smart-widget section -->
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="smart-widget sm-right smr-120">
+										</fieldset>
+										<fieldset class="[ column xmall-4 ][ margin-bottom ]">
 											<label class="field">
-												<input type="text" name="sub3" id="sub3" class="gui-input" placeholder="Smart widget right 120">
+												<p><small>Valor factura</small></p>
+												<input type="text" name="valor_factura" class="gui-input" placeholder="" value="$0.00"> 
 											</label>
-											<button type="submit" class="button"> Subscribe </button>
-										</div><!-- end .smart-widget section -->
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="option-group field">
-											<label for="female" class="option block">
-												<input type="radio" name="gender" id="female" value="female">
-												<span class="radio"></span> Female specie
-											</label>
-											<label for="male" class="option block spacer-t10">
-												<input type="radio" name="gender" id="male" value="male">
-												<span class="radio"></span> Male specie
-											</label>
-											<label for="other" class="option block spacer-t10">
-												<input type="radio" name="gender" id="other" value="other">
-												<span class="radio"></span> Other specie
-											</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="option-group field">
-											<label class="option block">
-												<input type="checkbox" name="mobileos" value="FR">
-												<span class="checkbox"></span> Android Kitkat
-											</label>
-											<label class="option block spacer-t10">
-												<input type="checkbox" name="mobileos" value="EN">
-												<span class="checkbox"></span> Windows 8 Mobile
-											</label>
-											<label class="option block spacer-t10">
-												<input type="checkbox" name="mobileos" value="CH">
-												<span class="checkbox"></span> Apple IOS 7
-											</label>
-										</div><!-- end .option-group section -->
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="option-group field">
-											<label class="option block">
-												<input type="checkbox" name="languages" value="FR">
-												<span class="checkbox"></span> Fluent french
-											</label>
-											<label class="option block spacer-t10">
-												<input type="checkbox" name="languages" value="EN">
-												<span class="checkbox"></span> Fluent english
-											</label>
-											<label class="option block spacer-t10">
-												<input type="checkbox" name="languages" value="CH">
-												<span class="checkbox"></span> Fluent chinese
-											</label>
-										</div><!-- end .option-group section -->
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="option-group field">
-											<label class="option">
-												<input type="radio" name="payment" checked>
-												<span class="radio"></span> Credit Card
-											</label>
-											<label class="option">
-												<input type="radio" name="payment">
-												<span class="radio"></span> Paypal
-											</label>
-											<label class="option">
-												<input type="radio" name="payment">
-												<span class="radio"></span> Skrill
-											</label>
-											<label class="option">
-												<input type="radio" name="payment">
-												<span class="radio"></span> Gumroad
-											</label>
-											<label class="option">
-												<input type="radio" name="payment">
-												<span class="radio"></span> Payoneer
-											</label>
-										</div><!-- end .option-group section -->
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="field option block">
-											<input type="checkbox" name="terms" checked>
-											<span class="checkbox"></span>
-											You must agree to our <a href="#" class="smart-link"> terms of service </a>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="switch block">
-											<input type="checkbox" name="features" id="f1" value="javascript">
-											<span class="switch-label" data-on="ON" data-off="OFF"></span>
-											<span> Javascript </span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="switch block">
-											<input type="checkbox" name="features" id="f2" value="downloads">
-											<span class="switch-label" data-on="ON" data-off="OFF"></span>
-											<span> Downloads </span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="switch block">
-											<input type="checkbox" name="features" id="f3" value="cookies">
-											<span class="switch-label" data-on="ON" data-off="OFF"></span>
-											<span> Cookies </span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="switch block">
-											<input type="checkbox" name="features" id="f4" value="popups" checked>
-											<span class="switch-label" data-on="ON" data-off="OFF"></span>
-											<span> Popups </span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="switch block">
-											<input type="checkbox" name="tools" id="t1" value="analytics">
-											<span class="switch-label" data-on="YES" data-off="NO"></span>
-											<span> Analytics </span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="switch block">
-											<input type="checkbox" name="tools" id="t2" value="reports">
-											<span class="switch-label" data-on="YES" data-off="NO"></span>
-											<span> Reports </span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="switch block">
-											<input type="checkbox" name="tools" id="t3" value="social">
-											<span class="switch-label" data-on="YES" data-off="NO"></span>
-											<span> Social </span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="switch block">
-											<input type="checkbox" name="tools" id="t4" value="admin" checked>
-											<span class="switch-label" data-on="YES" data-off="NO"></span>
-											<span> Access </span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="switch switch-round block">
-											<input type="radio" name="framework" id="fr1" value="mootols">
-											<span class="switch-label" data-on="YES" data-off="NO"></span>
-											<span> MooTools </span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="switch switch-round block">
-											<input type="radio" name="framework" id="fr2" value="angular">
-											<span class="switch-label" data-on="YES" data-off="NO"></span>
-											<span> Angular JS </span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="switch switch-round block">
-											<input type="radio" name="framework" id="fr3" value="jquery">
-											<span class="switch-label" data-on="YES" data-off="NO"></span>
-											<span> jQuery </span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<label class="switch switch-round block">
-											<input type="radio" name="framework" id="fr4" value="dojo" checked>
-											<span class="switch-label" data-on="YES" data-off="NO"></span>
-											<span> Dojo </span>
-										</label>
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="rating block">
-											<span class="lbl-text">Customization</span>
-											<div class="rating-wrapper">
-												<input class="rating-input" id="r5" type="radio"  name="custom" checked>
-												<label class="rating-star" for="r5"><i class="fa fa-star"></i><span>Excellent</span></label>
-												<input class="rating-input" id="r4" type="radio"  name="custom">
-												<label class="rating-star" for="r4"><i class="fa fa-star"></i><span>Good</span></label>
-												<input class="rating-input" id="r3" type="radio"  name="custom">
-												<label class="rating-star" for="r3"><i class="fa fa-star"></i><span>Tried</span></label>
-												<input class="rating-input" id="r2" type="radio"  name="custom">
-												<label class="rating-star" for="r2"><i class="fa fa-star"></i><span>Fair</span></label>
-												<input class="rating-input" id="r1" type="radio"  name="custom">
-												<label class="rating-star" for="r1"><i class="fa fa-star"></i><span>Poor</span></label>
-											</div>
-										</div><!-- end rating section -->
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="rating block">
-											<span class="lbl-text">Reliability</span>
-											<div class="rating-wrapper">
-												<input class="rating-input" id="rr5" type="radio"  name="reliable">
-												<label class="rating-star" for="rr5"><i class="fa fa-star"></i><span>Excellent</span></label>
-												<input class="rating-input" id="rr4" type="radio"  name="reliable" checked>
-												<label class="rating-star" for="rr4"><i class="fa fa-star"></i><span>Good</span></label>
-												<input class="rating-input" id="rr3" type="radio"  name="reliable">
-												<label class="rating-star" for="rr3"><i class="fa fa-star"></i><span>Tried</span></label>
-												<input class="rating-input" id="rr2" type="radio"  name="reliable">
-												<label class="rating-star" for="rr2"><i class="fa fa-star"></i><span>Fair</span></label>
-												<input class="rating-input" id="rr1" type="radio"  name="reliable">
-												<label class="rating-star" for="rr1"><i class="fa fa-star"></i><span>Poor</span></label>
-											</div>
-										</div><!-- end rating section -->
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="rating block">
-											<span class="lbl-text">Relevance</span>
-											<div class="rating-wrapper">
-												<input class="rating-input" id="rx5" type="radio"  name="relevance">
-												<label class="rating-star" for="rx5"><i class="fa fa-star"></i><span>Excellent</span></label>
-												<input class="rating-input" id="rx4" type="radio"  name="relevance">
-												<label class="rating-star" for="rx4"><i class="fa fa-star"></i><span>Good</span></label>
-												<input class="rating-input" id="rx3" type="radio"  name="relevance" checked>
-												<label class="rating-star" for="rx3"><i class="fa fa-star"></i><span>Tried</span></label>
-												<input class="rating-input" id="rx2" type="radio"  name="relevance">
-												<label class="rating-star" for="rx2"><i class="fa fa-star"></i><span>Fair</span></label>
-												<input class="rating-input" id="rx1" type="radio"  name="relevance">
-												<label class="rating-star" for="rx1"><i class="fa fa-star"></i><span>Poor</span></label>
-											</div>
-										</div><!-- end rating section -->
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-									</fieldset>
-
-									<fieldset class="[ margin-bottom ]">
-										<div class="[ form-footer ]">
-											<button type="submit" class="[ button button--primary ]">Proceed to confirm </button>
-										</div><!-- end .form-footer section -->
-									</fieldset>
-
-								</form>
-
-								<form method="post" action="/" id="smart-form">
-									<div class="form-body">
-										<article class="[ margin-bottom ]">
-											<h3>Time picker</h3>
-											<div class="[ row ]">
-												<div class="[ column xmall-12 medium-6 ][ margin-bottom--small ]">
-													<label for="timepicker1" class="field prepend-icon">
-														<input type="text" id="timepicker1" name="timepicker1" class="gui-input">
-														<span class="field-icon"><i class="fa fa-clock-o"></i></span>
-													</label>
-												</div>
-
-												<div class="[ column xmall-12 medium-6 ][ margin-bottom--small ]">
-													<label for="timepicker2" class="field prepend-icon">
-														<input type="text" id="timepicker2" name="timepicker2" class="gui-input">
-														<span class="field-icon"><i class="fa fa-clock-o"></i></span>
-													</label>
-												</div>
-											</div>
-										</article>
-
-										<article class="[ margin-bottom ]">
-											<h3>Date-Time picker</h3>
-											<div class="[ row ]">
-												<div class="[ column xmall-12 medium-6 ][ margin-bottom--small ]">
-													<label for="dtimepicker1" class="field prepend-icon">
-														<input type="text" id="dtimepicker1" name="dtimepicker1" class="gui-input">
-														<span class="field-icon"><i class="fa fa-calendar"></i></span>
-													</label>
-												</div>
-
-												<div class="[ column xmall-12 medium-6 ][ margin-bottom--small ]">
-													<label for="dtimepicker2" class="field prepend-icon">
-														<input type="text" id="dtimepicker2" name="dtimepicker2" class="gui-input">
-														<span class="field-icon"><i class="fa fa-calendar"></i></span>
-													</label>
-												</div>
-											</div>
-										</article>
-
-										<article class="[ margin-bottom ]">
-											<h3>Date Picker</h3>
-											<div class="[ row ]">
-												<div class="[ column xmall-12 medium-6 ][ margin-bottom--small ]">
-													<label for="datepicker1" class="field prepend-icon">
-														<input type="text" id="datepicker1" name="datepicker1" class="gui-input">
-														<span class="field-icon"><i class="fa fa-calendar"></i></span>
-													</label>
-												</div>
-
-												<div class="[ column xmall-12 medium-6 ][ margin-bottom--small ]">
-													<label for="datepicker2" class="field prepend-icon">
-														<input type="text" id="datepicker2" name="datepicker2" class="gui-input">
-														<span class="field-icon"><i class="fa fa-calendar"></i></span>
-													</label>
-												</div>
-											</div>
-										</article>
-
-										<article class="[ margin-bottom ]">
-											<h3>Month picker</h3>
-											<div class="[ row ]">
-												<div class="[ column xmall-12 medium-6 ][ margin-bottom--small ]">
-													<label class="field prepend-icon">
-														<input type="text" id="month-picker1" name="month-picker1" class="gui-input">
-														<span class="field-icon"><i class="fa fa-calendar-o"></i></span>
-													</label>
-												</div>
-
-												<div class="[ column xmall-12 medium-6 ][ margin-bottom--small ]">
-													<label class="field prepend-icon">
-														<input type="text" id="month-picker2" name="month-picker2" class="gui-input">
-														<span class="field-icon"><i class="fa fa-calendar-o"></i></span>
-													</label>
-												</div>
-											</div>
-										</article>
-
-										<article class="[ margin-bottom ]">
-											<h3>Color picker</h3>
-											<div class="[ row ]">
-												<div class="[ column xmall-12 medium-6 ][ margin-bottom--small ]">
-													<label class="field sfcolor">
-														<input type="text" name="colorpicker1" id="colorpicker1" class="gui-input">
-													</label>
-												</div>
-
-												<div class="[ column xmall-12 medium-6 ][ margin-bottom--small ]">
-													<label class="field sfcolor">
-														<input type="text" name="colorpicker2" id="colorpicker2" class="gui-input">
-													</label>
-												</div>
-											</div>
-										</article>
-
-										<article class="[ margin-bottom ]">
-											<h3>Numeric Stepper</h3>
-											<div class="[ row ]">
-												<div class="[ column xmall-12 medium-6 ][ margin-bottom--small ]">
-													<label class="field">
-														<input type="text" name="stepper3" id="stepper3" value="3.6" class="gui-input">
-													</label>
-												</div>
-
-												<div class="[ column xmall-12 medium-6 ][ margin-bottom--small ]">
-													<label class="field">
-														<input type="text" name="stepper4" id="stepper4" value="2" class="gui-input">
-													</label>
-												</div>
-											</div>
-										</article>
-
-										<article class="[ margin-bottom ]">
-											<h3>UI Slider</h3>
+										</fieldset>
+										<fieldset class="[ column xmall-12 ][ margin-bottom ]">
+											<p><small>Plazo en meses</small></p>
 											<div class="[ slider-wrapper ]">
-												<div id="slider1"></div>
+												<div id="slider-meses"></div>
 											</div><!-- end .slider-wrapper -->
-											<p class="[ row ]"><span class="[ pull-left ][ js-starting-price ]">$0</span><span class="[ pull-right ][ js-finishing-price ]">$100</span></p>
-										</article>
-
-										<div class="form-footer">
-											<button type="submit" class="button btn-primary"> Submit Form </button>
-											<button type="reset" class="button"> Cancel </button>
-										</div><!-- end .form-footer section -->
-
+											<p class="[ row ]"><span class="[ pull-left ][ js-meses ]">12 meses</span></p>
+										</fieldset>
+										<fieldset class="[ column xmall-12 ][ margin-bottom ]">
+											<p><small>Porcentaje (%) de enganche</small></p>
+											<div class="[ slider-wrapper ]">
+												<div id="slider-enganche"></div>
+											</div><!-- end .slider-wrapper -->
+											<p class="[ row ]"><span class="[ pull-left ][ js-porcentaje-enganche ]">0%</span></p>
+										</fieldset>
+										<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+											<label class="field">
+												<p><small>Monto total a financiar</small></p>
+												<input type="text" name="monto_financiar" class="gui-input" placeholder="$0.00">
+											</label>
+										</fieldset>
+										<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+											<label class="field">
+												<p><small>Mi renta mensual es de:</small></p>
+												<input type="text" name="renta_mensual" class="gui-input" placeholder="$0.00">
+											</label>
+										</fieldset>
+										<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
+											<div class="button">Siguiente</div>
+											<p><small>Paso 1 de 2</small></p>
+										</fieldset>
+									</div>
 								</form>
-							</div><!-- end .form section -->
-						</div><!-- wrapper -->
-					</div>
-				</section>
 
-				<!-- =================================================
-				==== FORMS
-				================================================== -->
-				<section class="[ margin-bottom--large ]">
-					<div class="[ margin-bottom ]">
-						<div class="[ wrapper ]">
-							<h2>Styles</h2>
-							<article class="[ margin-bottom--small ]">
-								<h3>Bordered</h3>
-								<div class="[ border ]">
-									Bordered element
-								</div>
-							</article>
-							<article class="[ margin-bottom--small ]">
-								<h3>Squared</h3>
-								<div class="[ row ]">
-									<div class="[ square ][ border ]">
-										<div class="[ square-content ]">
-											<h4 class="[ text-center ][ ellipsis ][ no-margin ]">Squared</h4>
-										</div><!-- square-content -->
-									</div><!-- square -->
-								</div><!-- row -->
 							</article>
 						</div>
 					</div>
-				</section>
-
-				<!-- =================================================
-				==== ICONS
-				================================================== -->
-				<section class="[ margin-bottom--large ]">
-					<div class="[ margin-bottom ]">
-						<div class="[ wrapper ]">
-							<h2>Icons</h2>
-							<div class="[ row ]">
-								<div class="[ column xmall-1 ]">
-									<img class="[ svg icon icon--small ][ color-light ]" src="icons/hamburger.svg" alt="menu">
-								</div>
-								<div class="[ column xmall-1 ]">
-									<i class="[ icon-menu ]"></i>
-								</div>
-								<div class="[ column xmall-1 ]">
-									<i class="[ icon-menu ]"></i>
-								</div>
-								<div class="[ column xmall-1 ]">
-									<i class="[ icon-menu ]"></i>
-								</div>
-								<div class="[ column xmall-1 ]">
-									<i class="[ icon-menu ]"></i>
-								</div>
-								<div class="[ column xmall-1 ]">
-									<i class="[ icon-menu ]"></i>
-								</div>
-								<div class="[ column xmall-1 ]">
-									<i class="[ icon-menu ]"></i>
-								</div>
-								<div class="[ column xmall-1 ]">
-									<i class="[ icon-menu ]"></i>
-								</div>
-								<div class="[ column xmall-1 ]">
-									<i class="[ icon-menu ]"></i>
-								</div>
-								<div class="[ column xmall-1 ]">
-									<i class="[ icon-menu ]"></i>
-								</div>
-								<div class="[ column xmall-1 ]">
-									<i class="[ icon-menu ]"></i>
-								</div>
-								<div class="[ column xmall-1 ]">
-									<i class="[ icon-menu ]"></i>
-								</div>
-							</div><!-- row -->
-						</div>
-					</div>
-				</section>
-
-				<!-- =================================================
-				==== UTILITIES
-				================================================== -->
-				<section class="[ margin-bottom--large ]">
-					<div class="[ margin-bottom ]">
-						<div class="[ wrapper ]">
-							<h2>Utilities</h2>
-							<div class="[ row ]">
-							</div>
-						</div>
-					</div>
-				</section>
+				</section><!-- cotizador -->
 
 			</div><!-- main -->
-
-			<section class="[ action-buttons action-buttons--right ]">
-				<a href="#" class="[ button button--primary button--action ][ js-modal-opener ]" data-modal="nav"><i class="[ icon-menu ]"></i></a>
-			</section><!-- action-buttons -->
-
-			<section class="[ modal-wrapper modal-nav ][ hide ]">
-				<div class="[ modal modal--full ]">
-					<div class="[ modal-content ]">
-						<article class="[ menu ]">
-							<div class="[ row ][ bg-dark ]">
-								<?php /*<a href="<?php echo site_url(''); ?>" class="[ span xmall-6 ][ border ][ button button--light button--ink ][ padding ]"><i class="[ icon-sillones ]"></i>quiero comprar</a>
-								<?php /* <a href="<?php echo site_url('');?>" class="[ span xmall-6 ][ border ][ button button--light button--ink ][ padding ]"><i class="[ icon-vender ]"></i>quiero vender</a> */ ?>
-								<a href="<?php echo site_url('como-funciona');?>" class="[ span xmall-6 ][ border ][ button button--light button--ink ][ padding--medium ]"><i class="[ icon-graph ]"></i>¿cómo funciona?</a>
-								<a href="<?php echo site_url('');?>" class="[ span xmall-6 ][ border ][ button button--light button--ink ][ padding--medium ]"><i class="[ icon-messages ]"></i>blog</a>
-								<?php if( is_user_logged_in() ) {  ?>
-									<a href="<?php echo site_url('mi-cuenta');?>" class="[ span xmall-12 ][ border ][ button button--light button--ink ][ bg-primary ][ padding--medium ]"><i class="[ icon-user ]"></i>mi cuenta</a>
-									<a href="<?php echo wp_logout_url( site_url() ) ?>" class="[ span xmall-12 ][ border ][ button button--light button--ink ][ bg-highlight ][ padding--medium ]"><i class="[ icon ]"></i>Logout</a>
-								<?php } else { ?>
-									<a href="<?php echo site_url('mi-cuenta');?>" class="[ span xmall-12 ][ border ][ button button--light button--ink ][ bg-primary ][ padding--medium ]"><i class="[ icon-user ]"></i>log in o registrate</a>
-								<?php } ?>
-							</div>
-						</article><!-- menu -->
-
-						<article class="[ search ]">
-							<div class="[ padding ][ border ]">
-								<?php get_product_search_form(); ?>
-							</div><!-- padding -->
-						</article><!-- search -->
-
-						<article class="[ categorias ]">
-							<div class="[ padding ]">
-								<h3 class="[ text-center ][ no-margin ]">Categorías</h3>
-							</div>
-							<div class="[ row ]">
-								<a href="#" class="[ span xmall-6 ][ border ][ button button--primary button--ink ][ padding ]"><img class="[ svg icon icon--small ][ color-light ]" src="icons/hamburger.svg" alt="menu">category</a>
-							</div>
-						</article><!-- categorias -->
-						<artcile class="[ initial ]">
-							<div class="[ action-buttons action-buttons--right ][ always-opened ]">
-								<a href="#" class="[ button button--primary button--action ][ pull-right ][ js-modal-closer ]"><i class="[ icon-close ]"></i></a>
-							</div><!-- action-buttons -->
-						</artcile><!-- action-buttons -->
-					</div><!-- modal-content -->
-				</div>
-			</section>
-
 		</div><!-- container -->
 
 		<footer class="">
-			<section class="[ border ][ padding ]">
-				<div class="[ wrapper ]">
-					<h3 class="[ title ] [ text-center ]">Suscríbete a nuestro newsletter</h3>
-					<form class="[ form form--large ]" action="http://mobilly.us10.list-manage1.com/subscribe/post" method="POST">
-
-						<fieldset class="[ columna xmall-12 medium-6 ][ center ]">
-							<div class="smart-widget sm-right smr-50">
-								<label class="field">
-									<input type="text" name="sub" id="sub" class="gui-input" placeholder="tu@correo.com">
-								</label>
-								<button type="submit" class="[ button ]">
-									<img class="[ svg icon icon--small ][ color-light ]" src="icons/hamburger.svg" alt="menu">
-								</button>
-							</div><!-- end .smart-widget section -->
-						</fieldset>
-
-					</form>
-				</div><!-- wrapper -->
-			</section><!-- border -->
-
-			<section class="[ text-center ][ margin-bottom ][ padding ]">
-				<a href="#"><small>¿Quiénes somos?</small></a>
-				<a href="#"><small>¿Cómo funciona?</small></a>
-				<a href="#"><small>FAQs</small></a>
-				<a href="#"><small>Trabaja con nosotros</small></a>
-				<a href="#"><small>Devoluciones y reembolsos</small></a>
-				<a href="#"><small>Términos y condiciones</small></a>
-				<a href="#"><small>Aviso de privacidad</small></a>
-				<a href="#"><small>Ayúdanos a transportar</small></a>
-				<a href="#"><small>Contacto</small></a>
-			</section>
-
-			<section class="[ text-center ]">
-				<p>
-					<small>
-						© 2014 Mobbily S.A de C.V.<br />
-						todos los derechos reservados.
-					</small>
-				</p>
-			</section>
+			
 		</footer>
 
 		<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -1032,24 +342,198 @@
 
 				/* @ui slider
 				------------------------------------------------------------------ */
-
-				$('#slider1').slider({
-					min: 0,
-					max: 100,
-					range: true,
-					values: [10, 90],
-
+				$('#slider-enganche').slider({
+					min: 10,
+					max: 70,
+					range: false,
+					values: [20],
+					step: 5,
 
 					slide: function( event, ui ) {
-						//$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-						$( '.js-starting-price' ).text( '$' + ui.values[ 0 ]);
-						$( '.js-finishing-price' ).text( '$' + ui.values[ 1 ]);
+						$( '.js-porcentaje-enganche' ).text( ui.values[ 0 ] + '%' );
+						actualizarValores( getValorTotal() );
 					}
 				});
-				$( '.js-starting-price' ).text( '$' + $('#slider1').slider( 'values', 0 ) );
-				$( '.js-finishing-price' ).text( '$' + $('#slider1').slider( 'values', 1 ) );
+				$( '.js-porcentaje-enganche' ).text( $('#slider-enganche').slider( 'values', 0 ) + '%' );
+
+				$('#slider-meses').slider({
+					min: 12,
+					max: 48,
+					range: false,
+					values: [36],
+
+					slide: function( event, ui ) {
+						$( '.js-meses' ).text( ui.value + ' meses' );
+						actualizarValores( getValorTotal() );
+					}
+				});
+				$( '.js-meses' ).text( $('#slider-meses').slider( 'values', 0 ) + ' meses' );
+				
+				initCotizador();
 
 });
+	
+	// Funciones cotizador (meter en plugin)
+	function getValorTotal(){
+		
+		var valorTotal = $('input[name="valor_total"]').val().replace(/,/g, '');
+		return valorTotal.substring( 1, valorTotal.length );
+	}
+	function getComision(){
+		return 0.2;
+	}
+	function getMontoFinanciar(){
+		var montoFinanciar = $('input[name="monto_financiar"]').val().replace(/,/g, '');
+		console.log(montoFinanciar);
+		return montoFinanciar.substring( 1, montoFinanciar.length );
+	}
+
+	function setIVA( total ){
+		var iva = total * 0.16;
+		$('input[name="iva"]').val( '$' + formatMoney( iva.toFixed(2) ) );
+	}
+
+	function getValorFactura(){
+		var valorFactura = $('input[name="valor_factura"]').val().replace(/,/g, '');
+		return valorFactura.substring( 1, valorFactura.length );
+	}	
+
+	function getPagoInicial( meses, valorFactura ){
+		return meses * valorFactura;
+	}
+
+	function getPorcentajeEnganche(){
+		var porcentajeEnganche = $( '.js-porcentaje-enganche' ).text()
+		return porcentajeEnganche.slice(0, -1) / 100;
+	}
+
+	function getPlazoMeses(){
+		return parseInt( $( '.js-meses' ).text() );
+	}
+
+	function getTasaMensual(){
+		return 0.26 / 12;
+	}
+
+	function getValorResidual(){
+		return getValorFactura() * 0.25;
+	}
+
+	function setValorFactura( total ){
+		var iva = total / 1.16;
+		$('input[name="valor_factura"]').val( '$' + formatMoney( iva.toFixed(2) ) );
+	}
+
+	function setMontoFinanciar( valorFactura, pagoInicial ){
+		var monto = valorFactura - pagoInicial;
+		$('input[name="monto_financiar"]').val( '$' + formatMoney( monto.toFixed(2) ) );
+	}
+
+	function setRentaMensual( rentaMensual ){
+		$('input[name="renta_mensual"]').val( '$' + formatMoney( rentaMensual.toFixed(2) ) );
+	}
+
+	function initCotizador(){
+
+		$('input[name="valor_total"]').keydown( function(e) {
+
+			if( invalidKey(e) ){
+				e.preventDefault();
+				return;
+			}
+
+			// Allow arrows
+			if(e.keyCode >= 37 && e.keyCode <= 40 ) {
+				return;
+			}
+
+		});	
+
+		$('input[name="valor_total"]').keyup( function(e) {
+
+			if( invalidKey(e) ){
+				e.preventDefault();
+				return;
+			}
+
+			// Allow arrows
+			if(e.keyCode >= 37 && e.keyCode <= 40 ) {
+				return;
+			}
+
+			$(this).val(function(i,v) {
+				actualizarValores( v.replace('$','') );
+				return '$' + v.replace('$',''); //remove exisiting, add back.
+			});
+		});	
+
+		$('input[name="valor_total"]').focusout( function(e) {
+			var formattedValue = $(this).val().replace('$','');
+
+			$(this).val( '$' + formatMoney(formattedValue) );
+		});
+	}
+
+	function invalidKey( e ) {
+		// Allow: backspace, delete, tab, escape, enter and .
+		//alert( e.keyCode );
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190 ]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+             // Allow: Ctrl+C
+            (e.keyCode == 67 && e.ctrlKey === true) ||
+             // Allow: Ctrl+X
+            (e.keyCode == 88 && e.ctrlKey === true) ||
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return false;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            return true;
+        }
+	}
+
+	function actualizarValores( valorTotal ){
+		var valorFactura, pagoInicial, montoFinanciar, valorResidual, plazo, tasaMensual, porcentajeEnganche; 
+
+		setValorFactura( valorTotal );
+		valorFactura = getValorFactura();
+		setIVA( getValorFactura() );
+
+		porcentajeEnganche = getPorcentajeEnganche();
+		pagoInicial = getPagoInicial( porcentajeEnganche, valorFactura );
+		setMontoFinanciar( valorFactura, pagoInicial );		
+		montoFinanciar = getMontoFinanciar();
+
+		valorResidual = getValorResidual();
+		tasaMensual = getTasaMensual();
+		plazo = getPlazoMeses();
+		
+		setRentaMensual( calculaRentaMensual( tasaMensual, plazo, montoFinanciar,  valorResidual ) * 1.16 );
+
+		console.clear();
+		console.log('tasa mensual: ' + tasaMensual );
+		console.log('plazo: ' + plazo );
+		console.log('monto a financiar: $' + montoFinanciar );
+		console.log('valorResidual: $' + valorResidual );
+		console.log( 'pago mensual: $' + calculaRentaMensual( tasaMensual, plazo, montoFinanciar,  valorResidual ) * 1.16 );
+	}
+
+	function calculaRentaMensual( tasaMensual, plazo, montoFinanciar, valorResidual ){
+		if( ! valorResidual ){ valorResidual = 0; }
+		
+		return tasaMensual * ( montoFinanciar * -1 * Math.pow((1 + tasaMensual), plazo) + valorResidual ) / (1 - Math.pow((1 + tasaMensual), plazo));
+	}
+
+	function formatMoney(n){
+		var digitosDecimales = 2;
+		var signo = n < 0 ? "-" : ""; 
+		i = parseInt(n = Math.abs(+n || 0).toFixed(digitosDecimales)) + "";
+		j = (j = i.length) > 3 ? j % 3 : 0;
+		return signo + (j ? i.substr(0, j) + "," : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + ",") + (digitosDecimales ? "." + Math.abs(n - i).toFixed(digitosDecimales).slice(2) : "");
+	};
 
 </script>
 	</body>
