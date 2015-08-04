@@ -1,0 +1,1766 @@
+/*------------------------------------*\
+    #FORM RESET
+\*------------------------------------*/
+fieldset{
+	padding: 0; border: none; margin: 0;
+}
+
+/*
+--------------------------------------------------
+@ * Smart Forms v3.0.0
+  * http://www.doptiq.com/smart-forms
+  * Last updated 25 / May / 2015
+  * Product developed by Elflaire
+  * http://codecanyon.net/user/elflaire
+--------------------------------------------------
+*/
+
+
+/* @form wrappers
+---------------------------------- */
+.form { }
+
+.smart-container{}
+
+/* @form container width
+/* @if you want to change the form container width change the values below
+/* @alternatively you can add yours eg .wrap4{ max-width:200px; }
+---------------------------------------------------------------------------- */
+.wrap-0{ max-width:952px; }
+.wrap-1{ max-width:852px; }
+.wrap-2{ max-width:652px; }
+.wrap-3{ max-width:452px; }
+
+/* @form helper classes
+--------------------------------------------------------------- */
+.form .section{ margin-bottom:22px; }
+.form .smart-link{ color: @primary; text-decoration:none; }
+.form .smart-link:hover{ text-decoration: underline; }
+.form .tagline{ height:0; border-top:1px solid #484848; text-align:center;  }
+.form .tagline span{
+	text-transform:uppercase;
+	display:inline-block;
+	position:relative;
+	padding:0 15px;
+	background:#222222;
+	color:@primary;
+	top:-10px;
+}
+
+/* @form label + field :: field class is useful for validation
+---------------------------------------------------------------------- */
+.form .field{ display:block; position:relative; }
+.form .field-icon i { color:@secondary; position:relative; }
+.form .field-label { display: block; margin-bottom: 7px; }
+.form .field-label.colm{ padding-top:12px; }
+.form .field-label em{
+	color:#e74c3c;
+	font-size:14px;
+	font-style:normal;
+	display:inline-block;
+	margin-left:4px;
+	position:relative;
+	top:3px;
+}
+
+
+/* @form body + footer
+------------------------------------------------------------------- */
+.form .form-body{ }
+.form .form-footer {
+	// overflow:hidden;
+	// padding:20px 25px;
+	// padding-top:25px;
+	background: @primary;
+}
+
+/* @crossbrowser placeholder styling :: modern browsers only IE10+
+------------------------------------------------------------------------ */
+.form input[type=search] { -webkit-appearance: textfield; }
+.form ::-webkit-search-decoration,
+.form ::-webkit-search-cancel-button { -webkit-appearance: none; }
+.form input:invalid { -moz-box-shadow: none; box-shadow: none;  }
+.form input::-webkit-input-placeholder,
+.form textarea::-webkit-input-placeholder { color: @secondary; }
+.form input:focus::-webkit-input-placeholder,
+.form textarea:focus::-webkit-input-placeholder { color: @secondary; }
+.form input:-moz-placeholder,
+.form textarea:-moz-placeholder {  color: @secondary; }
+.form input:focus:-moz-placeholder,
+.form textarea:focus:-moz-placeholder { color: @secondary; }
+.form input::-moz-placeholder,
+.form textarea::-moz-placeholder {  color: @secondary; opacity: 1; }
+.form input:focus::-moz-placeholder,
+.form textarea:focus::-moz-placeholder { color: @secondary; opacity: 1; }
+.form input:-ms-input-placeholder,
+.form textarea:-ms-input-placeholder {  color: @secondary; }
+.form input:focus:-ms-input-placeholder,
+.form textarea:focus:-ms-input-placeholder { color: @secondary; }
+
+/* @element general styling :: fonts :: adjust accordingly
+------------------------------------------------------------- */
+.form label,
+.form input,
+.form button,
+.form select,
+.form textarea {
+	font-size: 14px;
+	outline:none;
+}
+
+/* @remove browser specific styling
+----------------------------------------------- */
+.form .gui-input,
+.form .gui-textarea,
+.form .select > select,
+.form input[type="button"],
+.form input[type="submit"],
+.form input[type="search"],
+.form .select-multiple select {
+	-webkit-tap-highlight-color:transparent;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-border-radius:0px;
+	border-radius: 0px;
+}
+
+.form input[type="search"]::-webkit-search-decoration,
+.form input[type="search"]::-webkit-search-cancel-button,
+.form input[type="search"]::-webkit-search-results-button,
+.form input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+
+/* @labels font-size styling :: adjust to fit your needs
+--------------------------------------------------------- */
+.form .switch,
+.form .option,
+.form .field-label{ font-size:14px; }
+
+/* @prevent user selection for usability purposes
+----------------------------------------------------- */
+.form .radio,
+.form .button,
+.form .checkbox,
+.form .switch > label{
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+/* @universal rules for all elements
+---------------------------------------------------- */
+.form .tooltip,
+.form .gui-input,
+.form .notification,
+.form .gui-textarea,
+.form .select > select,
+.form .select-multiple select{
+	.transition(all 0.25s ease-in-out);
+	outline:none;
+}
+
+.form .checkbox,
+.form .radio,
+.form .button{
+	.transition(all 0.1s ease-in-out);
+}
+
+.form .button{
+	margin: 0; border-color: @primary;
+	line-height: 1.4;
+	background-color: @primary; color: @light;
+}
+
+.form .select > select,
+.form .select-multiple select{
+	.transition(none);
+}
+
+/* @control border-size :: color etc for these elements
+----------------------------------------------------------- */
+.form .select,
+.form .gui-input,
+.form .gui-textarea,
+.form .select > select,
+.form .select-multiple select{
+	background: @light;
+	position: relative;
+	vertical-align: top;
+	border: 1px solid @primary;
+	display: -moz-inline-stack;
+	display: inline-block;
+	*display: inline;
+	color:  @primary;
+	outline:none;
+	height: 42px;
+	width: 100%;
+	*zoom: 1;
+}
+
+/* @styling inputs and textareas
+------------------------------------------- */
+.form .gui-input,
+.form .gui-textarea { padding:10px; }
+.form .gui-textarea {
+	resize: none;
+	line-height: 19px;
+	overflow: auto;
+	max-width:100%;
+	height: 96px;
+}
+
+/* @hint below textareas
+---------------------------------------- */
+.form .input-hint {
+	padding: 10px;
+	display: block;
+	margin-top: -4px;
+	line-height: 16px;
+	position: relative;
+	background: @light;
+	border: 1px solid @primary;
+	border-top: 1px solid @primary;
+	font-size: 11px;
+	color: @primary;
+}
+
+/* @form selects :: dropdowns
+-------------------------------------------------- */
+.form .select { border:0; z-index:10; }
+.form .select > select {
+	display: block;
+	padding:9px 10px;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	outline:none;
+	text-indent: 0.01px;
+	text-overflow: '';
+	z-index:10;
+	margin: 0;
+}
+
+.form .select > select::-ms-expand { display: none; }
+.form .select:before,
+.form .select:after {
+	content: '';
+	position: absolute;
+	pointer-events: none;
+	z-index:15;
+}
+
+.form .select .arrow {
+	position: absolute;
+	top: 9px;
+	right: 5px;
+	width: 24px;
+	height: 24px;
+	color: @primary;
+	pointer-events:none;
+	z-index:16;
+}
+
+.form .select .arrow:after,
+.form .select .arrow:before {
+	content: '';
+	position: absolute;
+	font: 12px monospace;
+	font-style:normal;
+	pointer-events:none;
+	display:none\9;
+	left:6px;
+}
+
+.form .select .arrow:before { content:'\25BC'; bottom:4px; }
+.form .select .double:after { content:'\25B2'; top:-1px;  }
+.form .select .double:before { content:'\25BC'; bottom:-1px; }
+.form .select-multiple select {
+	width:100%;
+	height: 123px;
+	padding: 10px;
+}
+
+/* @file inputs :: file uploaders
+-------------------------------------------------------- */
+.form .file{ display:block; width:100%; }
+.form .file .gui-file{
+	width:100%;
+	height:100%;
+	cursor:pointer;
+	padding:8px 10px;
+	position:absolute;
+	-moz-opacity:0;
+	opacity: 0;
+	z-index:11;
+	bottom:0;
+	right:0;
+}
+
+.form .file .button {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	float: none;
+	height: 34px;
+	line-height: 30px;
+	padding: 0 16px;
+	z-index:10;
+}
+
+/* @form element :hover state
+-------------------------------------------- */
+.form .gui-input:hover,
+.form .gui-textarea:hover,
+.form .select > select:hover,
+.form .select-multiple select:hover,
+.form .gui-input:hover ~ .input-hint,
+.form .file .gui-file:hover + .gui-input,
+.form .gui-textarea:hover ~ .input-hint{
+	border-width: 2px;
+}
+
+/* @form element :focus state
+-------------------------------------------------------- */
+.form .gui-input:focus,
+.form .gui-textarea:focus,
+.form .select > select:focus,
+.form .select-multiple select:focus{ border-color: @primary; color: @primary !important; }
+.form .gui-textarea:focus{  height: 120px; }
+.form .select > select:focus { z-index:10; z-index:20\9; }
+.form .gui-input:focus ~ .field-icon i,
+.form .gui-textarea:focus ~ .field-icon i{ color:@primary; }
+.form .select-multiple select:focus,
+.form .gui-input:focus ~ .input-hint,
+.form .gui-textarea:focus ~ .input-hint,
+.form .file .gui-file:focus + .gui-input{ border-color: @primary; }
+.form .select > select:focus + .arrow{ color:@primary; }
+
+/* @radio + checkbox option elements
+----------------------------------------------------- */
+.form .option {
+	position: relative;
+	padding-right:15px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.form .option > input {
+	position: absolute;
+	height: inherit;
+	width: inherit;
+	opacity: 0;
+	left: 0;
+}
+.form .checkbox,
+.form .radio {
+	position: relative;
+	margin-right: 2px;
+	background: @light;
+	display: inline-block;
+	border: 1px solid @primary;
+	margin-bottom:0;
+	margin-top:0;
+	height: 21px;
+	width: 21px;
+	top: 5px;
+}
+
+.form .checkbox:before,
+.form .radio:before {
+	content: '';
+	display: none;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	box-sizing: content-box;
+	padding: 0;
+	margin: 0;
+}
+
+
+.form input:checked + .checkbox:before,
+.form input:checked + .radio:before {
+	display: block;
+}
+
+.form .checkbox:before {
+	position: absolute;
+	top: 4px;
+	left: 3px;
+	width: 6px;
+	height: 3px;
+	border: solid @primary;
+	border-width: 0 0 3px 3px;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.form input:checked + .checkbox,
+.form input:checked + .radio{ border: 3px solid @primary; }
+.form .radio {
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-o-border-radius: 20px;
+	border-radius: 20px;
+
+}
+.form .radio:before {
+	margin: 4px;
+	width: 7px;
+	height: 7px;
+	background: @primary;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+}
+
+
+/* @radio + checkbox :hover state
+-------------------------------------------------- */
+.form input:hover + .checkbox,
+.form input:hover + .radio{
+	border-color: @primary;
+}
+
+/* @radio + checkbox :focus state
+--------------------------------------------------- */
+.form input:focus + .checkbox,
+.form input:focus + .radio{
+	border-color: @primary;
+}
+
+.form input:focus + .radio:before{ background: @primary; }
+.form input:focus + .checkbox:before{ border-color: @primary; }
+
+/* @toggle switch elements
+-------------------------------------------------- */
+.form .switch {
+	cursor:pointer;
+	position: relative;
+	padding-right:10px;
+	display: inline-block;
+	margin-bottom:5px;
+	height: 26px;
+}
+.form .switch > .switch-label {
+	cursor:pointer;
+	display: inline-block;
+	position: relative;
+	height: 25px;
+	width: 58px;
+	color: #fff;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 20px;
+	text-align: center;
+	background: @danger;
+	border: 2px solid @danger;
+	text-transform: uppercase;
+	font-family:Helvetica, Arial, sans-serif;
+	-webkit-transition: 0.3s ease-out;
+	-moz-transition: 0.3s ease-out;
+	-o-transition: 0.3s ease-out;
+	transition: 0.3s ease-out;
+}
+.form .switch > .switch-label + span{ display:inline-block; padding-left:5px; position:relative; top:-7px; }
+.form .switch > .switch-label:before {
+	content: attr(data-off);
+	position: absolute;
+	top: 1px;
+	right: 3px;
+	width: 33px;
+}
+
+.form .switch > .switch-label:after {
+	content:"";
+	margin: 1px;
+	width: 19px;
+	height: 19px;
+	display: block;
+	background: #fff;
+}
+
+.form .switch > input {
+	-webkit-appearance: none;
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	opacity: 0;
+	left: 0;
+	top: 0;
+
+}
+
+/* @toggle switch focus state
+-------------------------------------------------------------- */
+.form .switch > input:focus { outline: none; }
+.form .switch > input:focus + .switch-label { color: #fff; border-color: @primary; background:@primary; }
+.form .switch > input:focus + .switch-label:after { background: #fff; }
+
+/* @toggle switch normal state
+--------------------------------------------------------------- */
+.form .switch > input:checked + .switch-label {
+	border-color: @success;
+	background: @success;
+	padding-left: 33px;
+	color: white;
+}
+
+.form .switch > input:checked + .switch-label:before {
+	content: attr(data-on);
+	left: 1px;
+	top:1px;
+}
+
+.form .switch > input:checked + .switch-label:after {
+	margin: 1px;
+	width: 19px;
+	height: 19px;
+	background: white;
+}
+
+/* @toggle switch normal state focus
+--------------------------------------------------------------------------------- */
+.form .switch > input:checked:focus + .switch-label { background: #16a085; border-color: #16a085; }
+.form .switch-round > .switch-label {
+	-webkit-border-radius: 13px;
+	-moz-border-radius: 13px;
+	-o-border-radius: 13px;
+	border-radius: 13px;
+}
+.form .switch-round > .switch-label + span{ top:-2px; }
+.form .switch-round > .switch-label:before { width: 33px; }
+.form .switch-round > .switch-label:after {
+	width: 19px;
+	color: @success;
+	content: "\2022";
+	font:20px/20px Times, Serif;
+	-webkit-border-radius: 13px;
+	-moz-border-radius: 13px;
+	-o-border-radius: 13px;
+	border-radius: 13px;
+}
+
+.form .switch-round > input:checked + .switch-label { padding-left: 33px; }
+.form .switch-round > input:checked + .switch-label:after{ color:@success; }
+
+
+
+/* @social buttons :: facebook :: twitter :: google +
+---------------------------------------------------- */
+.form .twitter,
+.form .twitter:hover,
+.form .twitter:focus,
+.form .facebook,
+.form .facebook:hover,
+.form .facebook:focus,
+.form .googleplus,
+.form .googleplus:hover,
+.form .googleplus:focus { color:#fff; text-shadow: 0 1px rgba(0, 0, 0, 0.08); }
+.form .facebook { background-color:#3b5998; }
+.form .twitter { background-color:#00acee;  }
+.form .googleplus { background-color:#dd4b39; }
+.form .facebook:hover,
+.form .facebook:focus { background-color:#25385F;  }
+.form .twitter:hover,
+.form .twitter:focus { background-color:#00749F;  }
+.form .googleplus:hover,
+.form .googleplus:focus { background-color:#8D2418;  }
+.form .span-left{ padding-left:52px; text-align:left; }
+.form .btn-social { position:relative; margin-bottom:5px;  }
+.form .btn-social i{ font-size:22px; position:relative; top:2px;    }
+.form .btn-social span{
+	-webkit-border-radius:3px 0 0 3px;
+	-moz-border-radius:3px 0 0 3px;
+	-o-border-radius:3px 0 0 3px;
+	border-radius:3px 0 0 3px;
+	display:inline-block;
+	text-align:center;
+	position:absolute;
+	width:42px;
+	left:0;
+}
+.form .twitter span{ background-color:#009AD5; }
+.form .facebook span{ background-color:#31497D; }
+.form .googleplus span{ background-color:#C03121; }
+
+/* @rating and review star widget :: with hover back afetr selecting
+------------------------------------------------------------------------ */
+.form .rating { position:relative; }
+.form .rating.block { display:block; margin:10px 0; }
+.form .rating label{color: @secondary;}
+.form .rating label i{ font-size:17px; text-align:center; color:inherit;  }
+.form .rating label span{ font:22px/22px Times, Serif; }
+.form .rating-star{ margin-left:4px; }
+.form .rating-input { position: absolute; left:-9999px; top: auto; }
+.form .rating:hover .rating-star:hover,
+.form .rating:hover .rating-star:hover ~ .rating-star,
+.form .rating-input:checked ~ .rating-star { color: @primary;	}
+.form .rating-star,
+.form .rating:hover .rating-star {
+	width: 18px;
+	float: right;
+	display: block;
+	cursor:pointer;
+	color: @secondary;
+}
+
+.form .rating:before,
+.form .rating:after{ display: table; content: ""; line-height: 0; }
+.form .rating:after{ clear: both; }
+.form .rating .lbl-text{ font-size:14px; display: inline-block; float:left; }
+.form .rating-wrapper {
+	position:relative;
+	display:inline-block;
+	margin-top:0;
+	float: right;
+}
+
+.form .rating label span{
+	font-family:Arial, Helvetica, sans-serif;
+	text-shadow: 0 1px rgba(255, 255, 255, 0);
+	.transition(margin 0.6s);
+	.border-radius(3px);
+	white-space:nowrap;
+	position:absolute;
+	padding:5px 10px;
+	font-weight:bold;
+	background:@secondary;
+	font-size:11px;
+	margin-left:-5px;
+	margin-bottom:15px;
+	display:block;
+	left:-9999px;
+	color:#fff;
+	opacity:0;
+	z-index:10;
+}
+
+.form .rating label:hover span{ bottom:100%; opacity:1; left: auto; margin-bottom:5px;  }
+.form .rating label span:before{
+	content: '';
+	position: absolute;
+	border-top: 4px solid #666666;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	left: 8px;
+	top: 100%;
+}
+
+
+/* @smart widget
+   @this widget helps us to position an element eg button or label or span
+   @the positions can either be left or right while the input stays 100%
+   @you ca use this to rapidly create search widgets, newsletter subscribe etc
+---------------------------------------------------------------------------------*/
+.form .smart-widget,
+.form .append-picker-icon,
+.form .prepend-picker-icon { position: relative; display:block; }
+.form .smart-widget .field input,
+.form .append-picker-icon input,
+.form .prepend-picker-icon input { width: 100%; }
+
+.form .append-picker-icon button,
+.form .prepend-picker-icon button,
+.form .smart-widget .button {
+	position: absolute;
+	height: 42px;
+	top: 0;
+}
+
+.form .append-picker-icon button,
+.form .prepend-picker-icon .gui-input,
+.form .sm-left .field input,
+.form .sm-right .button{
+	-webkit-border-top-left-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+	-moz-border-top-left-radius: 0;
+	-moz-border-bottom-left-radius: 0;
+	-o-border-top-left-radius: 0;
+	-o-border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form .prepend-picker-icon button,
+.form .append-picker-icon .gui-input,
+.form .sm-right .field input,
+.form .sm-left .button{
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	-moz-border-top-right-radius: 0;
+	-moz-border-bottom-right-radius: 0;
+	-o-border-top-right-radius: 0;
+	-o-border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.form .prepend-picker-icon button,
+.form .sm-left .button { left:0; }
+.form .append-picker-icon button,
+.form .sm-right .button {  right:0; }
+
+/* @smart widget buttons - to left
+------------------------------------------------- */
+.form .sml-50,
+.form .prepend-picker-icon{ padding-left: 50px; }
+.form .sml-50 .button,
+.form .prepend-picker-icon button{ width: 50px; }
+.form .sml-80{ padding-left: 80px; }
+.form .sml-80 .button { width: 80px; }
+.form .sml-120{ padding-left: 120px; }
+.form .sml-120 .button { width: 120px; }
+
+/* @smart widget buttons - to right
+------------------------------------------------- */
+.form .smr-50,
+.form .append-picker-icon{ padding-right: 50px; }
+.form .smr-50 .button,
+.form .append-picker-icon button{ width: 50px; }
+.form .smr-80{ padding-right: 80px; }
+.form .smr-80 .button { width: 80px; }
+.form .smr-120{ padding-right: 120px; }
+.form .smr-120 .button { width: 120px; }
+
+/* @picker buttons
+------------------------------------------------- */
+.form .append-picker-icon button,
+.form .prepend-picker-icon button{
+	background: #bdc3c7;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.2);
+	text-align: center;
+	cursor: pointer;
+	color: #243140;
+	border:0;
+}
+
+/* @ picker buttons :hover :active states
+---------------------------------------------------------------- */
+.form .append-picker-icon button:hover,
+.form .prepend-picker-icon button:hover { color: #243140; background: #cacfd2; }
+.form .append-picker-icon button:active,
+.form .prepend-picker-icon button:active{ color: #1d2938; background: #a1a6a9; }
+
+
+
+/* @icon append (right) :: prepend (left)
+------------------------------------------------- */
+.form .append-icon,
+.form .prepend-icon{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	width:100%;
+}
+
+.form .append-icon .field-icon,
+.form .prepend-icon .field-icon{
+	top:0;
+	width:42px;
+	height:42px;
+	color: inherit;
+	line-height:42px;
+	position:absolute;
+	text-align: center;
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+	pointer-events: none;
+	z-index:99;
+}
+
+.form .append-icon .field-icon i,
+.form .prepend-icon .field-icon i{
+	position:relative;
+	font-size:14px;
+}
+
+.form .prepend-icon .field-icon{ left:0;  }
+.form .append-icon .field-icon{ right:0; }
+.form .prepend-icon > input,
+.form .prepend-icon > textarea{ padding-left:36px; }
+.form .append-icon > input,
+.form .append-icon > textarea{ padding-right:36px; padding-left:10px;  }
+.form .append-icon > textarea{ padding-right:36px; }
+
+/* @tooltips on inputs + textareas
+------------------------------------------------- */
+.form .tooltip {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	color: #fff;
+	width: 184px;
+	left: -9999px;
+	top:auto;
+	font-size: 11px;
+	font-weight:normal;
+	background: #666666;
+	-webkit-transition: margin 0.6s, opacity 0.6s;
+	-moz-transition: margin 0.6s, opacity 0.6s;
+	-ms-transition: margin 0.6s, opacity 0.6s;
+	-o-transition: margin 0.6s, opacity 0.6s;
+	transition: margin 0.6s, opacity 0.6s;
+}
+
+.form .tooltip > em{ padding:12px; font-style:normal; display:block; position:static; }
+.form .tooltip:after { content: ''; position: absolute; }
+.form .option:hover .tooltip,
+.form .gui-input:focus + .tooltip,
+.form .gui-textarea:focus + .tooltip,
+.form .select > select:focus ~ .tooltip { opacity: 1; z-index: 999; }
+
+/* @tooltip left
+------------------------------------------------- */
+.form .tip-left { top:1px; margin-right:-20px; }
+.form .tip-left:after {
+	top:12px;
+	left: 100%;
+	border-left: 8px solid #666666;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+}
+
+.form .gui-input:focus + .tip-left,
+.form .gui-textarea:focus + .tip-left,
+.form .select > select:focus ~ .tip-left {
+	margin-right:5px;
+	right: 100%;
+	left: auto;
+}
+/* @tooltip right
+------------------------------------------------- */
+.form .tip-right { top:1px; margin-left:-20px; }
+.form .tip-right:after {
+	top:12px;
+	right: 100%;
+	border-right: 8px solid #666666;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+}
+
+.form .gui-input:focus + .tip-right,
+.form .gui-textarea:focus + .tip-right,
+.form .select > select:focus ~ .tip-right { left: 100%; margin-left:5px; }
+
+/* @tooltip right-top
+------------------------------------------------- */
+.form .tip-right-top { bottom: 100%; margin-bottom: -20px; }
+.form .tip-right-top:after {
+	top: 100%;
+	right: 12px;
+	border-top: 8px solid #666666;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}
+
+.form .gui-input:focus + .tip-right-top,
+.form .gui-textarea:focus + .tip-right-top,
+.form .select > select:focus ~ .tip-right-top {
+	right: 0;
+	left: auto;
+	margin-bottom: 10px;
+}
+
+/* @tooltip left-top
+------------------------------------------------- */
+.form .option .tooltip,
+.form .tip-left-top { bottom: 100%; margin-bottom: -20px; }
+.form .option .tooltip:after,
+.form .tip-left-top:after {
+	top: 100%;
+	left: 12px;
+	border-top: 8px solid #666666;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}
+.form .option:hover .tooltip,
+.form .gui-input:focus + .tip-left-top,
+.form .gui-textarea:focus + .tip-left-top,
+.form .select > select:focus ~ .tip-left-top {
+	left: 0;
+	right: auto;
+	margin-bottom: 10px;
+}
+
+.form .option:hover .tooltip{
+	left:-10px;
+}
+
+/* @tooltip right-bottom
+------------------------------------------------- */
+.form .tip-right-bottom { top: 100%; margin-top: -20px; }
+.form .tip-right-bottom:after {
+	right: 12px;
+	bottom: 100%;
+	border-bottom: 8px solid #666666;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}
+
+.form .gui-input:focus + .tip-right-bottom,
+.form .gui-textarea:focus + .tip-right-bottom {
+	margin-top: 10px;
+	left: auto;
+	right: 0;
+}
+
+/* @tooltip left-bottom
+------------------------------------------------- */
+.form .tip-left-bottom { top: 100%; margin-top: -20px; }
+.form .tip-left-bottom:after {
+	left: 12px;
+	bottom: 100%;
+	border-bottom: 8px solid #666666;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}
+
+.form .gui-input:focus + .tip-left-bottom,
+.form .gui-textarea:focus + .tip-left-bottom {
+	margin-top:10px;
+	right: auto;
+	left: 0;
+}
+
+/* @lists
+-------------------------------------------------------------- */
+.form .smart-list{ list-style:none; margin:0; padding:0; }
+.form .smart-list li{ margin-bottom:20px; }
+
+/* @notification messages | info | error | warning | success
+-------------------------------------------------------------- */
+.form .form-msg{ display:none; }
+.form .notification { color: #444; padding:15px; position:relative; }
+.form .notification p{ margin:0; padding:0 15px; padding-left:5px; line-height:normal;  }
+.form .notification .close-btn{
+	margin-top: -7px;
+	padding: inherit;
+	position: absolute;
+	text-decoration:none;
+	font: bold 20px/20px Arial, sans-serif;
+	opacity: 0.65;
+	color: inherit;
+	display: block;
+	right:1px;
+	top:14%;
+}
+
+.form .notification .close-btn:hover{ opacity: 1; }
+.form .alert-info { color:#163161; background-color: #cfe6fc; }
+.form .alert-success { color:#336633; background-color: #d2f7ad; }
+.form .alert-warning { color: #CC6600; background-color: #fae7a2; }
+.form .alert-error { color:#990000; background-color: #FBDBCF; }
+.form .notification ul{
+	margin-left:1.3em;
+	list-style-position: inside;
+	margin-top:10px;
+}
+
+/* @validaion - error state
+------------------------------------- */
+.form .state-error .gui-input,
+.form .state-error .gui-textarea,
+.form .state-error.select > select,
+.form .state-error.select-multiple > select,
+.form .state-error input:hover + .checkbox,
+.form .state-error input:hover + .radio,
+.form .state-error input:focus + .checkbox,
+.form .state-error input:focus + .radio,
+.form .state-error .checkbox,
+.form .state-error .radio{
+	border-color:#E46B66;
+}
+
+.form .state-error .gui-input ~ .field-icon i,
+.form .state-error .gui-textarea ~ .field-icon i{  color: #E46B66; }
+.form .state-error.select .arrow { color: #E46B66; }
+.form .state-error .gui-input ~ .input-hint,
+.form .state-error.file .gui-file:hover + .gui-input,
+.form .state-error .gui-textarea ~ .input-hint { border-color:#E46B66; }
+.form .state-error + em{
+	display: block!important;
+	margin-top: 6px;
+	padding: 0 3px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-style: normal;
+	line-height: normal;
+	color: #E46B66;
+	font-size:0.85em;
+
+}
+
+/* @validaion - success state
+-------------------------------------------------- */
+.form .state-success .gui-input,
+.form .state-success .gui-textarea,
+.form .state-success.select > select,
+.form .state-success.select-multiple > select,
+.form .state-success input:hover + .checkbox,
+.form .state-success input:hover + .radio,
+.form .state-success input:focus + .checkbox,
+.form .state-success input:focus + .radio,
+.form .state-success .checkbox,
+.form .state-success .radio{
+	border-color:#2ecc71;
+}
+
+.form .state-success .gui-input ~ .field-icon i,
+.form .state-success .gui-textarea ~ .field-icon i{  color: #2ecc71; }
+.form .state-success.select .arrow { color: #2ecc71; }
+.form .state-success .gui-input ~ .input-hint,
+.form .state-success.file .gui-file:hover + .gui-input,
+.form .state-success .gui-textarea ~ .input-hint { border-color:#2ecc71; }
+
+
+/* @disabled state
+----------------------------------------------- */
+.form .button[disabled],
+.form .state-disabled .button,
+.form input[disabled] + .radio,
+.form input[disabled] + .checkbox,
+.form .switch > input[disabled] + label{
+	cursor: default;
+	opacity:0.5;
+}
+
+.form .gui-input[disabled],
+.form .gui-textarea[disabled],
+.form .select > select[disabled],
+.form .select-multiple select[disabled],
+.form .gui-input[disabled] ~ .input-hint,
+.form .file .gui-file[disabled] + .gui-input,
+.form .file .gui-file[disabled]:hover + .gui-input,
+.form .gui-textarea[disabled] ~ .input-hint {
+  background-color: #f4f6f6;
+  border-color: #d5dbdb!important;
+  cursor: default;
+  color: #d5dbdb;
+  opacity:0.7;
+}
+
+.form input[disabled] ~ .field-icon i,
+.form textarea[disabled] ~ .field-icon i,
+.form .select > select[disabled] + .arrow{
+	opacity:0.4;
+}
+
+/* @datepicker - requires jquery ui
+----------------------------------------------- */
+.ui-datepicker {
+	display: none;
+	width: 18em;
+	border:5px solid @primary; margin-top:14px;
+	background: @light; color: @dark;
+	position:relative;
+	.font( 16px, 1.1, 300 );
+	.drop-shadow(0 0 4px rgba(0,0,0,.75));
+	z-index:9999!important;
+	text-align: center;
+}
+
+
+.ui-datepicker:before{
+	content:"";
+	bottom:auto;
+	border-style:solid;
+	border-width:16px 16px 16px;
+	border-color:transparent transparent @primary transparent;
+	border-color:rgba(255,255,255,0) rgba(255,255,255,0) @primary rgba(255,255,255,0);
+	position:absolute;
+	margin-left:-10px;
+	display:block;
+	top:-32px;
+	left:10%;
+	height:0;
+	width:0;
+}
+
+
+.ui-datepicker a { color: @primary; text-align:center; }
+.ui-datepicker .ui-state-disabled span{ color:#484848;}
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	background: @primary;
+	line-height: 27px;
+	font-size: 15px;
+	padding: 10px;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	width: 34px;
+	height: 34px;
+	display: block;
+	font-size: 14px;
+	position: absolute;
+	text-decoration: none;
+	cursor: pointer;
+	color:#fff;
+	top:19.5%;
+}
+
+.ui-datepicker .ui-datepicker-prev { left: 2px;  }
+.ui-datepicker .ui-datepicker-next { right: 2px; }
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 2.3em;
+	line-height: 1.8em;
+	text-align: center;
+	color:#fff;
+}
+
+.ui-datepicker .ui-datepicker-title select { font-size: 1em; margin: 1px 0; }
+.ui-datepicker select.ui-datepicker-month-year { width: 100%; }
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year { width: 49%; }
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	margin: 0 0 .4em;
+	border-collapse: collapse;
+}
+
+.ui-datepicker th {
+	padding: .7em .3em;
+	text-align: center;
+	font-weight: bold;
+	border: 0;
+}
+
+.ui-datepicker td { border: 0; padding: 5px; }
+.ui-datepicker .ui-state-disabled span:hover{ background:none; }
+.ui-datepicker td span,
+.ui-datepicker td a {
+	padding: .25em;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+
+}
+
+.ui-datepicker td span:hover,
+.ui-datepicker td a:hover { background: @intermediate; }
+.ui-datepicker-today a, .ui-datepicker-today a:hover,
+.ui-datepicker .ui-state-highlight {
+	font-weight: 700;
+	background: @primary!important;
+	color: @light;
+}
+
+.ui-datepicker .ui-state-active{
+	background: @secondary;
+	color: @light;
+}
+
+/* @multiple calendars || not responsive use carefully
+--------------------------------------------------------------- */
+.cal-widget .ui-datepicker { width: 100%; margin-top:0; }
+.cal-widget .ui-datepicker:before{ display:none; }
+.ui-datepicker.ui-datepicker-multi { width: auto; }
+.ui-datepicker-multi .ui-datepicker-group { float: left; }
+.ui-datepicker-multi .ui-datepicker-group table { width: 95%; margin: 0 auto .4em; }
+.ui-datepicker-multi-2 .ui-datepicker-group { width: 50%; }
+.ui-datepicker-multi-3 .ui-datepicker-group { width: 33.333%; }
+.ui-datepicker-multi-4 .ui-datepicker-group { width: 25%; }
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header { border-left-width: 0; }
+.ui-datepicker-multi .ui-datepicker-buttonpane { clear: left; }
+.ui-datepicker-row-break { clear: both; width: 100%; font-size: 0; }
+
+/* @ ui buttons
+---------------------------------------------------------------- */
+.ui-datepicker-buttonpane{ padding:10px;  }
+.ui-datepicker-buttonpane button {
+	margin-right: .2em !important;
+	position: relative;
+	line-height: normal;
+	-webkit-user-drag: none;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.2);
+	vertical-align: middle;
+	overflow: visible;
+	cursor: pointer;
+	border:0;
+}
+
+/* @ ui buttons :hover, :active states
+---------------------------------------------------------------- */
+.ui-datepicker-buttonpane button:hover { color: #243140; background: #cacfd2; }
+.ui-datepicker-buttonpane button:active{ color: #1d2938; background: #a1a6a9; }
+.ui-monthpicker .ui-datepicker-header{ margin-bottom:3px; }
+
+/* @ui slider - requires jquery ui
+------------------------------------------------------*/
+.form .slider-wrapper,
+.form .sliderv-wrapper{
+	background: @intermediate;
+	position:relative;
+}
+
+.form .ui-slider {
+	position: relative;
+	text-align: left;
+}
+
+.form .ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 1.5em;
+	height: 1.5em;
+	cursor: default;
+	background: @primary;
+	border: 1px solid @light;
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	-o-border-radius:20px;
+	border-radius:20px;
+	-ms-touch-action: none;
+	touch-action: none;
+	margin-top:-3px;
+	outline:none;
+}
+
+.form .ui-slider .ui-slider-handle:before{
+	content: '';
+	width: 7px;
+	height: 7px;
+	position:absolute;
+	background-color: @primary;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	z-index: 2;
+	left:4px;
+	top:4px;
+}
+
+.form .ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	background-position: 0 0;
+	background-color: @primary;
+}
+
+.form .ui-slider .ui-slider-handle{ border-color: @light; }
+.form .ui-slider .ui-slider-handle:before,
+.form .ui-slider .ui-slider-range { background-color: @primary;  }
+
+.form .ui-slider.ui-state-disabled .ui-slider-handle,
+.form .ui-slider.ui-state-disabled .ui-slider-range { filter: inherit; }
+.form .ui-slider-horizontal { height: .5em; }
+.form .ui-slider-horizontal .ui-slider-handle { top: -.3em; margin-left: -.6em; }
+.form .ui-slider-horizontal .ui-slider-range { top: 0; height: 100%; }
+.form .ui-slider-horizontal .ui-slider-range-min { left: 0; }
+.form .ui-slider-horizontal .ui-slider-range-max { right: 0; }
+.form .ui-slider-vertical,
+.form .sliderv-wrapper { width: .5em; height: 100px; }
+.form .ui-slider-vertical .ui-slider-handle { left: -.45em; margin-left: 0; margin-bottom: -.6em; }
+.form .ui-slider-vertical .ui-slider-range { left: 0; width: 100%; }
+.form .ui-slider-vertical .ui-slider-range-min { bottom: 0; }
+.form .ui-slider-vertical .ui-slider-range-max { top: 0; }
+.form .slider-input{  color:#f6931f!important; border:0; background:none; }
+.form .slider-group .sliderv-wrapper{ height:150px; float:left; margin:15px 15px;   }
+.form .ui-slider .ui-state-active {
+	cursor: -webkit-grabbing;
+	cursor: -moz-grabbing;
+	cursor: grabbing;
+}
+
+/* @ui slider tooltip
+------------------------------------------------------*/
+.form .slider-tip {
+	display: block;
+	position: absolute;
+	text-align: center;
+	font: 10pt Tahoma, Arial, sans-serif ;
+	background: #34495E;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	padding:10px;
+	color: #fff;
+}
+
+.form .slider-wrapper .slider-tip{ top: -50px; left:-15px; }
+.form .slider-wrapper .slider-tip:after {
+	content: '';
+	position: absolute;
+	top: 98%;
+	left: 35%;
+	border-top: 8px solid #34495E;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}
+
+.form .sliderv-wrapper .slider-tip{ left: 30px; top:-12px; }
+.form .sliderv-wrapper .slider-tip:after{
+	content: '';
+	position: absolute;
+	top:30%;
+	right: 98%;
+	border-right: 8px solid #34495E;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+}
+
+/* @ui timepicker - requires jquery ui
+------------------------------------------------------*/
+.ui-timepicker-div .ui-widget-header {
+	position: relative;
+	background:@primary;
+	line-height: 27px;
+	font-size: 15px;
+	padding: 10px;
+ }
+
+.ui-timepicker-div dl { text-align: left; padding: 15px 10px; margin:0;  }
+.ui-timepicker-div dl dt { float: left; clear:left; padding: 0 0 0 5px; }
+.ui-timepicker-div dl dd { margin: 0 10px 15px 40%; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0;    }
+.ui-timepicker-div .ui_tpicker_unit_hide{ display: none; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; padding: 0 5px 0 0; }
+.ui-timepicker-rtl dl dt{ float: right; clear: right; }
+.ui-timepicker-rtl dl dd { margin: 0 40% 10px 10px; background:@intermediate;  position:relative; top:6px;  }
+
+.ui-timepicker-div dl .ui_tpicker_hour,
+.ui-timepicker-div dl .ui_tpicker_minute,
+.ui-timepicker-div dl .ui_tpicker_second,
+.ui-timepicker-div dl .ui_tpicker_millisec{ background:@intermediate;  position:relative;  top:5px;  }
+
+/* Shortened version style */
+.ui-timepicker-div.ui-timepicker-oneLine { padding-right: 2px; }
+.ui-timepicker-div.ui-timepicker-oneLine .ui_tpicker_time,
+.ui-timepicker-div.ui-timepicker-oneLine dt { display: none;   }
+.ui-timepicker-div.ui-timepicker-oneLine .ui_tpicker_time_label { display: block; padding-top: 2px; }
+.ui-timepicker-div.ui-timepicker-oneLine dl { text-align: right;}
+.ui-timepicker-div.ui-timepicker-oneLine dl dd,
+.ui-timepicker-div.ui-timepicker-oneLine dl dd > div { display:inline-block; margin:0;  }
+.ui-timepicker-div.ui-timepicker-oneLine dl dd.ui_tpicker_minute:before,
+.ui-timepicker-div.ui-timepicker-oneLine dl dd.ui_tpicker_second:before { content:':'; display:inline-block;   }
+.ui-timepicker-div.ui-timepicker-oneLine dl dd.ui_tpicker_millisec:before,
+.ui-timepicker-div.ui-timepicker-oneLine dl dd.ui_tpicker_microsec:before { content:'.'; display:inline-block;  }
+.ui-timepicker-div.ui-timepicker-oneLine .ui_tpicker_unit_hide,
+.ui-timepicker-div.ui-timepicker-oneLine .ui_tpicker_unit_hide:before{ display: none; }
+
+/* ui-autocomplete widget
+----------------------------------------------------- */
+.ui-helper-hidden-accessible {
+	position: absolute;
+	left:-999em;
+}
+
+.ui-autocomplete {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+	z-index: 10000000;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+	outline: none;
+	font-family:  "Roboto", Arial, Helvetica, sans-serif;
+	font-size:14px;
+	border:1px solid #000;
+	border-top:0;
+	background:#333;
+}
+
+.ui-autocomplete .ui-menu { position: absolute; }
+.ui-autocomplete .ui-menu-item {
+	margin: 0;
+	color:#888;
+	background:#333;
+	position: relative;
+	padding: 8px 10px;
+	cursor: pointer;
+	min-height: 0;
+	list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+	border-bottom:1px solid #444;
+	-webkit-box-shadow: inset 0 1px #222, inset 0 0 0 1px rgba(0, 0, 0, 0);
+	-moz-box-shadow: inset 0 1px #222, inset 0 0 0 1px rgba(0, 0, 0, 0);
+	-o-box-shadow: inset 0 1px #222, inset 0 0 0 1px rgba(0, 0, 0, 0);
+	box-shadow: inset 0 1px #222, inset 0 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.ui-autocomplete .ui-menu-divider {
+	margin: 5px 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	border-width: 1px 0 0 0;
+	border-color:#ddd;
+}
+
+.ui-autocomplete .ui-state-focus,
+.ui-autocomplete .ui-state-active { }
+.ui-autocomplete .ui-menu-item:hover{
+	background: @intermediate;
+}
+
+
+/* @progress bars
+------------------------------------------------------*/
+.form .progress-section{ display:none; }
+.form .progress-bar {
+	position: relative;
+	background: @intermediate;
+	border-radius: 1px;
+}
+
+.form .progress-bar .percent {
+	position:absolute;
+	display:inline-block;
+	top:-3px;
+	right:-24px;
+	font-size:9px;
+	color:#93A2AA;
+}
+.form .progress-bar > .bar {
+	width:60%;
+	height:7px;
+	display: block;
+	background-size: 16px 16px;
+	background-color: #bdc3c7;
+	border-radius: 1px;
+}
+
+/* @progress bar themes
+----------------------------------------------------------- */
+.form .bar-primary > .bar { background-color: @primary; }
+.form .bar-blue > .bar     { background-color: #3498db; }
+.form .bar-black > .bar    { background-color: #34495e; }
+.form .bar-green > .bar    { background-color: #2ecc71; }
+.form .bar-purple > .bar   { background-color: #9B59B6; }
+.form .bar-red > .bar      { background-color: #e74c3c; }
+.form .bar-yellow > .bar   { background-color: #ed9c28; }
+
+/* @progress bar strips + animation IE10+
+----------------------------------------------------------- */
+
+.form .ui-slider .ui-slider-range{
+	background: @primary;
+}
+
+.form .progress > button[type="submit"]:hover,
+.form .progress > button[type="submit"],
+.form .progress-bar > .bar {
+	background-size: 16px 16px;
+	background-image: -webkit-linear-gradient(top left,
+					  transparent, transparent 25%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.3) 50%,
+					  transparent 50%, transparent 75%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.3));
+
+	background-image: -moz-linear-gradient(top left,
+					  transparent, transparent 25%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.3) 50%,
+					  transparent 50%, transparent 75%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.3));
+
+	background-image: -o-linear-gradient(top left,
+					  transparent, transparent 25%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.3) 50%,
+					  transparent 50%, transparent 75%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.3));
+
+	background-image: linear-gradient(to bottom right,
+					  transparent, transparent 25%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.3) 50%,
+					  transparent 50%, transparent 75%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.3));
+}
+
+.form .progress > button[type="submit"],
+.form .progress > button[type="submit"]:hover,
+.form .progress-animated > .bar{
+	-webkit-animation: sfprogress .6s linear infinite;
+	-moz-animation: sfprogress .6s linear infinite;
+	-o-animation: sfprogress .6s linear infinite;
+	animation: sfprogress .6s linear infinite;
+}
+
+.form .progress > button[type="submit"]:hover{ cursor:wait; }
+
+@-webkit-keyframes sfprogress {
+	from { background-position: 0 0; }
+	to { background-position: -16px 0; }
+}
+
+
+@-moz-keyframes sfprogress {
+	from { background-position: 0 0; }
+	to { background-position: -16px 0; }
+}
+
+@-o-keyframes sfprogress {
+	from { background-position: 0 0; }
+	to { background-position: -16px 0; }
+}
+
+@keyframes sfprogress {
+	from { background-position: 0 0; }
+	to { background-position: -16px 0; }
+}
+
+/* @google map :: block elements
+----------------------------------------------------------------------- */
+.form .map-container{ padding:10px; border: 2px solid #5D5D5D; }
+.form #map_canvas{ width:100%; height:300px; overflow:hidden;  }
+.form .block{ display:block; }
+
+/* @form grid
+----------------------------------- */
+
+/* @form rows
+--------------------------------- */
+.form .frm-row{ margin:0 -10px;  }
+.form .slider-group:before,
+.form .slider-group:after,
+.form .frm-row:before,
+.form .frm-row:after { display: table; content: ""; line-height: 0; }
+.form .slider-group:after,
+.form .frm-row:after{ clear: both; }
+
+/* @spacers
+--------------------------------------- */
+.form .spacer{
+	border-top:1px solid #484848;
+	display:block;
+	height:0;
+}
+
+/* @padding spacers :: modify accordingly
+-------------------------------------------------- */
+.form .frm-row .pad-l10{ padding-left:10px; }
+.form .frm-row .pad-r10{ padding-right:10px; }
+.form .frm-row .pad-l20{ padding-left:20px; }
+.form .frm-row .pad-r20{ padding-right:20px; }
+.form .frm-row .pad-l30{ padding-left:30px; }
+.form .frm-row .pad-r30{ padding-right:30px; }
+.form .frm-row .pad-l40{ padding-left:40px; }
+.form .frm-row .pad-r40{ padding-right:40px; }
+
+/* @border spacers + text adjust
+-------------------------------------------------- */
+.form .bdl { border-left:1px solid #484848;  }
+.form .bdr { border-right:1px solid #484848; }
+.form .fine-grey{ color:#888888; }
+.form .small-text{ font-size:11px; font-style:normal;  }
+.form .text-align{ height:42px; line-height:42px; }
+
+/* @element alignment
+-------------------------------------------------- */
+.form .align-right{ text-align:right; }
+.form .align-center{ text-align:center; }
+
+/* @simple price boxes :: depend on grid
+-------------------------------------------------- */
+.form .price-box{
+	padding:30px;
+	text-align:center;
+	position:relative;
+	border:1px solid #484848;
+	font-family:Arial, Helvetica, sans-serif;
+	-webkit-box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.05);
+	-o-box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.05);
+	box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.05);
+}
+
+.form .price-box p{ line-height:1.5em; color:#888; margin-bottom:0; }
+.form .price-box h5{ text-transform:uppercase; font-weight:300; margin:0; font-size:15px; color:#888; letter-spacing:2px  }
+.form .price-box h4{ font-size:60px; font-weight:300; margin:0; color:#888; }
+.form .selected-box h4{ color:@primary; }
+.form .price-box h4 sup{ position:relative; font-size:30px; vertical-align:top; top:15px; }
+.form .price-box h4 .per-month{font-size:14px; }
+.form .expand{ height:50px; line-height:50px!important; }
+
+
+/* @simple price boxes ribbon IE8+
+----------------------------------------- */
+.form .ribbon,
+.form .ribbon-large{
+	width:75px;
+	height:78px;
+	overflow:hidden;
+	position:absolute;
+	right: -2px;
+	top: -2px;
+	z-index:1;
+}
+
+.form .ribbon-inner{
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+	-webkit-box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+	-o-box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+	box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	-webkit-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	transform:rotate(45deg);
+	background: @primary;
+	letter-spacing:4px;
+	text-align:center;
+	position:relative;
+	font-weight:700;
+	font-size:14px;
+	padding:7px 0;
+	width:100px;
+	color:#fff;
+	z-index:1;
+	left:3px;
+	top:6px;
+}
+
+.form .ribbon-inner:before,
+.form .ribbon-inner:after{
+	content:"";
+	border-top:3px solid #16a085;
+	border-left:3px solid transparent;
+	border-right:3px solid transparent;
+	position:absolute;
+	bottom:-3px;
+}
+
+.form .ribbon-inner:before{ left:0px; }
+.form .ribbon-inner:after{ right:0px; }
+.form .ribbon-large{ width:115px; height:118px; }
+.form .ribbon-large .ribbon-inner{
+	width:160px;
+	left:-8px;
+	top:28px;
+}
+
+/* @captcha refresh button + icon
+-------------------------------------------------- */
+.form .sfcode{ padding-left:24px; }
+.form .captcode{ padding:0; position:relative; }
+.form .captcode:hover{ background:#BDC3C7!important;}
+.form .captcode img{
+	position:relative;
+	top:2px;
+	left:2px;
+}
+.form .refresh-captcha{
+	position:absolute;
+	background:@primary;
+	border:3px solid #16a085;
+	-webkit-border-radius:30px;
+	-moz-border-radius:30px;
+	-o-border-radius:30px;
+	border-radius:30px;
+	right:-15px;
+	height:32px;
+	width:32px;
+	top:4px;
+}
+
+.form .refresh-captcha i{
+	position:absolute;
+	text-align:center;
+	line-height:26px;
+	font-size:17px;
+	color:#fff;
+	left:24%;
+}
+
+/* @captcha refresh button themes
+-------------------------------------------------- */
+.form .refresh-black    { background: #34495e; border-color: #2c3e50; }
+.form .refresh-blue     { background: #3498db; border-color: #2c81ba; }
+.form .refresh-green    { background: #2ecc71; border-color: #27ad60; }
+.form .refresh-purple   { background: #9B59B6; border-color: #8E44AD; }
+.form .refresh-red      { background: #e74c3c; border-color: #c44133; }
+.form .refresh-yellow   { background: #ed9c28; border-color: #d58512; }
+
+/* Firefox select fix - select arrow hack  disabled on FF 30+
+-------------------------------------------------------------- */
+@-moz-document url-prefix() {
+	.form .select:before{
+		content: '';
+		pointer-events:none;
+		-moz-transition:none;
+		transition:none;
+		position: absolute;
+		background: #484848;
+		width: 34px;
+		right:2px;
+		top:2px;
+		bottom:2px;
+		z-index:99;
+	}
+
+	.form .select > select:focus,
+	.form .select > select:hover,
+	.form .select:hover select,
+	.form .select:hover:before{
+		background: #333333;
+		-moz-transition:none;
+		transition:none;
+		-moz-box-shadow:none;
+		box-shadow:none;
+	}
+
+	.form .select .arrow {  z-index:100;  }
+	.form .state-error.select > select:focus,
+	.form .state-error.select > select:hover,
+	.form .state-error.select:hover select,
+	.form .state-error.select:hover:before,
+	.form .state-error.select:before { background:#484848;  }
+	.form .state-success.select > select:focus,
+	.form .state-success.select > select:hover,
+	.form .state-success.select:hover select,
+	.form .state-success.select:hover:before,
+	.form .state-success.select:before { background:#484848;  }
+}
+
+/* IE10+
+-------------------------------------------------------------------------- */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.form .select .arrow:after,
+	.form .select .arrow:before { display:block; }
+}
+
+/* @Fix old of versions android + ios
+------------------------------------------------------------- */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+		.form .option,
+		.form .rating,
+		.form .switch,
+		.form .captcode { -webkit-animation: bugfix infinite 1s; }
+		@-webkit-keyframes bugfix {
+			from { padding: 0;  }
+			to { padding: 0; }
+		}
+		.form .switch { margin-right:10px;  margin-bottom:5px; }
+		.form .option { margin-right:15px; }
+		.form .switch-round > .switch-label:after{ font:20px/18px Times, Serif; }
+}
+
+/* @responsiveness for tablets + smart mobile
+-------------------------------------------------- */
+@media (max-width: 800px) {
+	.form .frm-row{ margin:0;  }
+	.form .frm-row .colm{  width: 100%; float:none; padding:0; }
+	.form .bdl { border-left:0;  }
+	.form .bdr { border-right:0; }
+	.form .align-right{ text-align: left; }
+}
