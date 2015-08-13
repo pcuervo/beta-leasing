@@ -219,19 +219,19 @@
 										<fieldset class="[ column xmall-4 ][ margin-bottom ]">
 											<label class="field">
 												<p><small>Valor total</small></p>
-												<input type="text" name="valor_total" class="gui-input" placeholder="$0.00"> 
+												<input type="text" name="valor_total" class="gui-input" placeholder="0.00"> 
 											</label>
 										</fieldset>
 										<fieldset class="[ column xmall-4 ][ margin-bottom ]">
 											<label class="field">
 												<p><small>IVA</small></p>
-												<input type="text" name="iva" class="gui-input" placeholder="" value="$0.00" disabled> 
+												<input type="text" name="iva" class="gui-input" placeholder="" value="-" disabled> 
 											</label>
 										</fieldset>
 										<fieldset class="[ column xmall-4 ][ margin-bottom ]">
 											<label class="field">
-												<p><small>Valor factura (con IVA)</small></p>
-												<input type="text" name="valor_factura" class="gui-input" placeholder="" value="$0.00" disabled> 
+												<p><small>Valor factura (sin IVA)</small></p>
+												<input type="text" name="valor_factura" class="gui-input" placeholder="" value="-" disabled> 
 											</label>
 										</fieldset>
 										<fieldset class="[ column xmall-12 ][ margin-bottom ]">
@@ -251,13 +251,13 @@
 										<fieldset class="[ column xmall-6 ][ margin-bottom ]">
 											<label class="field">
 												<p><small>Monto total a financiar</small></p>
-												<input type="text" name="monto_financiar" class="gui-input" placeholder="$0.00" disabled>
+												<input type="text" name="monto_financiar" class="gui-input" placeholder="-" disabled>
 											</label>
 										</fieldset>
 										<fieldset class="[ column xmall-6 ][ margin-bottom ]">
 											<label class="field">
 												<p><small>Renta mensual</small></p>
-												<input type="text" name="renta_mensual" class="gui-input" placeholder="$0.00" disabled>
+												<input type="text" name="renta_mensual" class="gui-input" placeholder="-" disabled>
 											</label>
 										</fieldset>
 										<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
@@ -420,12 +420,18 @@
 
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
+		<script src="js/cotizador-beta-leasing.js"></script>
+
 		<script type="text/javascript">
 		var $ = jQuery.noConflict();
 		$(function() {
 
-
 			loadMap();
+
+			$cotizador = $('.cotizador').cotizadorBetaLeasing({
+				'formatoDinero'		: true,
+				'digitosDecimales' 	: 3
+			});
 
 			/* @ui slider
 			------------------------------------------------------------------ */
@@ -438,7 +444,7 @@
 
 				slide: function( event, ui ) {
 					$( '.js-porcentaje-enganche' ).text( ui.values[ 0 ] + '%' );
-					actualizarValores( getValorTotal() );
+					$cotizador.actualizar();
 				}
 			});
 			$( '.js-porcentaje-enganche' ).text( $('#slider-enganche').slider( 'values', 0 ) + '%' );
@@ -451,16 +457,15 @@
 
 				slide: function( event, ui ) {
 					$( '.js-meses' ).text( ui.value + ' meses' );
-					actualizarValores( getValorTotal() );
+					$cotizador.actualizar();
 				}
 			});
 			$( '.js-meses' ).text( $('#slider-meses').slider( 'values', 0 ) + ' meses' );
 			
-			initCotizador();
+		});
 
-});
 	function loadMap(){
-		console.log( $('.button-primary').css('background-color'));
+
 		var map;
 		var styles = [
 		    {
@@ -501,168 +506,8 @@
 		  return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
 		}
 	}
-	// Funciones cotizador (meter en plugin)
-	function getValorTotal(){
-		
-		var valorTotal = $('input[name="valor_total"]').val().replace(/,/g, '');
-		return valorTotal.substring( 1, valorTotal.length );
-	}
-	function getComision(){
-		return 0.2;
-	}
-	function getMontoFinanciar(){
-		var montoFinanciar = $('input[name="monto_financiar"]').val().replace(/,/g, '');
-		console.log(montoFinanciar);
-		return montoFinanciar.substring( 1, montoFinanciar.length );
-	}
 
-	function setIVA( total ){
-		var iva = total * 0.16;
-		$('input[name="iva"]').val( '$' + formatMoney( iva.toFixed(2) ) );
-	}
-
-	function getValorFactura(){
-		var valorFactura = $('input[name="valor_factura"]').val().replace(/,/g, '');
-		return valorFactura.substring( 1, valorFactura.length );
-	}	
-
-	function getPagoInicial( meses, valorFactura ){
-		return meses * valorFactura;
-	}
-
-	function getPorcentajeEnganche(){
-		var porcentajeEnganche = $( '.js-porcentaje-enganche' ).text()
-		return porcentajeEnganche.slice(0, -1) / 100;
-	}
-
-	function getPlazoMeses(){
-		return parseInt( $( '.js-meses' ).text() );
-	}
-
-	function getTasaMensual(){
-		return 0.26 / 12;
-	}
-
-	function getValorResidual(){
-		return getValorFactura() * 0.25;
-	}
-
-	function setValorFactura( total ){
-		var iva = total / 1.16;
-		$('input[name="valor_factura"]').val( '$' + formatMoney( iva.toFixed(2) ) );
-	}
-
-	function setMontoFinanciar( valorFactura, pagoInicial ){
-		var monto = valorFactura - pagoInicial;
-		$('input[name="monto_financiar"]').val( '$' + formatMoney( monto.toFixed(2) ) );
-	}
-
-	function setRentaMensual( rentaMensual ){
-		$('input[name="renta_mensual"]').val( '$' + formatMoney( rentaMensual.toFixed(2) ) );
-	}
-
-	function initCotizador(){
-
-		$('input[name="valor_total"]').keydown( function(e) {
-
-			if( invalidKey(e) ){
-				e.preventDefault();
-				return;
-			}
-
-			// Allow arrows
-			if(e.keyCode >= 37 && e.keyCode <= 40 ) {
-				return;
-			}
-
-		});	
-
-		$('input[name="valor_total"]').keyup( function(e) {
-
-			if( invalidKey(e) ){
-				e.preventDefault();
-				return;
-			}
-
-			// Allow arrows
-			if( ( e.keyCode >= 37 && e.keyCode <= 40) || e.keyCode == 8 ) {
-				return;
-			}
-
-			$(this).val(function(i,v) {
-				actualizarValores( v.replace('$','') );
-				return '$' + v.replace('$',''); //remove exisiting, add back.
-			});
-		});	
-
-		$('input[name="valor_total"]').focusout( function(e) {
-			var formattedValue = $(this).val().replace('$','');
-
-			$(this).val( '$' + formatMoney(formattedValue) );
-		});
-
-	}
-
-	function invalidKey( e ) {
-		// Allow: backspace, delete, tab, escape, enter and .
-		//alert( e.keyCode );
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190 ]) !== -1 ||
-             // Allow: Ctrl+A
-            (e.keyCode == 65 && e.ctrlKey === true) ||
-             // Allow: Ctrl+C
-            (e.keyCode == 67 && e.ctrlKey === true) ||
-             // Allow: Ctrl+X
-            (e.keyCode == 88 && e.ctrlKey === true) ||
-             // Allow: home, end, left, right
-            (e.keyCode >= 35 && e.keyCode <= 39)) {
-                 // let it happen, don't do anything
-                 return false;
-        }
-        // Ensure that it is a number and stop the keypress
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            return true;
-        }
-	}
-
-	function actualizarValores( valorTotal ){
-		var valorFactura, pagoInicial, montoFinanciar, valorResidual, plazo, tasaMensual, porcentajeEnganche; 
-
-		setValorFactura( valorTotal );
-		valorFactura = getValorFactura();
-		setIVA( getValorFactura() );
-
-		porcentajeEnganche = getPorcentajeEnganche();
-		pagoInicial = getPagoInicial( porcentajeEnganche, valorFactura );
-		setMontoFinanciar( valorFactura, pagoInicial );		
-		montoFinanciar = getMontoFinanciar();
-
-		valorResidual = getValorResidual();
-		tasaMensual = getTasaMensual();
-		plazo = getPlazoMeses();
-		
-		setRentaMensual( calculaRentaMensual( tasaMensual, plazo, montoFinanciar,  valorResidual ) * 1.16 );
-
-		console.clear();
-		console.log('tasa mensual: ' + tasaMensual );
-		console.log('plazo: ' + plazo );
-		console.log('monto a financiar: $' + montoFinanciar );
-		console.log('valorResidual: $' + valorResidual );
-		console.log( 'pago mensual: $' + calculaRentaMensual( tasaMensual, plazo, montoFinanciar,  valorResidual ) * 1.16 );
-	}
-
-	function calculaRentaMensual( tasaMensual, plazo, montoFinanciar, valorResidual ){
-		if( ! valorResidual ){ valorResidual = 0; }
-		
-		return tasaMensual * ( montoFinanciar * -1 * Math.pow((1 + tasaMensual), plazo) + valorResidual ) / (1 - Math.pow((1 + tasaMensual), plazo));
-	}
-
-	function formatMoney(n){
-		var digitosDecimales = 2;
-		var signo = n < 0 ? "-" : ""; 
-		i = parseInt(n = Math.abs(+n || 0).toFixed(digitosDecimales)) + "";
-		j = (j = i.length) > 3 ? j % 3 : 0;
-		return signo + (j ? i.substr(0, j) + "," : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + ",") + (digitosDecimales ? "." + Math.abs(n - i).toFixed(digitosDecimales).slice(2) : "");
-	};
+	
 
 </script>
 	</body>
