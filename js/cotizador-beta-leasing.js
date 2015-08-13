@@ -11,6 +11,10 @@
 	'use strict';
 
 	$.fn.cotizadorBetaLeasing = function ( options ) {
+
+		// Constants
+		var IVA = 0.16;
+		var PORCENTAJE_VALOR_RESIDUAL = 0.25;
 		
 		var opts = $.extend({
 			formatoDinero: 		false,
@@ -59,16 +63,25 @@
 		});
 
 
-		// return {
-	 //        actualizar: function() {
-	 //            actualizarCotizacion( getValorTotal() );
-	 //        }
-	 //    }
 
-        // Public function
+        /***********************************
+		* PUBLIC FUNCTIONS
+		***********************************/	
+
 		this.actualizar = function() {
             actualizarCotizacion( getValorTotal() );
-        }
+        }// actualizar
+
+        this.generaPDF = function() {
+            var data = getDatos();
+
+            console.log( data );
+            $.post( 'php/cotizacion_pdf.php', data, function( response ) {
+            	window.open( response, '_blank' );
+            	console.log( response );
+            });
+
+        }// generaPDF
 
 	    return this;
 		
@@ -84,8 +97,7 @@
 
 			setValorFactura( valorTotal );
 			setIVA( getValorFactura() );
-			porcentajeEnganche = getPorcentajeEnganche();
-			pagoInicial = getPagoInicial( porcentajeEnganche, getValorFactura() );
+			pagoInicial = getPagoInicial( getPorcentajeEnganche(), getValorFactura() );
 			setMontoFinanciar( getValorFactura(), pagoInicial );		
 			
 			setRentaMensual( calculaRentaMensual( getTasaMensual(), getPlazoMeses(), getMontoFinanciar(),  getValorResidual() ) * 1.16 );
@@ -129,8 +141,36 @@
 		* GET / SET FUNCTIONS
 		***********************************/
 
+		function getDatos() {
+        	var datos = {};
+           	
+           	datos['cliente'] 			= $('input[name="nombre"]').val();
+           	datos['compania'] 			= $('input[name="compania"]').val();
+           	datos['tipo'] 				= $('select[name="tipo"]').val();
+           	datos['marca'] 				= $('input[name="marca"]').val();
+           	datos['modelo'] 			= $('input[name="modelo"]').val();
+           	datos['valor_total'] 		= formatoDinero( getValorTotal() );
+           	datos['plazo_mensual'] 		= getPlazoMeses();
+           	datos['renta_mensual_iva'] 	= formatoDinero( getRentaMensualIVA() );
+           	datos['pago_inicial']		= 
+           		formatoDinero( getPagoInicial( getPorcentajeEnganche(), getValorFactura() ) );
+           	datos['valor_comision']		= formatoDinero( parseFloat( getComision() * getValorFactura() ).toFixed( opts.digitosDecimales ) );
+           	datos['subtotal'] 			= formatoDinero ( parseFloat( removeFormatoDinero( datos['pago_inicial'] ) ) + parseFloat( removeFormatoDinero( datos['valor_comision'] ) ) );	
+           	datos['iva'] 				= formatoDinero( parseFloat( removeFormatoDinero( datos['subtotal'] ) ) * IVA );
+           	datos['renta_en_deposito']	= formatoDinero( parseFloat( removeFormatoDinero( datos['renta_mensual_iva'] ) / 1.16 ).toFixed( opts.digitosDecimales ) );
+           	datos['total_pago_inicial']	= formatoDinero( parseFloat( parseFloat( removeFormatoDinero( datos['subtotal'] ) ) + parseFloat( removeFormatoDinero( datos['iva'] ) ) + parseFloat( removeFormatoDinero( datos['renta_en_deposito'] ) ) ).toFixed( opts.digitosDecimales ) ); 
+           	datos['valor_residual']		= formatoDinero( getValorFactura() * PORCENTAJE_VALOR_RESIDUAL );
+           	datos['iva_mensual']		= formatoDinero( parseFloat( removeFormatoDinero( datos['renta_en_deposito'] ) * IVA ).toFixed( opts.digitosDecimales ) );	
+
+           	return datos;
+        }// getDatos
+
 		function getMontoFinanciar(){
 			return removeFormatoDinero( $('input[name="monto_financiar"]').val() );
+		}// monto_financiar
+
+		function getRentaMensualIVA(){
+			return removeFormatoDinero( $('input[name="renta_mensual"]').val() );
 		}// monto_financiar
 
 		function getValorFactura(){
@@ -142,11 +182,12 @@
 		}
 
 		function getComision(){
-			return 0.2;
+			return 0.02;
 		}
 
-		function getPagoInicial( meses, valorFactura ){
-			return meses * valorFactura;
+		function getPagoInicial( porcentajeEnganche, valorFactura ){
+			var pagoInicial = porcentajeEnganche * valorFactura;
+			return pagoInicial.toFixed( opts.digitosDecimales );
 		}
 
 		function getPorcentajeEnganche(){

@@ -194,7 +194,7 @@
 							<h2 class="[ text-center ]">Cotizador</h2>
 							<article class="[ form ][ xmall-12 ]">
 								<h3 class="[ text-center ]">Quiero cotizar:</h3>
-								<form method="post" action="" id="form-ui">
+								<form class="[ js-forma-cotizador ]" id="form-ui">
 									<div class="[ row ]">
 										<fieldset class="[ column xmall-12 ][ margin-bottom ]">
 											<label class="[ field select ]">
@@ -263,6 +263,33 @@
 										<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
 											<a class="[ button button-primary ]">Siguiente</a>
 											<p><small>Paso 1 de 2</small></p>
+										</fieldset>
+
+										<h3>Confirmar información</h3>
+										<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+											<label class="field">
+												<input type="text" name="nombre" class="gui-input" placeholder="Nombre completo">
+											</label>
+										</fieldset>
+										<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+											<label class="field">
+												<input type="text" name="telefono" class="gui-input" placeholder="Teléfono">
+											</label>
+										</fieldset>
+										<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+											<label class="field">
+												<input type="text" name="compania" class="gui-input" placeholder="Compañía">
+											</label>
+										</fieldset>
+										<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+											<label class="field">
+												<input type="text" name="email" class="gui-input" placeholder="Correo electrónico">
+											</label>
+										</fieldset>
+										<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
+											<p><small>mejorar este texto de detalle de cotización de arrendamiento...</small></p>
+											<button type="submit" class="[ button button-primary ]">Generar PDF</button>
+											
 										</fieldset>
 									</div><!-- row -->
 								</form>
@@ -414,27 +441,41 @@
 		<script type="text/javascript" src="js/js-forms/jquery.steps.min.js"></script>
 		<script type="text/javascript" src="js/js-forms/jquery.form.min.js"></script>
 		<script type="text/javascript" src="js/js-forms/jquery.validate.min.js"></script>
-
 		<script type="text/javascript" src="js/js-forms/additional-methods.min.js"></script>
 		<script type="text/javascript" src="js/js-forms/smart-form.js"></script>
-
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
 		<script src="js/cotizador-beta-leasing.js"></script>
 
 		<script type="text/javascript">
-		var $ = jQuery.noConflict();
-		$(function() {
 
-			loadMap();
+			/*
+			* ON LOAD
+			*/
+
+			var lat = 19.431717;
+			lon = -99.196758,
+			zoom = 18,
+			mapColor = rgb2hex( $('.button-primary').css('background-color') );
+			loadMap( lat, lon, zoom, mapColor );
 
 			$cotizador = $('.cotizador').cotizadorBetaLeasing({
 				'formatoDinero'		: true,
-				'digitosDecimales' 	: 3
+				'digitosDecimales' 	: 2
 			});
 
-			/* @ui slider
-			------------------------------------------------------------------ */
+
+
+			/*
+			* TRIGGERED EVENTS
+			*/
+
+			$('.js-forma-cotizador').submit( function(e){ 
+				e.preventDefault();
+
+				$cotizador.generaPDF();
+			});
+
 			$('#slider-enganche').slider({
 				min: 10,
 				max: 70,
@@ -461,54 +502,7 @@
 				}
 			});
 			$( '.js-meses' ).text( $('#slider-meses').slider( 'values', 0 ) + ' meses' );
-			
-		});
-
-	function loadMap(){
-
-		var map;
-		var styles = [
-		    {
-		    	stylers: [
-		        	{ hue: "#00a8ab" }
-		     	]
-		    }
-		];
-		 var styledMap = new google.maps.StyledMapType(styles,
-    		{name: "Styled Map"});
-
-		function initialize() {
-			map = new google.maps.Map(document.getElementById('map-canvas'), {
-				scrollwheel: false,
-				zoom: 18,
-				mapTypeIds: [ 'map_style' ],
-				center: {lat: 19.431717, lng: -99.196758}
-			});
-
-			map.mapTypes.set('map_style', styledMap);
-			map.setMapTypeId('map_style');
-		}
-
-		google.maps.event.addDomListener(window, 'load', initialize);
-	}
-
-	function getHex( rgb ){
-		var hexDigits = new Array
-        ("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"); 
-
-		//Function to convert hex format to a rgb color
-		function rgb2hex(rgb) {
-		 rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-		 return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
-		}
-
-		function hex(x) {
-		  return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
-		}
-	}
-
+		</script>
 	
-
-</script>
 	</body>
 </html>
