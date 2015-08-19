@@ -473,48 +473,48 @@
 		<script src="js/cotizador-beta-leasing.js"></script>
 
 		<script type="text/javascript">
-		var $ = jQuery.noConflict();
-		$(function() {
+			var $ = jQuery.noConflict();
+			$(function() {
 
-			loadMap();
+				loadMap();
 
-			$cotizador = $('.cotizador').cotizadorBetaLeasing({
-				'formatoDinero'		: true,
-				'digitosDecimales' 	: 3
+				$cotizador = $('.cotizador').cotizadorBetaLeasing({
+					'formatoDinero'		: true,
+					'digitosDecimales' 	: 3
+				});
+
+				/* @ui slider
+				------------------------------------------------------------------ */
+				$('#slider-enganche').slider({
+					min: 10,
+					max: 70,
+					range: false,
+					values: [20],
+					step: 5,
+
+					slide: function( event, ui ) {
+						$( '.js-porcentaje-enganche' ).text( ui.values[ 0 ] + '%' );
+						$cotizador.actualizar();
+					}
+				});
+				$( '.js-porcentaje-enganche' ).text( $('#slider-enganche').slider( 'values', 0 ) + '%' );
+
+				$('#slider-meses').slider({
+					min: 12,
+					max: 48,
+					range: false,
+					values: [36],
+
+					slide: function( event, ui ) {
+						$( '.js-meses' ).text( ui.value + ' meses' );
+						$cotizador.actualizar();
+					}
+				});
+				$( '.js-meses' ).text( $('#slider-meses').slider( 'values', 0 ) + ' meses' );
+
 			});
 
-			/* @ui slider
-			------------------------------------------------------------------ */
-			$('#slider-enganche').slider({
-				min: 10,
-				max: 70,
-				range: false,
-				values: [20],
-				step: 5,
 
-				slide: function( event, ui ) {
-					$( '.js-porcentaje-enganche' ).text( ui.values[ 0 ] + '%' );
-					$cotizador.actualizar();
-				}
-			});
-			$( '.js-porcentaje-enganche' ).text( $('#slider-enganche').slider( 'values', 0 ) + '%' );
-
-			$('#slider-meses').slider({
-				min: 12,
-				max: 48,
-				range: false,
-				values: [36],
-
-				slide: function( event, ui ) {
-					$( '.js-meses' ).text( ui.value + ' meses' );
-					$cotizador.actualizar();
-				}
-			});
-			$( '.js-meses' ).text( $('#slider-meses').slider( 'values', 0 ) + ' meses' );
-
-		});
-
-
-</script>
+	</script>
 	</body>
 </html>
