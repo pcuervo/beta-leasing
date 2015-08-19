@@ -157,72 +157,74 @@
 						<div class="[ row ]">
 							<article class="[ column xmall-12 medium-6 ][ text-center ][ margin-bottom ]">
 								<h2>Arrendamiento puro vs. contado</h2>
-								<img class="[ image-responsive ]" src="images/chair.jpg" alt="">
+								<div class="[ xmall-12 medium-8 ][ block center ]">
+									<canvas id="myChart" width="400" height="400"></canvas>
+								</div>
 							</article>
 							<article class="[ column xmall-12 medium-6 ]">
 								<div class="[ row ]">
 									<div class="[ span xmall-4 ]">&nbsp;</div>
-									<div class="[ column xmall-4 ][ bg-primary ]">
-										<p class="[ color-light ][ padding--top-bottom ]">Compra de contado</p>
+									<div class="[ span xmall-4 ][ bg-secondary ][ padding ]">
+										<p class="[ color-light ]">Compra de contado</p>
 									</div>
-									<div class="[ column xmall-4 ][ bg-primary ]">
-										<p class="[ color-light ][ padding--top-bottom ]">Arrendamiento puro</p>
+									<div class="[ span xmall-4 ][ bg-primary ][ padding ]">
+										<p class="[ color-light ]">Arrendamiento puro</p>
 									</div>
 									<div class="[ clear ]"></div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p>Valor del automóvil</p>
 									</div>
-									<div class="[ column xmall-8 ]">
+									<div class="[ column xmall-8 ][ padding ]">
 										<p class="[ text-center ][ color-intermediate ]">$185,256</p>
 									</div>
 									<div class="[ clear ]"></div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p>Inversión inicial</p>
 									</div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p class="[ text-center ][ color-intermediate ]">$185,256</p>
 									</div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p class="[ text-center ][ color-intermediate ]">$54,938</p>
 									</div>
 									<div class="[ clear ]"></div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p>Depreciación deducción anual</p>
 									</div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p class="[ text-center ][ color-intermediate ]">$32,500*</p>
 									</div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p class="[ text-center ][ color-intermediate ]">$68,472**</p>
 									</div>
 									<div class="[ clear ]"></div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p>Años</p>
 									</div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p class="[ text-center ]">3</p>
 									</div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p class="[ text-center ]">3</p>
 									</div>
 									<div class="[ clear ]"></div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p>Deducción total</p>
 									</div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p class="[ text-center ][ color-intermediate ]">$97,500</p>
 									</div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p class="[ text-center ][ color-intermediate ]">$205,416</p>
 									</div>
 									<div class="[ clear ]"></div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p>Egreso no deducible</p>
 									</div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p class="[ text-center ][ color-intermediate ]">$79,244</p>
 									</div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-4 ][ padding ]">
 										<p class="[ text-center ][ color-intermediate ]">$0</p>
 									</div>
 									<div class="[ clear ]"></div>
@@ -244,79 +246,118 @@
 							<h2 class="[ text-center ]">Cotizador</h2>
 							<article class="[ form ][ xmall-12 ]">
 								<h3 class="[ text-center ]">Quiero cotizar:</h3>
-								<form method="post" action="" id="form-ui">
+								<form class="[ js-forma-cotizador ]" id="form-ui">
 									<div class="[ row ]">
-										<fieldset class="[ column xmall-12 ][ margin-bottom ]">
-											<label class="[ field select ]">
-												<select id="tipo" name="tipo">
-													<option value="vehiculo" selected>Vehículo</option>
-													<option value="maquinaria">Maquinaria</option>
-													<option value="mobiliario">Mobiliario</option>
-												</select>
-												<i class="arrow"></i>
-											</label>
-										</fieldset>
-										<fieldset class="[ column xmall-6 ][ margin-bottom ]">
-											<label class="field">
-												<input type="text" name="marca" class="gui-input" placeholder="Marca">
-											</label>
-										</fieldset>
-										<fieldset class="[ column xmall-6 ][ margin-bottom ]">
-											<label class="field">
-												<input type="text" name="modelo" class="gui-input" placeholder="Modelo">
-											</label>
-										</fieldset>
-										<fieldset class="[ column xmall-4 ][ margin-bottom ]">
-											<label class="field">
-												<p><small>Valor total</small></p>
-												<input type="text" name="valor_total" class="gui-input" placeholder="0.00">
-											</label>
-										</fieldset>
-										<fieldset class="[ column xmall-4 ][ margin-bottom ]">
-											<label class="field">
-												<p><small>IVA</small></p>
-												<input type="text" name="iva" class="gui-input" placeholder="" value="-" disabled>
-											</label>
-										</fieldset>
-										<fieldset class="[ column xmall-4 ][ margin-bottom ]">
-											<label class="field">
-												<p><small>Valor factura (sin IVA)</small></p>
-												<input type="text" name="valor_factura" class="gui-input" placeholder="" value="-" disabled>
-											</label>
-										</fieldset>
-										<fieldset class="[ column xmall-12 ][ margin-bottom ]">
-											<p><small>Plazo en meses</small></p>
-											<div class="[ slider-wrapper ]">
-												<div id="slider-meses"></div>
-											</div><!-- end .slider-wrapper -->
-											<p class="[ row ]"><span class="[ pull-left ][ js-meses ]">12 meses</span></p>
-										</fieldset>
-										<fieldset class="[ column xmall-12 ][ margin-bottom ]">
-											<p><small>Porcentaje (%) de enganche</small></p>
-											<div class="[ slider-wrapper ]">
-												<div id="slider-enganche"></div>
-											</div><!-- end .slider-wrapper -->
-											<p class="[ row ]"><span class="[ pull-left ][ js-porcentaje-enganche ]">0%</span></p>
-										</fieldset>
-										<fieldset class="[ column xmall-6 ][ margin-bottom ]">
-											<label class="field">
-												<p><small>Monto total a financiar</small></p>
-												<input type="text" name="monto_financiar" class="gui-input" placeholder="-" disabled>
-											</label>
-										</fieldset>
-										<fieldset class="[ column xmall-6 ][ margin-bottom ]">
-											<label class="field">
-												<p><small>Renta mensual</small></p>
-												<input type="text" name="renta_mensual" class="gui-input" placeholder="-" disabled>
-											</label>
-										</fieldset>
-										<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
-											<a class="[ button button-primary ]">Siguiente</a>
-											<p><small>Paso 1 de 2</small></p>
-										</fieldset>
+										<div class="[ cycle-slideshow ]"
+											data-cycle-fx="scrollHorz"
+											data-cycle-timeout="0"
+											data-cycle-speed="650"
+											data-cycle-slides="> div"
+											data-cycle-center-horz="true"
+											data-cycle-center-vert="true"
+											data-cycle-auto-height="calc"
+										>
+											<div class="">
+												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+													<label class="[ field select ]">
+														<select id="tipo" name="tipo">
+															<option value="vehiculo" selected>Vehículo</option>
+															<option value="maquinaria">Maquinaria</option>
+															<option value="mobiliario">Mobiliario</option>
+														</select>
+														<i class="arrow"></i>
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+													<label class="field">
+														<input type="text" name="marca" class="gui-input" placeholder="Marca">
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+													<label class="field">
+														<input type="text" name="modelo" class="gui-input" placeholder="Modelo">
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+													<label class="field">
+														<p><small>Valor total</small></p>
+														<input type="text" name="valor_total" class="gui-input" placeholder="0.00">
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+													<label class="field">
+														<p><small>IVA</small></p>
+														<input type="text" name="iva" class="gui-input" placeholder="" value="-" disabled>
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+													<label class="field">
+														<p><small>Valor factura (sin IVA)</small></p>
+														<input type="text" name="valor_factura" class="gui-input" placeholder="" value="-" disabled>
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-12 ][ margin-bottom ]">
+													<p><small>Plazo en meses</small></p>
+													<div class="[ slider-wrapper ]">
+														<div id="slider-meses"></div>
+													</div><!-- end .slider-wrapper -->
+													<p class="[ row ]"><span class="[ pull-left ][ js-meses ]">12 meses</span></p>
+												</fieldset>
+												<fieldset class="[ column xmall-12 ][ margin-bottom ]">
+													<p><small>Porcentaje (%) de enganche</small></p>
+													<div class="[ slider-wrapper ]">
+														<div id="slider-enganche"></div>
+													</div><!-- end .slider-wrapper -->
+													<p class="[ row ]"><span class="[ pull-left ][ js-porcentaje-enganche ]">0%</span></p>
+												</fieldset>
+												<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+													<label class="field">
+														<p><small>Monto total a financiar</small></p>
+														<input type="text" name="monto_financiar" class="gui-input" placeholder="-" disabled>
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+													<label class="field">
+														<p><small>Renta mensual</small></p>
+														<input type="text" name="renta_mensual" class="gui-input" placeholder="-" disabled>
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
+													<a class="[ button button-primary ]">Siguiente</a>
+													<p><small>Paso 1 de 2</small></p>
+												</fieldset>
+											</div>
+
+											<div>
+												<h3>Confirmar información</h3>
+												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+													<label class="field">
+														<input type="text" name="nombre" class="gui-input" placeholder="Nombre completo">
+													</label>
+												</fieldset>
+												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+													<label class="field">
+														<input type="text" name="telefono" class="gui-input" placeholder="Teléfono">
+													</label>
+												</fieldset>
+												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+													<label class="field">
+														<input type="text" name="compania" class="gui-input" placeholder="Compañía">
+													</label>
+												</fieldset>
+												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+													<label class="field">
+														<input type="text" name="email" class="gui-input" placeholder="Correo electrónico">
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
+													<p><small>mejorar este texto de detalle de cotización de arrendamiento...</small></p>
+													<button type="submit" class="[ button button-primary ]">Generar PDF</button>
+												</fieldset>
+											</div>
 									</div><!-- row -->
 								</form>
-								<p class="[ uppercase ][ color-intermediate ]"><small>Los importes de seguros, impuestos, comisiones y costos de accesorios no están includídos en esta cotización. La presente cotización se emite únicamente con fines informativos y podrá ser objeto de modificaciones. La celebración de cualquier contrato está sujeta a la aprobación de la solicitud de arrendamiento respectiva.</small></p>
+								<p class="[ ][ color-intermediate ]"><small>Los importes de seguros, impuestos, comisiones y costos de accesorios no están includídos en esta cotización. La presente cotización se emite únicamente con fines informativos y podrá ser objeto de modificaciones. La celebración de cualquier contrato está sujeta a la aprobación de la solicitud de arrendamiento respectiva.</small></p>
 							</article>
 						</div><!-- row -->
 					</div><!-- wrapper -->
@@ -332,8 +373,8 @@
 							<ol>
 								<li>
 									<p>Envía tu solicitud de crédito firmada.</p>
-									<a class="[ button button-primary ]" href="#">Persona física</a>
-									<a class="[ button button-primary ]" href="#">Persona moral</a>
+									<a class="[ button button-primary ]" href="pdf/Solicitud de Arrendamiento Puro (Personas Morales).pdf" target="_blank">Persona física</a>
+									<a class="[ button button-primary ]" href="pdf/Solicitud de Arrendamiento Puro (Personas Morales).pdf" target="_blank">Persona moral</a>
 								</li>
 								<li>
 									<p class="[ margin-bottom ]">Envía los siguientes documentos:</p>
@@ -464,57 +505,107 @@
 		<script type="text/javascript" src="js/js-forms/jquery.steps.min.js"></script>
 		<script type="text/javascript" src="js/js-forms/jquery.form.min.js"></script>
 		<script type="text/javascript" src="js/js-forms/jquery.validate.min.js"></script>
-
 		<script type="text/javascript" src="js/js-forms/additional-methods.min.js"></script>
 		<script type="text/javascript" src="js/js-forms/smart-form.js"></script>
-
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
 		<script src="js/cotizador-beta-leasing.js"></script>
 
 		<script type="text/javascript">
-			var $ = jQuery.noConflict();
-			$(function() {
 
-				loadMap();
+			/*
+			* ON LOAD
+			*/
 
-				$cotizador = $('.cotizador').cotizadorBetaLeasing({
-					'formatoDinero'		: true,
-					'digitosDecimales' 	: 3
-				});
+			imgToSvg();
 
-				/* @ui slider
-				------------------------------------------------------------------ */
-				$('#slider-enganche').slider({
-					min: 10,
-					max: 70,
-					range: false,
-					values: [20],
-					step: 5,
-
-					slide: function( event, ui ) {
-						$( '.js-porcentaje-enganche' ).text( ui.values[ 0 ] + '%' );
-						$cotizador.actualizar();
+			var data = {
+				labels: ["1", "6", "11", "16", "21", "26", "31", "36"],
+				datasets: [
+					{
+						label: "Arrendamiento puro",
+						fillColor: "rgba(220,220,220,0.2)",
+						strokeColor: "rgba(220,220,220,1)",
+						pointColor: "rgba(220,220,220,1)",
+						pointStrokeColor: "#fff",
+						pointHighlightFill: "#fff",
+						pointHighlightStroke: "rgba(220,220,220,1)",
+						data: [65, 59, 80, 81, 56, 55, 100, 97500]
+					},
+					{
+						label: "Comprado de contado",
+						fillColor: "rgba(151,187,205,0.2)",
+						strokeColor: "rgba(151,187,205,1)",
+						pointColor: "rgba(151,187,205,1)",
+						pointStrokeColor: "#fff",
+						pointHighlightFill: "#fff",
+						pointHighlightStroke: "rgba(151,187,205,1)",
+						data: [28, 48, 40, 19, 86, 27, 100, 205416]
 					}
-				});
-				$( '.js-porcentaje-enganche' ).text( $('#slider-enganche').slider( 'values', 0 ) + '%' );
+				]
+			};
 
-				$('#slider-meses').slider({
-					min: 12,
-					max: 48,
-					range: false,
-					values: [36],
+			var ctx = $("#myChart").get(0).getContext("2d");
+			var myLineChart = new Chart(ctx).Line(data, {
+				bezierCurve: false,
+				responsive: true,
 
-					slide: function( event, ui ) {
-						$( '.js-meses' ).text( ui.value + ' meses' );
-						$cotizador.actualizar();
-					}
-				});
-				$( '.js-meses' ).text( $('#slider-meses').slider( 'values', 0 ) + ' meses' );
-
+				scaleOverride: true,
+				scaleSteps: 3,
+				scaleStepWidth: 100000,
+				scaleStartValue: 0,
 			});
 
+			$cotizador = $('.cotizador').cotizadorBetaLeasing({
+				'formatoDinero'		: true,
+				'digitosDecimales' 	: 2
+			});
 
-	</script>
+			var lat = 19.431717;
+			lon = -99.196758,
+			zoom = 18,
+			mapColor = rgb2hex( $('.button-primary').css('background-color') );
+			loadMap( lat, lon, zoom, mapColor );
+
+
+
+			/*
+			* TRIGGERED EVENTS
+			*/
+
+			$('.js-forma-cotizador').submit( function(e){
+				e.preventDefault();
+
+				$cotizador.generaPDF();
+			});
+
+			$('#slider-enganche').slider({
+				min: 10,
+				max: 70,
+				range: false,
+				values: [20],
+				step: 5,
+
+				slide: function( event, ui ) {
+					$( '.js-porcentaje-enganche' ).text( ui.values[ 0 ] + '%' );
+					$cotizador.actualizar();
+				}
+			});
+			$( '.js-porcentaje-enganche' ).text( $('#slider-enganche').slider( 'values', 0 ) + '%' );
+
+			$('#slider-meses').slider({
+				min: 12,
+				max: 48,
+				range: false,
+				values: [36],
+
+				slide: function( event, ui ) {
+					$( '.js-meses' ).text( ui.value + ' meses' );
+					$cotizador.actualizar();
+				}
+			});
+			$( '.js-meses' ).text( $('#slider-meses').slider( 'values', 0 ) + ' meses' );
+		</script>
+
 	</body>
 </html>

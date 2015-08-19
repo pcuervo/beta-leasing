@@ -3,7 +3,7 @@
 }
 
 .accordion-section{
-	border-bottom:1px solid @secondary;
+
 }
 
 /*----- Section Titles -----*/
@@ -22,8 +22,13 @@
 	border-bottom:none;
 }
 
+/*----- Section Titles toggle -----*/
+.accordion-section-title .toggle{ .transition; }
+.accordion-section-title .toggle:after{ content: '+'; }
+
+.accordion-section-title.active .toggle:after{ content: '-'; }
+
 /*----- Section Content -----*/
 .accordion-section-content {
-	padding:15px;
 	display:none;
 }
