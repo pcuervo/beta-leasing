@@ -55,9 +55,34 @@
 		<![endif]-->
 		<div class="[ container ]">
 
-			<header class="[ xmall-12 ][ padding--top-bottom--small ][ bg-primary ]">
-				
+			<header class="[ text-center ]">
+				<img class="[ svg icon icon--small ][ block ]" src="icons/logo.svg">
 			</header>
+
+			<nav class="[ xmall-12 ][ padding--top-bottom--small ][ bg-primary ]">
+				<div class="[ row ]">
+					<div class="[ span xmall-1-5 ]">
+						<img class="[ svg icon icon--small ]" src="icons/coins.svg">
+						<p class="[  ]">¿Qué es Beta Leasing?</p>
+					</div>
+					<div class="[ span xmall-1-5 ]">
+						<img class="[ svg icon icon--small ]" src="icons/calculator.svg">
+						<p class="[  ]">Cotizador</p>
+					</div>
+					<div class="[ span xmall-1-5 ]">
+						<img class="[ svg icon icon--small ]" src="icons/check.svg">
+						<p class="[  ]">Solicitud de crédito</p>
+					</div>
+					<div class="[ span xmall-1-5 ]">
+						<img class="[ svg icon icon--small ]" src="icons/chat.svg">
+						<p class="[  ]">PReguntas frecuentes</p>
+					</div>
+					<div class="[ span xmall-1-5 ]">
+						<img class="[ svg icon icon--small ]" src="icons/phone.svg">
+						<p class="[  ]">Contáctanos</p>
+					</div>
+				</div>
+			</nav>
 
 			<div class="[ main ]">
 
@@ -71,7 +96,9 @@
 							<h1 class="[ text-shadow ]"></h1>
 							<p>Beta Leasing es tu mejor opción para la renovación de vehículos, maquinaria y equipo, ofreciendo soluciones personalizadas de arrendamiento puro</p>
 							<a class="[ button button--primary ]" href="#cotizador">simula tu cotización en línea</a>
-							<a class="[ block ]" href="#beneficios" ><i class="[ ]"></i>flecha</a><!-- arrow -->
+							<a class="[ block ][ js-anchor ]" href="#beneficios" >
+								<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
+							</a><!-- arrow -->
 						</div><!-- wrapper -->
 					</div>
 				</section><!-- hero-home -->
@@ -82,19 +109,42 @@
 				<section class="[ beneficios ][ padding--top-bottom ][ bg-primary ]" id="beneficios">
 					<div class="[ wrapper ]">
 						<article class="[ color-light ]">
-							<div class="[ row ]">
-								<h2 class="[ text-center ]">Beneficios del arrendamiento puro</h2>
-								<ul>
-									<li class="[ column xmall-12 medium-6 ]"><i></i><p>Rentas fijas</p></li>
-									<li class="[ column xmall-12 medium-6 ]"><i></i><p>Pago inicial mínimo</p></li>
-									<li class="[ column xmall-12 medium-6 ]"><i></i><p>Duración del contrato definida por el cliente</p></li>
-									<li class="[ column xmall-12 medium-6 ]"><i></i><p>Deducibilidad hasta del 100% de las rentas</p></li>
-									<li class="[ column xmall-12 medium-6 ]"><i></i><p>Evita la descapitalización y apalancamiento</p></li>
-									<li class="[ column xmall-12 medium-6 ]"><i></i><p>Reducción de gastos de mantenimiento</p></li>
-									<li class="[ column xmall-12 medium-6 ]"><i></i><p>Financiamiento opcional de equipo adicional, garantías, placas y seguros</p></li>
-								</ul>
-							</div>
-							
+							<h2 class="[ text-center ]">Beneficios del arrendamiento puro</h2>
+							<ul>
+								<div class="[ column xmall-12 medium-6 ]">
+									<li>
+										<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
+										<p>Rentas fijas</p>
+									</li>
+									<li>
+										<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
+										<p>Pago inicial mínimo</p>
+									</li>
+									<li>
+										<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
+										<p>Duración del contrato definida por el cliente</p>
+									</li>
+									<li>
+										<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
+										<p>Deducibilidad hasta del 100% de las rentas</p>
+									</li>
+								</div>
+								<div class="[ column xmall-12 medium-6 ]">
+									<li>
+										<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
+										<p>Evita la descapitalización y apalancamiento</p>
+									</li>
+									<li>
+										<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
+										<p>Reducción de gastos de mantenimiento</p>
+									</li>
+									<li>
+										<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
+										<p>Financiamiento opcional de equipo adicional, garantías, placas y seguros</p>
+									</li>
+								</div>
+							</ul>
+
 						</article>
 					</div><!-- wrapper -->
 				</section><!-- beneficios -->
@@ -219,19 +269,19 @@
 										<fieldset class="[ column xmall-4 ][ margin-bottom ]">
 											<label class="field">
 												<p><small>Valor total</small></p>
-												<input type="text" name="valor_total" class="gui-input" placeholder="0.00"> 
+												<input type="text" name="valor_total" class="gui-input" placeholder="0.00">
 											</label>
 										</fieldset>
 										<fieldset class="[ column xmall-4 ][ margin-bottom ]">
 											<label class="field">
 												<p><small>IVA</small></p>
-												<input type="text" name="iva" class="gui-input" placeholder="" value="-" disabled> 
+												<input type="text" name="iva" class="gui-input" placeholder="" value="-" disabled>
 											</label>
 										</fieldset>
 										<fieldset class="[ column xmall-4 ][ margin-bottom ]">
 											<label class="field">
 												<p><small>Valor factura (sin IVA)</small></p>
-												<input type="text" name="valor_factura" class="gui-input" placeholder="" value="-" disabled> 
+												<input type="text" name="valor_factura" class="gui-input" placeholder="" value="-" disabled>
 											</label>
 										</fieldset>
 										<fieldset class="[ column xmall-12 ][ margin-bottom ]">
@@ -461,53 +511,9 @@
 				}
 			});
 			$( '.js-meses' ).text( $('#slider-meses').slider( 'values', 0 ) + ' meses' );
-			
+
 		});
 
-	function loadMap(){
-
-		var map;
-		var styles = [
-		    {
-		    	stylers: [
-		        	{ hue: "#00a8ab" }
-		     	]
-		    }
-		];
-		 var styledMap = new google.maps.StyledMapType(styles,
-    		{name: "Styled Map"});
-
-		function initialize() {
-			map = new google.maps.Map(document.getElementById('map-canvas'), {
-				scrollwheel: false,
-				zoom: 18,
-				mapTypeIds: [ 'map_style' ],
-				center: {lat: 19.431717, lng: -99.196758}
-			});
-
-			map.mapTypes.set('map_style', styledMap);
-			map.setMapTypeId('map_style');
-		}
-
-		google.maps.event.addDomListener(window, 'load', initialize);
-	}
-
-	function getHex( rgb ){
-		var hexDigits = new Array
-        ("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"); 
-
-		//Function to convert hex format to a rgb color
-		function rgb2hex(rgb) {
-		 rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-		 return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
-		}
-
-		function hex(x) {
-		  return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
-		}
-	}
-
-	
 
 </script>
 	</body>

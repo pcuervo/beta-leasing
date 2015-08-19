@@ -4,6 +4,33 @@ var $=jQuery.noConflict();
 	#GENERAL FUNCTIONS
 \*------------------------------------*/
 
+function loadMap(){
+	var map;
+	var styles = [
+		{
+			stylers: [
+				{ hue: "#00a8ab" }
+			]
+		}
+	];
+	var styledMap = new google.maps.StyledMapType(styles,
+		{name: "Styled Map"});
+
+	function initialize() {
+		map = new google.maps.Map(document.getElementById('map-canvas'), {
+			scrollwheel: false,
+			zoom: 18,
+			mapTypeIds: [ 'map_style' ],
+			center: {lat: 19.431717, lng: -99.196758}
+		});
+
+		map.mapTypes.set('map_style', styledMap);
+		map.setMapTypeId('map_style');
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+}
+
 
 
 /*------------------------------------*\
@@ -31,12 +58,6 @@ function getScrollY() {
 	return $(window).scrollTop();
 }// getScrollY
 
-/**
- * Get the scrolled pixels in Y axis
- */
-function getScrollY() {
-	return $(window).scrollTop();
-}// getScrollY
 
 /**
  * Set main's padding top
@@ -138,6 +159,21 @@ function imgToSvg(){
 	});
 } //imgToSvg
 
+
+function getHex( rgb ){
+		var hexDigits = new Array
+		("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");
+
+		//Function to convert hex format to a rgb color
+		function rgb2hex(rgb) {
+		 rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+		 return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+		}
+
+		function hex(x) {
+			return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
+		}
+	}
 
 
 /*------------------------------------*\
