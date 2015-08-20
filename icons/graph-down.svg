@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
 <g>
-	
-		<line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="39" y1="38.3" x2="1" y2="38.3"/>
-	
-		<rect x="31.1" y="33.1" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="5.2" height="5.2"/>
-	
-		<rect x="22" y="26.6" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="5.2" height="11.8"/>
-	
-		<rect x="12.8" y="20" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="5.2" height="18.3"/>
-	
-		<rect x="3.6" y="13.4" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="5.2" height="24.9"/>
-	
-		<line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="35.1" y1="22" x2="4.9" y2="1.7"/>
-	<polyline fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="34.4,15.4 
-		35.1,22 28.5,23.3 	"/>
+	<path d="M39,37.8h-2.1v-4.7c0-0.3-0.2-0.5-0.5-0.5h-5.2c-0.3,0-0.5,0.2-0.5,0.5v4.7h-2.9V26.6c0-0.3-0.2-0.5-0.5-0.5H22
+		c-0.3,0-0.5,0.2-0.5,0.5v11.3h-2.9V20c0-0.3-0.2-0.5-0.5-0.5h-5.2c-0.3,0-0.5,0.2-0.5,0.5v17.8H9.4V13.4c0-0.3-0.2-0.5-0.5-0.5H3.6
+		c-0.3,0-0.5,0.2-0.5,0.5v24.4H1c-0.3,0-0.5,0.2-0.5,0.5s0.2,0.5,0.5,0.5h2.6h5.2h3.9H18H22h5.2h3.9h5.2H39c0.3,0,0.5-0.2,0.5-0.5
+		S39.3,37.8,39,37.8z M4.1,37.8V13.9h4.2v23.9H4.1z M13.3,37.8V20.5h4.2v17.3H13.3z M22.5,37.8V27.1h4.2v10.8H22.5z M31.6,37.8v-4.2
+		h4.2v4.2H31.6z"/>
+	<path d="M33.8,21.7l-5.4,1.1c-0.3,0.1-0.4,0.3-0.4,0.6c0,0.2,0.3,0.4,0.5,0.4c0,0,0.1,0,0.1,0l6.6-1.3c0,0,0.1,0,0.1,0
+		c0,0,0,0,0.1,0c0.1,0,0.1-0.1,0.2-0.1c0,0,0,0,0,0c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0,0,0-0.1l-0.7-6.6
+		c0-0.3-0.3-0.5-0.5-0.4c-0.3,0-0.5,0.3-0.4,0.5l0.5,5.5L5.2,1.2C5,1.1,4.7,1.1,4.5,1.4C4.4,1.6,4.4,1.9,4.7,2.1L33.8,21.7z"/>
 </g>
 </svg>
