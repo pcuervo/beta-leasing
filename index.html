@@ -549,8 +549,10 @@
 
 			imgToSvg();
 
+
+
 			var data = {
-				labels: ["1", "6", "11", "16", "21", "26", "31", "36"],
+				labels: ["Mes 1", "Mes 6", "Mes 11", "Mes 16", "Mes 21", "Mes 26", "Mes 31", "Mes 36"],
 				datasets: [
 					{
 						label: "Arrendamiento puro",
@@ -560,7 +562,7 @@
 						pointStrokeColor: "#fff",
 						pointHighlightFill: "#fff",
 						pointHighlightStroke: "rgba(220,220,220,1)",
-						data: [65, 59, 80, 81, 56, 55, 100, 97500]
+						data: [formatoDinero(2708.3), 16250, 29791.6, 43333.3, 56875, 70416.6, 83958.3, 97500]
 					},
 					{
 						label: "Comprado de contado",
@@ -570,7 +572,7 @@
 						pointStrokeColor: "#fff",
 						pointHighlightFill: "#fff",
 						pointHighlightStroke: "rgba(151,187,205,1)",
-						data: [28, 48, 40, 19, 86, 27, 100, 205416]
+						data: [5706, 34236, 62766, 91296, 119826, 148356, 176886, 205416]
 					}
 				]
 			};
@@ -584,6 +586,11 @@
 				scaleSteps: 3,
 				scaleStepWidth: 100000,
 				scaleStartValue: 0,
+
+				scaleLabel: "$<%=value%>",
+
+				tooltipTemplate: "lol",
+				multiTooltipTemplate: "$<%= value %>",
 			});
 
 			$cotizador = $('.cotizador').cotizadorBetaLeasing({

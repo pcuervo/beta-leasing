@@ -194,3 +194,12 @@ function getHex( rgb ){
 /*------------------------------------*\
 	#FORMAT FUNCTIONS
 \*------------------------------------*/
+
+function formatoDinero( num ){
+	var digitosDecimales = 1;
+	var signo = num < 0 ? "-" : "";
+	var numConDecimales = parseInt( num = Math.abs( +num || 0 ).toFixed(digitosDecimales) ) + "";
+	var posicionComa = ( posicionComa = numConDecimales.length ) > 3 ? posicionComa % 3 : 0;
+
+	return '$' + signo + ( posicionComa ? numConDecimales.substr( 0, posicionComa ) + "," : "" ) + numConDecimales.substr( posicionComa ).replace( /(\d{3})(?=\d)/g, "$1" + "," ) + ( digitosDecimales ? "." + Math.abs( num - numConDecimales ).toFixed( digitosDecimales ).slice(2) : "" );
+}// formatoDinero
