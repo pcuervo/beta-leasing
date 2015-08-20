@@ -403,27 +403,57 @@
 				<section class="[ preguntas-frecuentes ][ padding--top-bottom ]">
 					<div class="[ wrapper ]">
 						<div class="[ row ]">
-							<article>
+							<article class="[ accordion ]">
 								<h2 class="[ text-center ]">Preguntas frecuentes</h2>
-								<div class="[ column xmall-12 medium-6 ]">
-									<p class="[ lead-text ][ color-primary ]">¿Por qué me conviene el arrenamiento puro?</p>
-									<p class="[  ]">Por que te da beneficios pedereitor rey, finaciamiento audaz, mamador.</p>
+								<div class="[ accordion-section ][ column xmall-12 medium-6 ]">
+									<p class="[ lead-text ][ color-primary ]">
+										<a class="[ accordion-section-title ]" href="#accordion-1" >
+											<span class="[ toggle ]"></span> ¿Por qué me conviene el arrenamiento puro?
+										</a>
+									</p>
+									<div id="accordion-1" class="[ accordion-section-content ]">
+										<p>Por que te da beneficios pedereitor rey, finaciamiento audaz, mamador.</p>
+									</div><!--end .accordion-section-content-->
 								</div>
 								<div class="[ column xmall-12 medium-6 ]">
-									<p class="[ lead-text ][ color-primary ]">¿Por qué me conviene el arrenamiento puro?</p>
-									<p class="[ hidden ]">Por que está de poca madre mi broder...</p>
+									<p class="[ lead-text ][ color-primary ]">
+										<a class="[ accordion-section-title ]" href="#accordion-2" >
+											<span class="[ toggle ]"></span> ¿Por qué me conviene el arrenamiento puro?
+										</a>
+									</p>
+									<div id="accordion-2" class="[ accordion-section-content ]">
+										<p>Por que está de poca madre mi broder...</p>
+									</div><!--end .accordion-section-content-->
 								</div>
 								<div class="[ column xmall-12 medium-6 ]">
-									<p class="[ lead-text ][ color-primary ]">¿Por qué me conviene el arrenamiento puro?</p>
-									<p class="[ hidden ]">Por que está de poca madre mi broder...</p>
+									<p class="[ lead-text ][ color-primary ]">
+										<a class="[ accordion-section-title ]" href="#accordion-3" >
+											<span class="[ toggle ]"></span> ¿Por qué me conviene el arrenamiento puro?
+										</a>
+									</p>
+									<div id="accordion-3" class="[ accordion-section-content ]">
+										<p>Por que está de poca madre mi broder...</p>
+									</div><!--end .accordion-section-content-->
 								</div>
 								<div class="[ column xmall-12 medium-6 ]">
-									<p class="[ lead-text ][ color-primary ]">¿Por qué me conviene el arrenamiento puro?</p>
-									<p class="[ hidden ]">Por que está de poca madre mi broder...</p>
+									<p class="[ lead-text ][ color-primary ]">
+										<a class="[ accordion-section-title ]" href="#accordion-4" >
+											<span class="[ toggle ]"></span> ¿Por qué me conviene el arrenamiento puro?
+										</a>
+									</p>
+									<div id="accordion-4" class="[ accordion-section-content ]">
+										<p>Por que está de poca madre mi broder...</p>
+									</div><!--end .accordion-section-content-->
 								</div>
 								<div class="[ column xmall-12 medium-6 ]">
-									<p class="[ lead-text ][ color-primary ]">¿Por qué me conviene el arrenamiento puro?</p>
-									<p class="[ hidden ]">Por que está de poca madre mi broder...</p>
+									<p class="[ lead-text ][ color-primary ]">
+										<a class="[ accordion-section-title ]" href="#accordion-5" >
+											<span class="[ toggle ]"></span> ¿Por qué me conviene el arrenamiento puro?
+										</a>
+									</p>
+									<div id="accordion-5" class="[ accordion-section-content ]">
+										<p>Por que está de poca madre mi broder...</p>
+									</div><!--end .accordion-section-content-->
 								</div>
 							</article>
 						</div>
@@ -605,6 +635,24 @@
 				}
 			});
 			$( '.js-meses' ).text( $('#slider-meses').slider( 'values', 0 ) + ' meses' );
+
+			$('.accordion-section-title').click(function(e) {
+				// Grab current anchor value
+				var currentAttrValue = $(this).attr('href');
+
+				if($(e.target).is('.active')) {
+					closeAccordionSection();
+				}else {
+					closeAccordionSection();
+
+					// Add active class to section title
+					$(this).addClass('active');
+					// Open up the hidden content panel
+					$('.accordion ' + currentAttrValue).slideDown(300).addClass('open');
+				}
+
+				e.preventDefault();
+			});
 		</script>
 
 	</body>
