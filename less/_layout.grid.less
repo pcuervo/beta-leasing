@@ -18,6 +18,7 @@
 	margin-left: -8px; margin-right: -8px;
 }
 
+.column{ padding-right: 8px; padding-left: 8px; }
 
 
 
@@ -25,9 +26,6 @@
 /*------------------------------------*\
     #12 COLUMNS
 \*------------------------------------*/
-
-.column{ padding-right: 8px; padding-left: 8px; }
-
 
 /**
  * xmall
@@ -221,4 +219,127 @@
 	.xxlarge-10{ width: 83.3333333%; }
 	.xxlarge-11{ width: 91.66666663%; }
 	.xxlarge-12{ width: 100%; }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #FIFTHS
+\*------------------------------------*/
+
+/**
+ * xmall
+**/
+.column, .span{ float: left;
+	&.xmall-1-5{ width: 20%; }
+	&.xmall-2-5{ width: 40%; }
+	&.xmall-3-5{ width: 60%; }
+	&.xmall-4-5{ width: 80%; }
+	&.xmall-5-5{ width: 100%; }
+}
+
+.xmall-1-5{ width: 20%; }
+.xmall-2-5{ width: 40%; }
+.xmall-3-5{ width: 60%; }
+.xmall-4-5{ width: 80%; }
+.xmall-5-5{ width: 100%; }
+
+
+/**
+ * small
+**/
+@media only screen and (min-width: @small) { //min-width 321px
+	.column, .span{ float: left;
+		&.small-1-5{ width: 20%; }
+		&.small-2-5{ width: 40%; }
+		&.small-3-5{ width: 60%; }
+		&.small-4-5{ width: 80%; }
+		&.small-5-5{ width: 100%; }
+	}
+
+	.small-1-5{ width: 20%; }
+	.small-2-5{ width: 40%; }
+	.small-3-5{ width: 60%; }
+	.small-4-5{ width: 80%; }
+	.small-5-5{ width: 100%; }
+}
+
+/**
+ * medium
+**/
+@media only screen and (min-width: @medium) { //min-width 641px, medium screens
+	.column, .span{ float: left;
+		&.medium-1-5{ width: 20%; }
+		&.medium-2-5{ width: 40%; }
+		&.medium-3-5{ width: 60%; }
+		&.medium-4-5{ width: 80%; }
+		&.medium-5-5{ width: 100%; }
+	}
+
+	.medium-1-5{ width: 20%; }
+	.medium-2-5{ width: 40%; }
+	.medium-3-5{ width: 60%; }
+	.medium-4-5{ width: 80%; }
+	.medium-5-5{ width: 100%; }
+}
+
+/**
+ * large
+**/
+@media only screen and (min-width: @large) { //min-width 1025px, large screens
+	.column, .span{ float: left;
+		&.large-1-5{ width: 20%; }
+		&.large-2-5{ width: 40%; }
+		&.large-3-5{ width: 60%; }
+		&.large-4-5{ width: 80%; }
+		&.large-5-5{ width: 100%; }
+	}
+
+	.large-1-5{ width: 20%; }
+	.large-2-5{ width: 40%; }
+	.large-3-5{ width: 60%; }
+	.large-4-5{ width: 80%; }
+	.large-5-5{ width: 100%; }
+}
+
+
+/**
+ * xlarge
+**/
+@media only screen and (min-width: @xlarge) { //min-width 1441px, xlarge screens
+	.column, .span{ float: left;
+		&.xlarge-1-5{ width: 20%; }
+		&.xlarge-2-5{ width: 40%; }
+		&.xlarge-3-5{ width: 60%; }
+		&.xlarge-4-5{ width: 80%; }
+		&.xlarge-5-5{ width: 100%; }
+	}
+
+	.xlarge-1-5{ width: 20%; }
+	.xlarge-2-5{ width: 40%; }
+	.xlarge-3-5{ width: 60%; }
+	.xlarge-4-5{ width: 80%; }
+	.xlarge-5-5{ width: 100%; }
+}
+
+
+/**
+ * xxlarge
+**/
+@media only screen and (min-width: @xxlarge) { //min-width 1921px, xxlarge screens
+	.column, .span{ float: left;
+		&.xxlarge-1-5{ width: 20%; }
+		&.xxlarge-2-5{ width: 40%; }
+		&.xxlarge-3-5{ width: 60%; }
+		&.xxlarge-4-5{ width: 80%; }
+		&.xxlarge-5-5{ width: 100%; }
+	}
+
+	.xxlarge-1-5{ width: 20%; }
+	.xxlarge-2-5{ width: 40%; }
+	.xxlarge-3-5{ width: 60%; }
+	.xxlarge-4-5{ width: 80%; }
+	.xxlarge-5-5{ width: 100%; }
 }

@@ -60,26 +60,26 @@
 			</header>
 
 			<nav class="[ xmall-12 ][ padding--top-bottom--small ][ bg-primary ]">
-				<div class="[ row ]">
+				<div class="[ row ][ text-center ]">
 					<div class="[ span xmall-1-5 ]">
 						<img class="[ svg icon icon--small ]" src="icons/coins.svg">
-						<p class="[  ]">¿Qué es Beta Leasing?</p>
+						<p class="[ xmall ]">¿Qué es Beta Leasing?</p>
 					</div>
 					<div class="[ span xmall-1-5 ]">
 						<img class="[ svg icon icon--small ]" src="icons/calculator.svg">
-						<p class="[  ]">Cotizador</p>
+						<p class="[ xmall ]">Cotizador</p>
 					</div>
 					<div class="[ span xmall-1-5 ]">
 						<img class="[ svg icon icon--small ]" src="icons/check.svg">
-						<p class="[  ]">Solicitud de crédito</p>
+						<p class="[ xmall ]">Solicitud de crédito</p>
 					</div>
 					<div class="[ span xmall-1-5 ]">
 						<img class="[ svg icon icon--small ]" src="icons/chat.svg">
-						<p class="[  ]">PReguntas frecuentes</p>
+						<p class="[ xmall ]">Preguntas frecuentes</p>
 					</div>
 					<div class="[ span xmall-1-5 ]">
 						<img class="[ svg icon icon--small ]" src="icons/phone.svg">
-						<p class="[  ]">Contáctanos</p>
+						<p class="[ xmall ]">Contáctanos</p>
 					</div>
 				</div>
 			</nav>
@@ -110,7 +110,7 @@
 					<div class="[ wrapper ]">
 						<article class="[ color-light ]">
 							<h2 class="[ text-center ]">Beneficios del arrendamiento puro</h2>
-							<ul>
+							<ul class="[ row ][ list-reset ]">
 								<div class="[ column xmall-12 medium-6 ]">
 									<li>
 										<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
@@ -247,17 +247,18 @@
 							<article class="[ form ][ xmall-12 ]">
 								<h3 class="[ text-center ]">Quiero cotizar:</h3>
 								<form class="[ js-forma-cotizador ]" id="form-ui">
-									<div class="[ row ]">
-										<div class="[ cycle-slideshow ]"
-											data-cycle-fx="scrollHorz"
-											data-cycle-timeout="0"
-											data-cycle-speed="650"
-											data-cycle-slides="> div"
-											data-cycle-center-horz="true"
-											data-cycle-center-vert="true"
-											data-cycle-auto-height="calc"
-										>
-											<div class="">
+
+									<div class="[ cycle-slideshow ]"
+										data-cycle-fx="scrollHorz"
+										data-cycle-timeout="0"
+										data-cycle-speed="650"
+										data-cycle-slides="> div"
+										data-cycle-center-horz="true"
+										data-cycle-center-vert="true"
+										data-cycle-auto-height="calc"
+									>
+										<div class="">
+											<div class="[ row ]">
 												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
 													<label class="[ field select ]">
 														<select id="tipo" name="tipo">
@@ -326,10 +327,11 @@
 													<a class="[ button button-primary ]">Siguiente</a>
 													<p><small>Paso 1 de 2</small></p>
 												</fieldset>
-											</div>
-
-											<div>
-												<h3>Confirmar información</h3>
+											</div><!-- row -->
+										</div>
+										<div>
+											<h3>Confirmar información</h3>
+											<div class="[ row ]">
 												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
 													<label class="field">
 														<input type="text" name="nombre" class="gui-input" placeholder="Nombre completo">
@@ -354,12 +356,12 @@
 													<p><small>mejorar este texto de detalle de cotización de arrendamiento...</small></p>
 													<button type="submit" class="[ button button-primary ]">Generar PDF</button>
 												</fieldset>
-											</div>
-									</div><!-- row -->
+											</div><!-- row -->
+										</div>
+									</div><!-- cycle-slideshow -->
+									<p class="[ ][ color-intermediate ]"><small>Los importes de seguros, impuestos, comisiones y costos de accesorios no están includídos en esta cotización. La presente cotización se emite únicamente con fines informativos y podrá ser objeto de modificaciones. La celebración de cualquier contrato está sujeta a la aprobación de la solicitud de arrendamiento respectiva.</small></p>
 								</form>
-								<p class="[ ][ color-intermediate ]"><small>Los importes de seguros, impuestos, comisiones y costos de accesorios no están includídos en esta cotización. La presente cotización se emite únicamente con fines informativos y podrá ser objeto de modificaciones. La celebración de cualquier contrato está sujeta a la aprobación de la solicitud de arrendamiento respectiva.</small></p>
 							</article>
-						</div><!-- row -->
 					</div><!-- wrapper -->
 				</section><!-- cotizador -->
 
@@ -402,9 +404,9 @@
 				================================================== -->
 				<section class="[ preguntas-frecuentes ][ padding--top-bottom ]">
 					<div class="[ wrapper ]">
-						<div class="[ row ]">
-							<article class="[ accordion ]">
-								<h2 class="[ text-center ]">Preguntas frecuentes</h2>
+						<article class="[ accordion ]">
+							<h2 class="[ text-center ]">Preguntas frecuentes</h2>
+							<div class="[ row ]">
 								<div class="[ accordion-section ][ column xmall-12 medium-6 ]">
 									<p class="[ lead-text ][ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-1" >
@@ -455,15 +457,15 @@
 										<p>Por que está de poca madre mi broder...</p>
 									</div><!--end .accordion-section-content-->
 								</div>
-							</article>
-						</div>
+							</div><!-- row -->
+						</article>
 					</div><!-- wrapper -->
 				</section><!-- preguntas-frecuentes -->
 
 				<!-- =================================================
 				==== CONTACTO
 				================================================== -->
-				<section class="[ hero-contacto ]">
+				<section class="[ hero hero-contacto ]">
 					<div class="[ screen screen-dark--30 ][ z-index-1 ]"></div>
 					<div class="[ padding--top-bottom ][ relative z-index-2 ]">
 						<div class="[ wrapper ][ text-center ]">
@@ -502,7 +504,7 @@
 				==== MAPA
 				================================================== -->
 				<section class="[ mapa ]">
-					<div class="row">
+					<div class="[ ]">
 						<div id="map-canvas" style="height: 300px;"></div>
 					</div>
 				</section><!-- mapa -->
