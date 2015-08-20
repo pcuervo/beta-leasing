@@ -157,7 +157,7 @@
 						<div class="[ row ]">
 							<article class="[ column xmall-12 medium-6 ][ text-center ][ margin-bottom ]">
 								<h2>Arrendamiento puro vs. contado</h2>
-								<div class="[ xmall-12 medium-8 ][ block center ]">
+								<div class="[ xmall-12 medium-10 ][ block center ]">
 									<canvas id="myChart" width="400" height="400"></canvas>
 								</div>
 							</article>
@@ -551,50 +551,6 @@
 
 			imgToSvg();
 
-
-
-			var data = {
-				labels: ["Mes 1", "Mes 6", "Mes 11", "Mes 16", "Mes 21", "Mes 26", "Mes 31", "Mes 36"],
-				datasets: [
-					{
-						label: "Arrendamiento puro",
-						fillColor: "rgba(220,220,220,0.2)",
-						strokeColor: "rgba(220,220,220,1)",
-						pointColor: "rgba(220,220,220,1)",
-						pointStrokeColor: "#fff",
-						pointHighlightFill: "#fff",
-						pointHighlightStroke: "rgba(220,220,220,1)",
-						data: [formatoDinero(2708.3), 16250, 29791.6, 43333.3, 56875, 70416.6, 83958.3, 97500]
-					},
-					{
-						label: "Comprado de contado",
-						fillColor: "rgba(151,187,205,0.2)",
-						strokeColor: "rgba(151,187,205,1)",
-						pointColor: "rgba(151,187,205,1)",
-						pointStrokeColor: "#fff",
-						pointHighlightFill: "#fff",
-						pointHighlightStroke: "rgba(151,187,205,1)",
-						data: [5706, 34236, 62766, 91296, 119826, 148356, 176886, 205416]
-					}
-				]
-			};
-
-			var ctx = $("#myChart").get(0).getContext("2d");
-			var myLineChart = new Chart(ctx).Line(data, {
-				bezierCurve: false,
-				responsive: true,
-
-				scaleOverride: true,
-				scaleSteps: 3,
-				scaleStepWidth: 100000,
-				scaleStartValue: 0,
-
-				scaleLabel: "$<%=value%>",
-
-				tooltipTemplate: "lol",
-				multiTooltipTemplate: "$<%= value %>",
-			});
-
 			$cotizador = $('.cotizador').cotizadorBetaLeasing({
 				'formatoDinero'		: true,
 				'digitosDecimales' 	: 2
@@ -611,6 +567,15 @@
 			/*
 			* TRIGGERED EVENTS
 			*/
+
+			var inView = false;
+			$(window).scroll(function() {
+			    if (isScrolledIntoView('#myChart')) {
+			        if (inView) { return; }
+			        inView = true;
+			        createChart();
+			    } 
+			});
 
 			$('.js-forma-cotizador').submit( function(e){
 				e.preventDefault();
