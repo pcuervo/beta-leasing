@@ -4,6 +4,13 @@ var $=jQuery.noConflict();
 	#GENERAL FUNCTIONS
 \*------------------------------------*/
 
+/**
+ * Create a Google Map
+ * @param float lat
+ * @param float lon
+ * @param int zoom
+ * @param string mapColor (hex)
+**/
 function loadMap( lat, lon, zoom, mapColor){
 
 	var map;
@@ -28,6 +35,71 @@ function loadMap( lat, lon, zoom, mapColor){
 
 	google.maps.event.addDomListener(window, 'load', initialize);
 }// loadMap
+
+/**
+ * Create a Chart using Chart.js
+**/
+function createChart(){
+
+	var data = {
+		labels: ["Mes 1", "Mes 6", "Mes 11", "Mes 16", "Mes 21", "Mes 26", "Mes 31", "Mes 36"],
+		datasets: [
+			{
+				label: "Arrendamiento puro",
+				fillColor: "rgba(220,220,220,0.2)",
+				strokeColor: "rgba(220,220,220,1)",
+				pointColor: "rgba(220,220,220,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(220,220,220,1)",
+				data: [2708.3, 16250, 29791.6, 43333.3, 56875, 70416.6, 83958.3, 97500]
+			},
+			{
+				label: "Comprado de contado",
+				fillColor: "rgba(151,187,205,0.2)",
+				strokeColor: "rgba(151,187,205,1)",
+				pointColor: "rgba(151,187,205,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(151,187,205,1)",
+				data: [5706, 34236, 62766, 91296, 119826, 148356, 176886, 205416]
+			}
+		]
+	};
+	var ctx = $("#myChart").get(0).getContext("2d");
+	var myLineChart = new Chart(ctx).Line(data, {
+		bezierCurve: false,
+		responsive: true,
+
+		scaleOverride: true,
+		scaleSteps: 5,
+		scaleStepWidth: 50000,
+		scaleStartValue: 0,
+
+		scaleLabel: "<%= formatoDinero(value) %>",
+		multiTooltipTemplate: "<%= formatoDinero(value)  %>",
+
+		animationSteps: 150,
+	
+	});
+
+}// createChart
+
+/**
+ * Check if the user has scrolled to the given element.
+ * @param element elem
+**/
+function isScrolledIntoView(elem)
+{
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ( (elemTop <= docViewBottom) && (elemBottom >= docViewTop) );
+}// isScrolledIntoView
+
 
 /*------------------------------------*\
 	#GET/SET FUNCTIONS
@@ -105,7 +177,6 @@ function toggleModal(element){
 		$('.modal-wrapper').addClass('hide');
 		return;
 	}
-
 	$(element).toggleClass('hide');
 
 }//toggleModal
@@ -164,37 +235,37 @@ function imgToSvg(){
 	});
 } //imgToSvg
 
+/**
+ * Convert an RGB color into a hexadecimal color
+ * @param array rgb
+ * @return string 
+**/
 function rgb2hex( rgb ) {
 	rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
  	return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 }// rgb2hex
 
-function hex(x) {
+/**
+ * Return the hexadecimal number of a decimal number
+ * @param float num
+ * @return string 
+**/
+function hex( num ) {
 	var hexDigits = new Array("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");
- 	return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
+ 	return isNaN( num ) ? "00" : hexDigits[( num - num % 16) / 16] + hexDigits[num % 16];
 }// hex
 
-
-function getHex( rgb ){
-		var hexDigits = new Array
-		("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");
-
-		//Function to convert hex format to a rgb color
-		function rgb2hex(rgb) {
-		 rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-		 return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
-		}
-
-		function hex(x) {
-			return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
-		}
-	}
 
 
 /*------------------------------------*\
 	#FORMAT FUNCTIONS
 \*------------------------------------*/
 
+/**
+ * Add money format to a number
+ * @param float num
+ * @return string 
+**/
 function formatoDinero( num ){
 	var digitosDecimales = 1;
 	var signo = num < 0 ? "-" : "";
