@@ -157,7 +157,7 @@
 						<div class="[ row ]">
 							<article class="[ column xmall-12 medium-6 ][ text-center ][ margin-bottom ]">
 								<h2>Arrendamiento puro vs. contado</h2>
-								<div class="[ xmall-12 medium-10 ][ block center ]">
+								<div class="[ xmall-12 xlarge-10 ][ block center ]">
 									<canvas id="myChart" width="400" height="400"></canvas>
 								</div>
 							</article>
@@ -570,6 +570,7 @@
 			*/
 
 			var inView = false;
+			console.log($(window).scrollTop());
 			$(window).scroll(function() {
 			    if (isScrolledIntoView('#myChart')) {
 			        if (inView) { return; }
