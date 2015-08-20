@@ -100,6 +100,33 @@ function isScrolledIntoView(elem)
     return ( (elemTop <= docViewBottom) && (elemBottom >= docViewTop) );
 }// isScrolledIntoView
 
+/**
+ * Send email requesting more information.
+ * @param elemnt form
+ */
+function sendContactEmail( form ){
+
+	var data = $( form ).serialize();
+	$.post(
+		'php/send_contact_email.php',
+		data,
+		function( response ){
+			console.log(response);
+			var jsonResponse = $.parseJSON( response );
+
+			if( jsonResponse.error === 1) {
+				showContactErrorHTML( jsonResponse.message );
+				return;
+			}
+
+			$( form ).empty();
+			$( form ).append( getContactSuccessHTML( jsonResponse.message ) );
+		}
+	);
+
+}// sendContactEmail
+
+
 
 /*------------------------------------*\
 	#GET/SET FUNCTIONS
@@ -134,6 +161,24 @@ function setMainPaddingTop(){
 	var headerHeight = getHeaderHeight();
 	$('.main').css('padding-top', headerHeight + 20);
 }// setMainPaddingTop
+
+/**
+ * Show HTML if contact form was sent succesfully.
+ * @param string message
+ * @return successHTML
+**/
+function getContactSuccessHTML( message ){
+	return '<h4 class="[ text-center ][ text-shadow ]">' + message + '</h4>';
+}// getContactSuccessHTML
+
+/**
+ * Show HTML if contact form was not sent succesfully.
+ * @param string message
+ * @return errorHTML
+**/
+function getContactErrorHTML( message ){
+	return '<p>' + message + '</p>';
+}// showContactErrorHTML
 
 
 

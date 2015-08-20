@@ -486,7 +486,7 @@
 											</fieldset>
 											<fieldset class="[ column xmall-12 ][ margin-bottom--large ]">
 												<label class="field">
-													<textarea class="[ gui-textarea ][ required ]" name="mensaje">Mensaje</textarea>
+													<textarea class="[ gui-textarea ][ required ]" name="mensaje" placeholder="mensaje"></textarea>
 												</label>
 											</fieldset>
 											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-right ]">
@@ -627,6 +627,12 @@
 
 				e.preventDefault();
 			});
+
+			$('.js-contact-form').submit( function(e){
+				e.preventDefault();
+				sendContactEmail( $(this) );
+			});
+
 		</script>
 
 	</body>
