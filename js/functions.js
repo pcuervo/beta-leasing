@@ -46,9 +46,9 @@ function createChart(){
 		datasets: [
 			{
 				label: "Arrendamiento puro",
-				fillColor: "rgba(220,220,220,0.2)",
+				fillColor: "rgba(60, 119, 251,0.2)",
 				strokeColor: "rgba(220,220,220,1)",
-				pointColor: "rgba(220,220,220,1)",
+				pointColor: "rgba(60, 119, 251,1)",
 				pointStrokeColor: "#fff",
 				pointHighlightFill: "#fff",
 				pointHighlightStroke: "rgba(220,220,220,1)",
@@ -56,9 +56,9 @@ function createChart(){
 			},
 			{
 				label: "Comprado de contado",
-				fillColor: "rgba(151,187,205,0.2)",
+				fillColor: "rgba(127, 179, 237,0.2)",
 				strokeColor: "rgba(151,187,205,1)",
-				pointColor: "rgba(151,187,205,1)",
+				pointColor: "rgba(127, 179, 237,1)",
 				pointStrokeColor: "#fff",
 				pointHighlightFill: "#fff",
 				pointHighlightStroke: "rgba(151,187,205,1)",
@@ -80,7 +80,7 @@ function createChart(){
 		multiTooltipTemplate: "<%= formatoDinero(value)  %>",
 
 		animationSteps: 150,
-	
+
 	});
 
 }// createChart
@@ -238,7 +238,7 @@ function imgToSvg(){
 /**
  * Convert an RGB color into a hexadecimal color
  * @param array rgb
- * @return string 
+ * @return string
 **/
 function rgb2hex( rgb ) {
 	rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
@@ -248,7 +248,7 @@ function rgb2hex( rgb ) {
 /**
  * Return the hexadecimal number of a decimal number
  * @param float num
- * @return string 
+ * @return string
 **/
 function hex( num ) {
 	var hexDigits = new Array("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");
@@ -264,7 +264,7 @@ function hex( num ) {
 /**
  * Add money format to a number
  * @param float num
- * @return string 
+ * @return string
 **/
 function formatoDinero( num ){
 	var digitosDecimales = 1;
