@@ -108,34 +108,39 @@
 					<div class="[ wrapper ]">
 						<article class="[ color-light ]">
 							<h2 class="[ text-center ]">Beneficios del arrendamiento puro</h2>
-							<ul class="[ row ][ list-reset ]">
-								<div class="[ column xmall-12 medium-6 ]">
-									<li class="[ relative ]">
-										<img class="[ svg icon icon--small icon--item ][ circled ][ color-light ]" src="icons/bills.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Rentas fijas</p>
-									</li>
-									<li class="[ relative ]">
-										<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/coins.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Pago inicial mínimo</p>
-									</li>
-									<li class="[ relative ]">
-										<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/check.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Duración del contrato definida por el cliente</p>
-									</li>
-									<li class="[ relative ]">
-										<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/dollar.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Deducibilidad hasta del 100% de las rentas</p>
-									</li>
-								</div>
-								<div class="[ column xmall-12 medium-6 ]">
-									<li class="[ relative ]">
-										<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/graph-down.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Evita la descapitalización y apalancamiento</p>
-									</li>
-									<li class="[ relative ]">
-										<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/graph-down.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Reducción de gastos de mantenimiento</p>
-									</li>
-									<li class="[ relative ]">
-										<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/list.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Financiamiento opcional de equipo adicional, garantías, placas y seguros</p>
-									</li>
-								</div>
-							</ul>
+							<div class="[ row ]">
 
+
+								<div class="[ column xmall-12 medium-6 ]">
+									<ul class="[ row ][ list-reset ]">
+										<li class="[ relative ]">
+											<img class="[ svg icon icon--small icon--item ][ circled ][ color-light ]" src="icons/bills.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Rentas fijas</p>
+										</li>
+										<li class="[ relative ]">
+											<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/coins.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Pago inicial mínimo</p>
+										</li>
+										<li class="[ relative ]">
+											<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/check.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Duración del contrato definida por el cliente</p>
+										</li>
+										<li class="[ relative ]">
+											<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/dollar.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Deducibilidad hasta del 100% de las rentas</p>
+										</li>
+									</ul>
+								</div>
+								<div class="[ column xmall-12 medium-6 ]">
+									<ul class="[ row ][ list-reset ]">
+										<li class="[ relative ]">
+											<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/graph-down.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Evita la descapitalización y apalancamiento</p>
+										</li>
+										<li class="[ relative ]">
+											<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/graph-down.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Reducción de gastos de mantenimiento</p>
+										</li>
+										<li class="[ relative ]">
+											<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/list.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Financiamiento opcional de equipo adicional, garantías, placas y seguros</p>
+										</li>
+									</ul>
+								</div>
+							</div><!-- row -->
 						</article>
 					</div><!-- wrapper -->
 				</section><!-- beneficios -->
@@ -233,127 +238,130 @@
 				================================================== -->
 				<section class="[ cotizador ][ margin-bottom--large ][ bg-dark ][ padding--top-bottom ][ margin-bottom ][ color-light ]">
 					<div class="[ wrapper ]">
-						<div class="[ row ]">
-							<h2 class="[ text-center ]">Cotizador</h2>
-							<article class="[ form ][ xmall-12 ]">
-								<h3 class="[ text-center ]">Quiero cotizar:</h3>
-								<form class="[ js-forma-cotizador ]" id="form-ui">
+						<h2 class="[ text-center ]">Cotizador</h2>
+						<article class="[ form ][ xmall-12 ]">
+							<h3 class="[ text-center ]">Quiero cotizar:</h3>
+							<form class="[ js-forma-cotizador ]" id="form-ui">
 
-									<div class="[ cycle-slideshow ]"
-										data-cycle-fx="scrollHorz"
-										data-cycle-timeout="0"
-										data-cycle-speed="650"
-										data-cycle-slides="> div"
-										data-cycle-center-horz="true"
-										data-cycle-center-vert="true"
-										data-cycle-auto-height="calc"
-										data-cycle-log="false"
-									>
-										<div class="">
-											<div class="[ row ]">
-												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
-													<label class="[ field select ]">
-														<select id="tipo" name="tipo">
-															<option value="vehiculo" selected>Vehículo</option>
-															<option value="maquinaria">Maquinaria</option>
-															<option value="mobiliario">Mobiliario</option>
-														</select>
-														<i class="arrow"></i>
-													</label>
-												</fieldset>
-												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
-													<label class="field">
-														<input type="text" name="marca" class="gui-input" placeholder="Marca">
-													</label>
-												</fieldset>
-												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
-													<label class="field">
-														<input type="text" name="modelo" class="gui-input" placeholder="Modelo">
-													</label>
-												</fieldset>
-												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
-													<label class="field">
-														<p><small>Valor total</small></p>
-														<input type="text" name="valor_total" class="gui-input" placeholder="0.00">
-													</label>
-												</fieldset>
-												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
-													<label class="field">
-														<p><small>IVA</small></p>
-														<input type="text" name="iva" class="gui-input" placeholder="" value="-" disabled>
-													</label>
-												</fieldset>
-												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
-													<label class="field">
-														<p><small>Valor factura (sin IVA)</small></p>
-														<input type="text" name="valor_factura" class="gui-input" placeholder="" value="-" disabled>
-													</label>
-												</fieldset>
-												<fieldset class="[ column xmall-12 ][ margin-bottom ]">
-													<p><small>Plazo en meses</small></p>
-													<div class="[ slider-wrapper ]">
-														<div id="slider-meses"></div>
-													</div><!-- end .slider-wrapper -->
-													<p class="[ row ]"><span class="[ pull-left ][ js-meses ]">12 meses</span></p>
-												</fieldset>
-												<fieldset class="[ column xmall-12 ][ margin-bottom ]">
-													<p><small>Porcentaje (%) de enganche</small></p>
-													<div class="[ slider-wrapper ]">
-														<div id="slider-enganche"></div>
-													</div><!-- end .slider-wrapper -->
-													<p class="[ row ]"><span class="[ pull-left ][ js-porcentaje-enganche ]">0%</span></p>
-												</fieldset>
-												<fieldset class="[ column xmall-6 ][ margin-bottom ]">
-													<label class="field">
-														<p><small>Monto total a financiar</small></p>
-														<input type="text" name="monto_financiar" class="gui-input" placeholder="-" disabled>
-													</label>
-												</fieldset>
-												<fieldset class="[ column xmall-6 ][ margin-bottom ]">
-													<label class="field">
-														<p><small>Renta mensual</small></p>
-														<input type="text" name="renta_mensual" class="gui-input" placeholder="-" disabled>
-													</label>
-												</fieldset>
-												<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
-													<a class="[ button button-primary ]">Siguiente</a>
-													<p><small>Paso 1 de 2</small></p>
-												</fieldset>
-											</div><!-- row -->
-										</div>
-										<div>
-											<h3>Confirmar información</h3>
-											<div class="[ row ]">
-												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
-													<label class="field">
-														<input type="text" name="nombre" class="gui-input" placeholder="Nombre completo">
-													</label>
-												</fieldset>
-												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
-													<label class="field">
-														<input type="text" name="telefono" class="gui-input" placeholder="Teléfono">
-													</label>
-												</fieldset>
-												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
-													<label class="field">
-														<input type="text" name="compania" class="gui-input" placeholder="Compañía">
-													</label>
-												</fieldset>
-												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
-													<label class="field">
-														<input type="text" name="email" class="gui-input" placeholder="Correo electrónico">
-													</label>
-												</fieldset>
-												<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
-													<p><small>mejorar este texto de detalle de cotización de arrendamiento...</small></p>
-													<button type="submit" class="[ button button-primary ]">Generar PDF</button>
-												</fieldset>
-											</div><!-- row -->
-										</div>
-									</div><!-- cycle-slideshow -->
-									<p class="[ ][ color-intermediate ]"><small>Los importes de seguros, impuestos, comisiones y costos de accesorios no están includídos en esta cotización. La presente cotización se emite únicamente con fines informativos y podrá ser objeto de modificaciones. La celebración de cualquier contrato está sujeta a la aprobación de la solicitud de arrendamiento respectiva.</small></p>
-								</form>
-							</article>
+								<div class="[ cycle-slideshow ]"
+									data-cycle-fx="scrollHorz"
+									data-cycle-timeout="0"
+									data-cycle-speed="650"
+									data-cycle-slides="> .cycle-slide"
+									data-cycle-center-horz="true"
+									data-cycle-center-vert="true"
+									data-cycle-auto-height="calc"
+									data-cycle-log="true"
+								>
+									<div class="[ cycle-slide ][ bg-dark ][ xmall-12 ]">
+										<div class="[ row ]">
+											<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+												<label class="[ field select ]">
+													<select id="tipo" name="tipo">
+														<option value="vehiculo" selected>Vehículo</option>
+														<option value="maquinaria">Maquinaria</option>
+														<option value="mobiliario">Mobiliario</option>
+													</select>
+													<i class="arrow"></i>
+												</label>
+											</fieldset>
+											<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+												<label class="field">
+													<input type="text" name="marca" class="gui-input" placeholder="Marca">
+												</label>
+											</fieldset>
+											<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+												<label class="field">
+													<input type="text" name="modelo" class="gui-input" placeholder="Modelo">
+												</label>
+											</fieldset>
+											<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+												<label class="field">
+													<p><small>Valor total</small></p>
+													<input type="text" name="valor_total" class="gui-input" placeholder="0.00">
+												</label>
+											</fieldset>
+											<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+												<label class="field">
+													<p><small>IVA</small></p>
+													<input type="text" name="iva" class="gui-input" placeholder="" value="-" disabled>
+												</label>
+											</fieldset>
+											<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+												<label class="field">
+													<p><small>Valor factura (sin IVA)</small></p>
+													<input type="text" name="valor_factura" class="gui-input" placeholder="" value="-" disabled>
+												</label>
+											</fieldset>
+											<fieldset class="[ column xmall-12 ][ margin-bottom ]">
+												<p><small>Plazo en meses</small></p>
+												<div class="[ slider-wrapper ]">
+													<div id="slider-meses"></div>
+												</div><!-- end .slider-wrapper -->
+												<p class="[ row ]"><span class="[ pull-left ][ js-meses ]">12 meses</span></p>
+											</fieldset>
+											<fieldset class="[ column xmall-12 ][ margin-bottom ]">
+												<p><small>Porcentaje (%) de enganche</small></p>
+												<div class="[ slider-wrapper ]">
+													<div id="slider-enganche"></div>
+												</div><!-- end .slider-wrapper -->
+												<p class="[ row ]"><span class="[ pull-left ][ js-porcentaje-enganche ]">0%</span></p>
+											</fieldset>
+											<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+												<label class="field">
+													<p><small>Monto total a financiar</small></p>
+													<input type="text" name="monto_financiar" class="gui-input" placeholder="-" disabled>
+												</label>
+											</fieldset>
+											<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+												<label class="field">
+													<p><small>Renta mensual</small></p>
+													<input type="text" name="renta_mensual" class="gui-input" placeholder="-" disabled>
+												</label>
+											</fieldset>
+											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
+												<a class="[ button button-primary ][ js-cycle-next ]">Siguiente</a>
+												<p><small>Paso 1 de 2</small></p>
+											</fieldset>
+										</div><!-- row -->
+									</div><!-- cycle-slide -->
+									<div class="[ cycle-slide ][ bg-dark ][ xmall-12 ]">
+										<h3>Confirmar información</h3>
+										<div class="[ row ]">
+											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+												<label class="field">
+													<input type="text" name="nombre" class="gui-input" placeholder="Nombre completo">
+												</label>
+											</fieldset>
+											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+												<label class="field">
+													<input type="text" name="telefono" class="gui-input" placeholder="Teléfono">
+												</label>
+											</fieldset>
+											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+												<label class="field">
+													<input type="text" name="compania" class="gui-input" placeholder="Compañía">
+												</label>
+											</fieldset>
+											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+												<label class="field">
+													<input type="text" name="email" class="gui-input" placeholder="Correo electrónico">
+												</label>
+											</fieldset>
+											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
+												<p><small>mejorar este texto de detalle de cotización de arrendamiento...</small></p>
+												<button type="submit" class="[ button button-primary ]">Generar PDF</button>
+											</fieldset>
+											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
+												<a class="[ button button-primary ][ js-cycle-prev ]">Atras</a>
+												<p><small>Paso 1 de 2</small></p>
+											</fieldset>
+										</div><!-- row -->
+									</div><!-- cycle-slide -->
+								</div><!-- cycle-slideshow -->
+								<p class="[ color-light ]"><small>Los importes de seguros, impuestos, comisiones y costos de accesorios no están includídos en esta cotización. La presente cotización se emite únicamente con fines informativos y podrá ser objeto de modificaciones. La celebración de cualquier contrato está sujeta a la aprobación de la solicitud de arrendamiento respectiva.</small></p>
+							</form>
+						</article>
 					</div><!-- wrapper -->
 				</section><!-- cotizador -->
 
@@ -367,8 +375,8 @@
 							<ol>
 								<li>
 									<p>Envía tu solicitud de crédito firmada.</p>
-									<a class="[ button button-primary ]" href="pdf/Solicitud de Arrendamiento Puro (Personas Morales).pdf" target="_blank">Persona física</a>
-									<a class="[ button button-primary ]" href="pdf/Solicitud de Arrendamiento Puro (Personas Morales).pdf" target="_blank">Persona moral</a>
+									<a class="[ button button-primary ]" href="pdf/Solicitud%20de%20Arrendamiento%20Puro%20(Personas%20Morales).pdf" target="_blank">Persona física</a>
+									<a class="[ button button-primary ]" href="pdf/Solicitud%20de%20Arrendamiento%20Puro%20(Personas%20Morales).pdf" target="_blank">Persona moral</a>
 								</li>
 								<li>
 									<p class="[ margin-bottom ]">Envía los siguientes documentos:</p>
@@ -400,53 +408,96 @@
 							<h2 class="[ text-center ]">Preguntas frecuentes</h2>
 							<div class="[ row ]">
 								<div class="[ accordion-section ][ column xmall-12 medium-6 ]">
-									<p class="[ lead-text ][ color-primary ]">
+									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-1" >
-											<span class="[ toggle ]"></span> ¿Por qué me conviene el arrenamiento puro?
+											<span class="[ toggle ]"></span> ¿Cuál es el límite de renta mensual que se puede deducir sobre carros que no se consideran equipo de trabajo?
 										</a>
 									</p>
 									<div id="accordion-1" class="[ accordion-section-content ]">
-										<p>Por que te da beneficios pedereitor rey, finaciamiento audaz, mamador.</p>
+										<ul>
+											<li>De acuerdo al artículo 28 de la ley del ISR: "Tratándose de arrendamiento puro sólo será deducible, según lo que establece la Ley del Impuesto Sobre la Renta (LISR), hasta $200.00 + IVA diarios para el caso de automóviles"</li>
+											<li>Para todo lo demás que no sean automóviles la ley no establece un límite de renta en cuestión de deducibilidad</li>
+										</ul>
 									</div><!--end .accordion-section-content-->
 								</div>
-								<div class="[ column xmall-12 medium-6 ]">
-									<p class="[ lead-text ][ color-primary ]">
+								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
+									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-2" >
-											<span class="[ toggle ]"></span> ¿Por qué me conviene el arrenamiento puro?
+											<span class="[ toggle ]"></span> ¿Qué integra el pago inicial?
 										</a>
 									</p>
 									<div id="accordion-2" class="[ accordion-section-content ]">
-										<p>Por que está de poca madre mi broder...</p>
+										<p>En el pago inicial se incluyen los siguientes conceptos: enganche o pago inicial, renta en depósito y comisión. Si el cliente decide pagar de contado y a través de nosotros el seguro y placas, esto también se incluirá en el pago inicial.</p>
 									</div><!--end .accordion-section-content-->
 								</div>
-								<div class="[ column xmall-12 medium-6 ]">
-									<p class="[ lead-text ][ color-primary ]">
+								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
+									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-3" >
-											<span class="[ toggle ]"></span> ¿Por qué me conviene el arrenamiento puro?
+											<span class="[ toggle ]"></span> ¿La opción de compra quién la puede ejercer?
 										</a>
 									</p>
 									<div id="accordion-3" class="[ accordion-section-content ]">
-										<p>Por que está de poca madre mi broder...</p>
+										<p>La debe de ejercer un tercero al final del contrato ya que si la ejerce el mismo arrendatario, el fisco le pudiera observar que en lugar de ser un arrendamiento puro fue un arrendamiento financiero.</p>
 									</div><!--end .accordion-section-content-->
 								</div>
-								<div class="[ column xmall-12 medium-6 ]">
-									<p class="[ lead-text ][ color-primary ]">
+								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
+									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-4" >
-											<span class="[ toggle ]"></span> ¿Por qué me conviene el arrenamiento puro?
+											<span class="[ toggle ]"></span> ¿Qué diferencia hay entre arrendamiento puro y financiero?
 										</a>
 									</p>
 									<div id="accordion-4" class="[ accordion-section-content ]">
-										<p>Por que está de poca madre mi broder...</p>
+										<p>El arrendamiento puro es la figura bajo la cual rentas el bien por un plazo determinado sin que el bien esté a nombre del cliente. Bajo el arrendamiento financiero, el bien está, desde un inicio, a nombre del arrendatario y mensualmente amortiza capital e intereses.</p>
 									</div><!--end .accordion-section-content-->
 								</div>
-								<div class="[ column xmall-12 medium-6 ]">
-									<p class="[ lead-text ][ color-primary ]">
+								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
+									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-5" >
-											<span class="[ toggle ]"></span> ¿Por qué me conviene el arrenamiento puro?
+											<span class="[ toggle ]"></span> ¿Se puede hacer arrendamiento sobre autos usados?
 										</a>
 									</p>
 									<div id="accordion-5" class="[ accordion-section-content ]">
-										<p>Por que está de poca madre mi broder...</p>
+										<p>Lo ideal es que se haga sobre autos nuevos, pero no estamos cerrados a hacerlo en ocasiones especiales y en unidades que estén en buenas condiciones.</p>
+									</div><!--end .accordion-section-content-->
+								</div>
+								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
+									<p class="[ color-primary ]">
+										<a class="[ accordion-section-title ]" href="#accordion-6" >
+											<span class="[ toggle ]"></span> ¿Qué plazos damos en el contrato inicial y cuantos meses más en el refinanciamiento?
+										</a>
+									</p>
+									<div id="accordion-6" class="[ accordion-section-content ]">
+										<p>El contrato inicial puede ser a 12, 24, 36 y 48 meses y al término del contrato el cliente puede refinanciar su valor residual por un plazo de 12 meses más.</p>
+									</div><!--end .accordion-section-content-->
+								</div>
+								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
+									<p class="[ color-primary ]">
+										<a class="[ accordion-section-title ]" href="#accordion-7" >
+											<span class="[ toggle ]"></span> ¿Qué días vencen las rentas?
+										</a>
+									</p>
+									<div id="accordion-7" class="[ accordion-section-content ]">
+										<p>Todas las rentas vencen los días 1ero de cada mes y si cae en día inhábil se recorre al próximo día hábil.</p>
+									</div><!--end .accordion-section-content-->
+								</div>
+								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
+									<p class="[ color-primary ]">
+										<a class="[ accordion-section-title ]" href="#accordion-8" >
+											<span class="[ toggle ]"></span> ¿Qué tasa de intereses moratorios cobramos?
+										</a>
+									</p>
+									<div id="accordion-8" class="[ accordion-section-content ]">
+										<p>3% mensual por cada día que el cliente se atrase en sus pagos.</p>
+									</div><!--end .accordion-section-content-->
+								</div>
+								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
+									<p class="[ color-primary ]">
+										<a class="[ accordion-section-title ]" href="#accordion-9" >
+											<span class="[ toggle ]"></span> ¿Quién debe pagar las placas, verificación, tenencia, mantenimiento y seguro de los coches arrendados?
+										</a>
+									</p>
+									<div id="accordion-9" class="[ accordion-section-content ]">
+										<p>El arrendatario debe cubrir todos los gastos antes mencionados y los necesarios para el correcto funcionamiento del bien.</p>
 									</div><!--end .accordion-section-content-->
 								</div>
 							</div><!-- row -->
@@ -464,7 +515,7 @@
 							<div class="[ row ]">
 								<h2>¿Tienes alguna duda? <br> Te podemos ayudar</h2>
 								<article class="[ form ]">
-									<form class="[ js-contact-form ]" action="">
+									<form class="[ js-contact-form ]">
 										<div class="[ row ]">
 											<fieldset class="[ column xmall-12 ][ margin-bottom--large ]">
 												<label class="field">
@@ -624,6 +675,14 @@
 			$('.js-contact-form').submit( function(e){
 				e.preventDefault();
 				sendContactEmail( $(this) );
+			});
+
+			$('.js-cycle-next').on('click', function(){
+				$('.cycle-slideshow').cycle('next');
+			});
+
+			$('.js-cycle-prev').on('click', function(){
+				$('.cycle-slideshow').cycle('prev');
 			});
 
 		</script>
