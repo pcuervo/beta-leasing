@@ -22,6 +22,7 @@
 		}, options);
 
 		$('input[name="valor_total"]').keydown( function(e) {
+
 			if( invalidKey(e) ){
 				e.preventDefault();
 				return;
@@ -33,6 +34,11 @@
 		});
 
 		$('input[name="valor_total"]').keyup( function(e) {
+
+			if( $(this).val() == '' ){
+				$('.js-siguiente-fieldset').addClass('hidden')
+			}
+
 			if( invalidKey(e) ){
 				e.preventDefault();
 				return;
@@ -44,6 +50,11 @@
 
 			$(this).val(function(i,v) {
 				actualizarCotizacion( removeFormatoDinero( v ) );
+
+				if( parseInt( removeFormatoDinero( v ) ) > 0 && $('.js-siguiente-fieldset').hasClass('hidden') ){
+					$('.js-siguiente-fieldset').removeClass('hidden')
+				}
+
 				return v;
 			});
 
@@ -94,21 +105,23 @@
 
 		function actualizarCotizacion( valorTotal ){
 
-			var valorFactura, pagoInicial, montoFinanciar, valorResidual, plazo, tasaMensual, porcentajeEnganche;
+			var pagoInicial;
 
 			setValorFactura( valorTotal );
 			setIVA( getValorFactura() );
 			pagoInicial = getPagoInicial( getPorcentajeEnganche(), getValorFactura() );
 			setMontoFinanciar( getValorFactura(), pagoInicial );
-
 			setRentaMensual( calculaRentaMensual( getTasaMensual(), getPlazoMeses(), getMontoFinanciar(),  getValorResidual() ) * 1.16 );
 
-			// console.clear();
-			// console.log('tasa mensual: ' + tasaMensual );
-			// console.log('plazo: ' + plazo );
-			// console.log('monto a financiar: $' + montoFinanciar );
-			// console.log('valorResidual: $' + valorResidual );
-			// console.log( 'pago mensual: $' + calculaRentaMensual( tasaMensual, plazo, montoFinanciar,  valorResidual ) * 1.16 );
+			//console.clear();
+			// console.log('porcentaje enganche: ' + getPorcentajeEnganche() );
+			// console.log('valor factura: ' + getValorFactura() );
+			// console.log('pago inicial: ' + pagoInicial );
+			// console.log('tasa mensual: ' + getTasaMensual() );
+			// console.log('plazo: ' + getPlazoMeses() );
+			// console.log('monto a financiar: $' + getMontoFinanciar() );
+			// console.log('valorResidual: $' + getValorResidual() );
+			// console.log( 'pago mensual: $' + calculaRentaMensual( getTasaMensual(), getPlazoMeses(), getMontoFinanciar(),  getValorResidual() ) * 1.16 );
 		}// actualizarCotizacion
 
 		function calculaRentaMensual( tasaMensual, plazo, montoFinanciar, valorResidual ){
@@ -192,7 +205,7 @@
 		}
 
 		function getPorcentajeEnganche(){
-			var porcentajeEnganche = $( '.js-porcentaje-enganche' ).text();
+			var porcentajeEnganche = $( '.js-porcentaje-enganche' ).first().text();
 			return porcentajeEnganche.slice(0, -1) / 100;
 		}
 

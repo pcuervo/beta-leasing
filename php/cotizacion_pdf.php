@@ -29,6 +29,7 @@ require_once('tcpdf_include.php');
 
 // Get POST variables
 $cliente = $_POST['cliente']; 
+$email =isset( $_POST['email'] ) ? $_POST['email'] : '-' ; 
 $compania = isset( $_POST['compania'] ) ? $_POST['compania'] : '-' ; 
 $tipo = $_POST['tipo']; 
 $marca = isset( $_POST['marca'] ) ? $_POST['marca'] : '-' ; 
@@ -258,7 +259,11 @@ $pdf->lastPage();
 $filename .= '.pdf';
 $pdf->Output( $filename, 'F' );
 
-echo '/beta-leasing/cotizaciones/' . $filename;
+$pdf_url = '/beta-leasing/cotizaciones/' . $filename;
+
+//send_email_cotizacion( $nombre, $email, $compania, $pdf_url );
+
+echo $pdf_url;
 
 //============================================================+
 // END OF FILE
@@ -283,3 +288,23 @@ function to_slug( $text )
 
 	return $text;
 }// to_slug
+
+function send_email_cotizacion( $nombre, $email, $compania, $pdf_url ){
+
+	$from_email = 'ventas@betaleasing.com';
+	$to_email = 'miguel@pcuervo.com';
+
+	$subject = $nombre . ' ha creado su cotización a través de www.betaleasing.com: ';
+	$headers = 'From: Nombre <' . $from_email . '>' . "\r\n";
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+	$message = '<html><body>';
+	$message .= '<h3>Datos de contacto</h3>';
+	$message .= '<p>Nombre: '.$nombre.'</p>';	
+	$message .= '<p>Email: '. $email . '</p>';
+	$message .= '<p>Cotización: '. $pdf_url . '</p>';
+	$message .= '</body></html>';
+
+	mail($to_email, $subject, $message, $headers );
+
+}// send_email_cotizacion

@@ -337,7 +337,7 @@
 													<input type="text" name="renta_mensual" class="gui-input" placeholder="-" disabled>
 												</label>
 											</fieldset>
-											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
+											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ][ js-siguiente-fieldset ][ hidden ]">
 												<a class="[ button button--primary ][ js-cycle-next ]">Siguiente</a>
 												<p><small>Paso 1 de 2</small></p>
 											</fieldset>
@@ -643,10 +643,17 @@
 				}
 			});
 
-			$('.js-forma-cotizador').submit( function(e){
-				e.preventDefault();
+			// $('.js-forma-cotizador').submit( function(e){
+			// 	e.preventDefault();
 
-				$cotizador.generaPDF();
+			// 	$cotizador.generaPDF();
+			// });
+
+			$('.js-forma-cotizador').validate({
+				submitHandler:function(){
+					// sendMoreInfoEmail();
+					console.log('estamos aquí tomandooooo');
+				}
 			});
 
 			$('#slider-enganche').slider({
