@@ -641,10 +641,17 @@
 				}
 			});
 
-			$('.js-forma-cotizador').submit( function(e){
-				e.preventDefault();
+			// $('.js-forma-cotizador').submit( function(e){
+			// 	e.preventDefault();
 
-				$cotizador.generaPDF();
+			// 	$cotizador.generaPDF();
+			// });
+
+			$('.js-forma-cotizador').validate({
+				submitHandler:function(){
+					// sendMoreInfoEmail();
+					console.log('estamos aquí tomandooooo');
+				}
 			});
 
 			$('#slider-enganche').slider({
