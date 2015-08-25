@@ -97,6 +97,16 @@ fieldset{
 .form input:focus:-ms-input-placeholder,
 .form textarea:focus:-ms-input-placeholder { color: fade(@light, 50%); }
 
+.form input:invalid { -moz-box-shadow: none; box-shadow: none;  }
+.form .gui-light::-webkit-input-placeholder{ color: fade(@dark, 50%); }
+.form .gui-light:focus::-webkit-input-placeholder{ color: fade(@dark, 50%); }
+.form .gui-light:-moz-placeholder{ color: fade(@dark, 50%); }
+.form .gui-light:focus:-moz-placeholder{ color: fade(@dark, 50%); }
+.form .gui-light::-moz-placeholder { color: fade(@dark, 50%); opacity: 1; }
+.form .gui-light:focus::-moz-placeholder { color: fade(@dark, 50%); opacity: 1; }
+.form .gui-light:-ms-input-placeholder { color: fade(@dark, 50%); }
+.form .gui-light:focus:-ms-input-placeholder { color: fade(@dark, 50%); }
+
 /* @element general styling :: fonts :: adjust accordingly
 ------------------------------------------------------------- */
 .form label,
@@ -204,6 +214,14 @@ fieldset{
 	*zoom: 1;
 }
 
+.form .gui-input.gui-light,
+.form .gui-textarea.gui-light{
+	border: 1px solid @intermediate;
+	background: @light;
+	color: @intermediate;
+	text-align: left;
+}
+
 /* @styling inputs and textareas
 ------------------------------------------- */
 .form .gui-input,
@@ -236,7 +254,7 @@ fieldset{
 .form .select { border:0; z-index:10; }
 .form .select > select {
 	display: block;
-	padding:9px 10px;
+	padding: 9px 30px 9px 9px;
 	-webkit-appearance:none;
 	-moz-appearance:none;
 	appearance:none;
@@ -1045,11 +1063,12 @@ fieldset{
 .form .file .gui-file[disabled] + .gui-input,
 .form .file .gui-file[disabled]:hover + .gui-input,
 .form .gui-textarea[disabled] ~ .input-hint {
-  background-color: #f4f6f6;
-  border-color: #d5dbdb!important;
-  cursor: default;
-  color: #d5dbdb;
-  opacity:0.7;
+	padding: 5px;
+	background-color: @primary;
+	cursor: default;
+	font-size: 18px;
+	font-weight: bold;
+	color: @light;
 }
 
 .form input[disabled] ~ .field-icon i,

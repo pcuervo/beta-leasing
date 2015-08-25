@@ -21,7 +21,20 @@
  * Unique sizes
 **/
 
-.icon--beta-horizontal, .icon--beta-vertical{ width: 180px; }
+.icon--beta-horizontal{
+	width: 180px;
+
+	@media (min-width: @xlarge){
+		width: 500px;
+
+		& path{
+			fill: @light !important;
+			.drop-shadow( 0 1px 3px rgba(0, 0, 0, 0.25) );
+		}
+	}
+}
+
+.icon--beta-vertical{ width: 110px; }
 
 
 

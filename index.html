@@ -54,26 +54,29 @@
 			<p class="[ chromeframe ]">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
 
-		<nav class="[ xmall-12 ][ padding--top-bottom--small ][ border-top-intemediate ][ bg-light ][ color-intermediate ][ text-center ]">
-			<div class="[ xmall-1-5 ][ inline-block align-top ]">
-				<img class="[ svg icon icon--small ]" src="icons/coins.svg">
-				<p class="[ xmall ]">¿Qué es Beta Leasing?</p>
+		<nav class="[ padding--top-bottom--small ][ bg-light ][ color-intermediate ][ text-center ]">
+			<div class="[ nav__item ][ js-anchor ][ shown--xlarge ]" data-section="hero-home">
+				<img class="[ svg icon icon--beta-vertical ][ center block ]" src="icons/beta-vertical.svg">
+			</div>
+			<div class="[ xmall-1-5 ][ nav__item ][ js-anchor ]" data-section="beneficios">
+				<img class="[ svg icon ][ nav__icon ]" src="icons/coins.svg">
+				<p class="[ nav__text ]">¿Qué es Beta Leasing?</p>
 			</div><div
-				class="[ xmall-1-5 ][ inline-block align-top ]">
-				<img class="[ svg icon icon--small ]" src="icons/calculator.svg">
-				<p class="[ xmall ]">Cotizador</p>
+			class="[ xmall-1-5 ][ nav__item ][ js-anchor ]" data-section="cotizador">
+				<img class="[ svg icon ][ nav__icon ]" src="icons/calculator.svg">
+				<p class="[ nav__text ]">Cotizador</p>
 			</div><div
-				class="[ xmall-1-5 ][ inline-block align-top ]">
-				<img class="[ svg icon icon--small ]" src="icons/check.svg">
-				<p class="[ xmall ]">Solicitud de crédito</p>
+			class="[ xmall-1-5 ][ nav__item ][ js-anchor ]" data-section="tramite-arrendamiento">
+				<img class="[ svg icon ][ nav__icon ]" src="icons/check.svg">
+				<p class="[ nav__text ]">Solicitud de crédito</p>
 			</div><div
-				class="[ xmall-1-5 ][ inline-block align-top ]">
-				<img class="[ svg icon icon--small ]" src="icons/chats.svg">
-				<p class="[ xmall ]">Preguntas frecuentes</p>
+			class="[ xmall-1-5 ][ nav__item ][ js-anchor ]" data-section="preguntas-frecuentes">
+				<img class="[ svg icon ][ nav__icon ]" src="icons/chats.svg">
+				<p class="[ nav__text ]">Preguntas frecuentes</p>
 			</div><div
-				class="[ xmall-1-5 ][ inline-block align-top ]">
-				<img class="[ svg icon icon--small ]" src="icons/phone.svg">
-				<p class="[ xmall ]">Contáctanos</p>
+			class="[ xmall-1-5 ][ nav__item ][ js-anchor ]" data-section="contacto">
+				<img class="[ svg icon ][ nav__icon ]" src="icons/phone.svg">
+				<p class="[ nav__text ]">Contáctanos</p>
 			</div>
 		</nav>
 
@@ -89,15 +92,18 @@
 				==== HERO
 				================================================== -->
 				<section class="[ hero hero-home ]">
-					<div class="[ screen screen-dark--30 ][ z-index-1 ]"></div>
+					<div class="[ screen screen-dark--40 ][ z-index-1 ]"></div>
 					<div class="[ padding--top-bottom ][ relative z-index-2 ]">
 						<div class="[ wrapper ][ text-center ]">
 							<h1 class="[ text-shadow ][ color-light ][ xmall-12 medium-8 ][ center block ]">Beta Leasing es tu mejor opción para la renovación de vehículos, maquinaria y equipo, ofreciendo soluciones personalizadas de arrendamiento puro</h1>
-							<a class="[ button button--primary ]" href="#cotizador">simula tu cotización en línea</a>
-							<a class="[ color-light ][ block ][ js-anchor ]" href="#beneficios" >
-								<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
-							</a><!-- arrow -->
+							<img class="[ svg icon icon--beta-horizontal ][ center block ][ margin-bottom--large ][ shown--xlarge ]" src="icons/beta-horizontal.svg">
 						</div><!-- wrapper -->
+					</div>
+					<div class="[ center-bottom ][ text-center ][ z-index-2 ]">
+						<a class="[ button button--primary ]" href="#cotizador">simula tu cotización en línea</a>
+						<a class="[ color-light ][ block ][ js-anchor ]" data-section="beneficios" >
+							<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
+						</a><!-- arrow -->
 					</div>
 				</section><!-- hero-home -->
 
@@ -258,13 +264,13 @@
 									data-cycle-center-horz="true"
 									data-cycle-center-vert="true"
 									data-cycle-auto-height="calc"
-									data-cycle-log="true"
+									data-cycle-log="false"
 								>
-									<div class="[ cycle-slide ][ bg-intermediate ][ xmall-12 ]">
+									<div class="[ cycle-slide ][ bg-intermediate ][ xmall-12 ][ no-margin ]">
 										<div class="[ row ]">
 											<fieldset class="[ column xmall-4 ][ margin-bottom ]">
 												<label class="[ field select ]">
-													<select id="tipo" name="tipo">
+													<select class="[ ellipsis ]" id="tipo" name="tipo">
 														<option value="vehiculo" selected>Vehículo</option>
 														<option value="maquinaria">Maquinaria</option>
 														<option value="mobiliario">Mobiliario</option>
@@ -332,7 +338,7 @@
 											</fieldset>
 										</div><!-- row -->
 									</div><!-- cycle-slide -->
-									<div class="[ cycle-slide ][ bg-intermediate ][ xmall-12 ]">
+									<div class="[ cycle-slide ][ bg-intermediate ][ xmall-12 ][ no-margin ]">
 										<h3>Confirmar información</h3>
 										<div class="[ row ]">
 											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
@@ -505,8 +511,8 @@
 				<!-- =================================================
 				==== CONTACTO
 				================================================== -->
-				<section class="[ hero hero-contacto ]">
-					<div class="[ screen screen-dark--30 ][ z-index-1 ]"></div>
+				<section class="[ contacto ][ hero hero-contacto ]">
+					<div class="[ screen screen-dark--40 ][ z-index-1 ]"></div>
 					<div class="[ padding--top-bottom ][ relative z-index-2 ]">
 						<div class="[ wrapper ][ text-center ]">
 							<div class="[ row ]">
@@ -514,23 +520,23 @@
 								<article class="[ form ]">
 									<form class="[ js-contact-form ]">
 										<div class="[ row ]">
-											<fieldset class="[ column xmall-12 ][ margin-bottom--large ]">
+											<fieldset class="[ column xmall-12 ][ margin-bottom ]">
 												<label class="field">
-													<input type="text" name="nombre" class="[ gui-input ][ required ]" placeholder="Nombre">
+													<input type="text" name="nombre" class="[ gui-input gui-light ][ required ]" placeholder="Nombre">
 												</label>
 											</fieldset>
-											<fieldset class="[ column xmall-12 ][ margin-bottom--large ]">
+											<fieldset class="[ column xmall-12 ][ margin-bottom ]">
 												<label class="field">
-													<input type="text" name="email" class="[ gui-input ][ required email ]" placeholder="Correo electrónico">
+													<input type="text" name="email" class="[ gui-input gui-light ][ required email ]" placeholder="Correo electrónico">
 												</label>
 											</fieldset>
-											<fieldset class="[ column xmall-12 ][ margin-bottom--large ]">
+											<fieldset class="[ column xmall-12 ][ margin-bottom ]">
 												<label class="field">
-													<textarea class="[ gui-textarea ][ required ]" name="mensaje" placeholder="mensaje"></textarea>
+													<textarea class="[ gui-textarea gui-light ][ required ]" name="mensaje" placeholder="Mensaje"></textarea>
 												</label>
 											</fieldset>
 											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-right ]">
-												<button type="submit" class="[ button button--primary button--large ]">Enviar</button>
+												<button type="submit" class="[ button button--primary ]">Enviar</button>
 											</fieldset>
 										</div>
 									</form>
@@ -680,6 +686,11 @@
 
 			$('.js-cycle-prev').on('click', function(){
 				$('.cycle-slideshow').cycle('prev');
+			});
+
+			$('.js-anchor').on('click', function(){
+				var section = $(this).data('section');
+				scrollTo('.'+section, 0, 250);
 			});
 
 		</script>
