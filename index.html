@@ -100,7 +100,7 @@
 						</div><!-- wrapper -->
 					</div>
 					<div class="[ center-bottom ][ text-center ][ z-index-2 ]">
-						<a class="[ button button--primary ]" href="#cotizador">simula tu cotización en línea</a>
+						<a class="[ button button--primary ][ js-anchor ]" data-section="cotizador">simula tu cotización en línea</a>
 						<a class="[ color-light ][ block ][ js-anchor ]" data-section="beneficios" >
 							<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
 						</a><!-- arrow -->
@@ -420,88 +420,92 @@
 						<article class="[ accordion ]">
 							<h2 class="[ text-center ]">Preguntas frecuentes</h2>
 							<div class="[ row ]">
-								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
-									<p class="[ color-primary ]">
-										<a class="[ accordion-section-title ]" href="#accordion-1" >
-											¿Cuál es el límite de renta mensual que se puede deducir sobre carros que no se consideran equipo de trabajo?
-										</a>
-									</p>
-									<div id="accordion-1" class="[ accordion-section-content ]">
-										<ul class="[ list-reset ][ no-margin ]">
-											<li>De acuerdo al artículo 28 de la ley del ISR: "Tratándose de arrendamiento puro sólo será deducible, según lo que establece la Ley del Impuesto Sobre la Renta (LISR), hasta $200.00 + IVA diarios para el caso de automóviles"</li>
-											<li>Para todo lo demás que no sean automóviles la ley no establece un límite de renta en cuestión de deducibilidad</li>
-										</ul>
-									</div><!--end .accordion-section-content-->
+								<div class="[ column xmall-12 medium-6 ]">
+									<div class="[ accordion-section ][ margin-bottom--small ]">
+										<p class="[ color-primary ]">
+											<a class="[ accordion-section-title ]" href="#accordion-1" >
+												¿Cuál es el límite de renta mensual que se puede deducir sobre carros que no se consideran equipo de trabajo?
+											</a>
+										</p>
+										<div id="accordion-1" class="[ accordion-section-content ]">
+											<ul class="[ list-reset ][ no-margin ]">
+												<li>De acuerdo al artículo 28 de la ley del ISR: "Tratándose de arrendamiento puro sólo será deducible, según lo que establece la Ley del Impuesto Sobre la Renta (LISR), hasta $200.00 + IVA diarios para el caso de automóviles"</li>
+												<li>Para todo lo demás que no sean automóviles la ley no establece un límite de renta en cuestión de deducibilidad</li>
+											</ul>
+										</div><!--end .accordion-section-content-->
+									</div>
+									<div class="[ accordion-section ][ margin-bottom--small ]">
+										<p class="[ color-primary ]">
+											<a class="[ accordion-section-title ]" href="#accordion-2" >
+												¿Qué integra el pago inicial?
+											</a>
+										</p>
+										<div id="accordion-2" class="[ accordion-section-content ]">
+											<p>En el pago inicial se incluyen los siguientes conceptos: enganche o pago inicial, renta en depósito y comisión. Si el cliente decide pagar de contado y a través de nosotros el seguro y placas, esto también se incluirá en el pago inicial.</p>
+										</div><!--end .accordion-section-content-->
+									</div>
+									<div class="[ accordion-section ][ margin-bottom--small ]">
+										<p class="[ color-primary ]">
+											<a class="[ accordion-section-title ]" href="#accordion-4" >
+												¿Qué diferencia hay entre arrendamiento puro y financiero?
+											</a>
+										</p>
+										<div id="accordion-4" class="[ accordion-section-content ]">
+											<p>El arrendamiento puro es la figura bajo la cual rentas el bien por un plazo determinado sin que el bien esté a nombre del cliente. Bajo el arrendamiento financiero, el bien está, desde un inicio, a nombre del arrendatario y mensualmente amortiza capital e intereses.</p>
+										</div><!--end .accordion-section-content-->
+									</div>
+									<div class="[ accordion-section ][ margin-bottom--small ]">
+										<p class="[ color-primary ]">
+											<a class="[ accordion-section-title ]" href="#accordion-5" >
+												¿Se puede hacer arrendamiento sobre autos usados?
+											</a>
+										</p>
+										<div id="accordion-5" class="[ accordion-section-content ]">
+											<p>Lo ideal es que se haga sobre autos nuevos, pero no estamos cerrados a hacerlo en ocasiones especiales y en unidades que estén en buenas condiciones.</p>
+										</div><!--end .accordion-section-content-->
+									</div>
 								</div>
-								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
-									<p class="[ color-primary ]">
-										<a class="[ accordion-section-title ]" href="#accordion-2" >
-											¿Qué integra el pago inicial?
-										</a>
-									</p>
-									<div id="accordion-2" class="[ accordion-section-content ]">
-										<p>En el pago inicial se incluyen los siguientes conceptos: enganche o pago inicial, renta en depósito y comisión. Si el cliente decide pagar de contado y a través de nosotros el seguro y placas, esto también se incluirá en el pago inicial.</p>
-									</div><!--end .accordion-section-content-->
-								</div>
-								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
-									<p class="[ color-primary ]">
-										<a class="[ accordion-section-title ]" href="#accordion-4" >
-											¿Qué diferencia hay entre arrendamiento puro y financiero?
-										</a>
-									</p>
-									<div id="accordion-4" class="[ accordion-section-content ]">
-										<p>El arrendamiento puro es la figura bajo la cual rentas el bien por un plazo determinado sin que el bien esté a nombre del cliente. Bajo el arrendamiento financiero, el bien está, desde un inicio, a nombre del arrendatario y mensualmente amortiza capital e intereses.</p>
-									</div><!--end .accordion-section-content-->
-								</div>
-								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
-									<p class="[ color-primary ]">
-										<a class="[ accordion-section-title ]" href="#accordion-5" >
-											¿Se puede hacer arrendamiento sobre autos usados?
-										</a>
-									</p>
-									<div id="accordion-5" class="[ accordion-section-content ]">
-										<p>Lo ideal es que se haga sobre autos nuevos, pero no estamos cerrados a hacerlo en ocasiones especiales y en unidades que estén en buenas condiciones.</p>
-									</div><!--end .accordion-section-content-->
-								</div>
-								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
-									<p class="[ color-primary ]">
-										<a class="[ accordion-section-title ]" href="#accordion-6" >
-											¿Qué plazos damos en el contrato inicial y cuantos meses más en el refinanciamiento?
-										</a>
-									</p>
-									<div id="accordion-6" class="[ accordion-section-content ]">
-										<p>El contrato inicial puede ser de 12 a 48 meses y al término del contrato el cliente puede solicitar re financiar su valor residual por un plazo de 12 meses más.</p>
-									</div><!--end .accordion-section-content-->
-								</div>
-								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
-									<p class="[ color-primary ]">
-										<a class="[ accordion-section-title ]" href="#accordion-7" >
-											¿Qué días vencen las rentas?
-										</a>
-									</p>
-									<div id="accordion-7" class="[ accordion-section-content ]">
-										<p>Todas las rentas vencen los días 1ero de cada mes y si cae en día inhábil se recorre al próximo día hábil.</p>
-									</div><!--end .accordion-section-content-->
-								</div>
-								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
-									<p class="[ color-primary ]">
-										<a class="[ accordion-section-title ]" href="#accordion-8" >
-											¿Cual es la tasa de intereses moratorios?
-										</a>
-									</p>
-									<div id="accordion-8" class="[ accordion-section-content ]">
-										<p>3% mensual por cada día que el cliente se atrase en sus pagos.</p>
-									</div><!--end .accordion-section-content-->
-								</div>
-								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
-									<p class="[ color-primary ]">
-										<a class="[ accordion-section-title ]" href="#accordion-9" >
-											¿Quién debe pagar las placas, verificación, tenencia, mantenimiento y seguro de los coches arrendados?
-										</a>
-									</p>
-									<div id="accordion-9" class="[ accordion-section-content ]">
-										<p>El arrendatario debe cubrir todos los gastos antes mencionados y los necesarios para el correcto funcionamiento del bien.</p>
-									</div><!--end .accordion-section-content-->
+								<div class="[ column xmall-12 medium-6 ]">
+									<div class="[ accordion-section ][ margin-bottom--small ]">
+										<p class="[ color-primary ]">
+											<a class="[ accordion-section-title ]" href="#accordion-6" >
+												¿Qué plazos damos en el contrato inicial y cuantos meses más en el refinanciamiento?
+											</a>
+										</p>
+										<div id="accordion-6" class="[ accordion-section-content ]">
+											<p>El contrato inicial puede ser de 12 a 48 meses y al término del contrato el cliente puede solicitar re financiar su valor residual por un plazo de 12 meses más.</p>
+										</div><!--end .accordion-section-content-->
+									</div>
+									<div class="[ accordion-section ][ margin-bottom--small ]">
+										<p class="[ color-primary ]">
+											<a class="[ accordion-section-title ]" href="#accordion-7" >
+												¿Qué días vencen las rentas?
+											</a>
+										</p>
+										<div id="accordion-7" class="[ accordion-section-content ]">
+											<p>Todas las rentas vencen los días 1ero de cada mes y si cae en día inhábil se recorre al próximo día hábil.</p>
+										</div><!--end .accordion-section-content-->
+									</div>
+									<div class="[ accordion-section ][ margin-bottom--small ]">
+										<p class="[ color-primary ]">
+											<a class="[ accordion-section-title ]" href="#accordion-8" >
+												¿Cual es la tasa de intereses moratorios?
+											</a>
+										</p>
+										<div id="accordion-8" class="[ accordion-section-content ]">
+											<p>3% mensual por cada día que el cliente se atrase en sus pagos.</p>
+										</div><!--end .accordion-section-content-->
+									</div>
+									<div class="[ accordion-section ][ margin-bottom--small ]">
+										<p class="[ color-primary ]">
+											<a class="[ accordion-section-title ]" href="#accordion-9" >
+												¿Quién debe pagar las placas, verificación, tenencia, mantenimiento y seguro de los coches arrendados?
+											</a>
+										</p>
+										<div id="accordion-9" class="[ accordion-section-content ]">
+											<p>El arrendatario debe cubrir todos los gastos antes mencionados y los necesarios para el correcto funcionamiento del bien.</p>
+										</div><!--end .accordion-section-content-->
+									</div>
 								</div>
 							</div><!-- row -->
 						</article>
