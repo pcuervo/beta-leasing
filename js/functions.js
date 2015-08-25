@@ -46,12 +46,12 @@ function createChart(){
 		datasets: [
 			{
 				label: "Arrendamiento puro",
-				fillColor: "rgba(60, 119, 251,0.2)",
-				strokeColor: "rgba(220,220,220,1)",
-				pointColor: "rgba(60, 119, 251,1)",
+				fillColor: "rgba(3, 2, 115,0.2)",
+				strokeColor: "rgba(3, 2, 115,1)",
+				pointColor: "rgba(3, 2, 115,1)",
 				pointStrokeColor: "#fff",
 				pointHighlightFill: "#fff",
-				pointHighlightStroke: "rgba(220,220,220,1)",
+				pointHighlightStroke: "rgba(3, 2, 115,1)",
 				data: [2708.3, 16250, 29791.6, 43333.3, 56875, 70416.6, 83958.3, 97500]
 			},
 			{
@@ -321,7 +321,7 @@ function hex( num ) {
  * @return string
 **/
 function formatoDinero( num ){
-	var digitosDecimales = 1;
+	var digitosDecimales = 0;
 	var signo = num < 0 ? "-" : "";
 	var numConDecimales = parseInt( num = Math.abs( +num || 0 ).toFixed(digitosDecimales) ) + "";
 	var posicionComa = ( posicionComa = numConDecimales.length ) > 3 ? posicionComa % 3 : 0;
