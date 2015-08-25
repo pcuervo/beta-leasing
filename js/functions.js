@@ -136,21 +136,6 @@ function sendContactEmail( form ){
 
 }// sendContactEmail
 
-function changeBackgroundImage(element){
-	var total = 3;
-	var rands = new Array();
-
-	for (i=1; i<=total; i++) {
-		console.log(i);
-		setTinterval(function(){
-			console.log(i);
-			$(element).css('background-image', 'url(images/hero-home-'+i+'.jpg)');
-		}, 3000, );
-	};
-}
-
-
-
 /*------------------------------------*\
 	#GET/SET FUNCTIONS
 \*------------------------------------*/
