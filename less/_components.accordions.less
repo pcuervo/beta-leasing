@@ -9,6 +9,8 @@
 /*----- Section Titles -----*/
 .accordion-section-title {
 	width:100%;
+	font-weight: bold;
+	text-decoration: none;
 	display:inline-block;
 	.transition(all linear 0.15s);
 }
@@ -21,12 +23,6 @@
 .accordion-section:last-child .accordion-section-title {
 	border-bottom:none;
 }
-
-/*----- Section Titles toggle -----*/
-.accordion-section-title .toggle{ .transition; }
-.accordion-section-title .toggle:after{ content: '+'; }
-
-.accordion-section-title.active .toggle:after{ content: '-'; }
 
 /*----- Section Content -----*/
 .accordion-section-content {

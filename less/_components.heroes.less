@@ -1,10 +1,15 @@
 .hero{
+	min-height: 70vh;
 	background-size: cover; background-position: center center;
 	position: relative;
 	.transition;
 
-	@media (min-width: @xlarge){
-		min-height: 400px;
+	@media (orientation: landscape){
+		min-height: 65vh;
+	}
+
+	@media (min-width: @xlarge) and (orientation: landscape){
+		min-height: 80vh;
 	}
 }
 
@@ -18,7 +23,7 @@
 	}
 }
 
-.hero-contact{
+.hero-contacto{
 	background-image: url('../images/hero-contact.jpg');
 	@media (min-width: @large){
 		background-image: url('../images/hero-contact@2x.jpg');

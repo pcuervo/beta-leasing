@@ -85,6 +85,15 @@ function createChart(){
 
 }// createChart
 
+
+function scrollTo(elemento, offset, speed){
+	console.log( $(elemento) );
+	var divPosicion =  $(elemento).offset().top,
+		divPosicion = divPosicion - offset;
+	$('html, body').animate({scrollTop: divPosicion}, speed);
+}
+
+
 /**
  * Check if the user has scrolled to the given element.
  * @param element elem
@@ -169,7 +178,7 @@ function setMainPaddingTop(){
  * @return successHTML
 **/
 function getContactSuccessHTML( message ){
-	return '<h4 class="[ text-center ][ text-shadow ]">' + message + '</h4>';
+	return '<h4 class="[ text-center ][ text-shadow ][ color-light ]">' + message + '</h4>';
 }// getContactSuccessHTML
 
 /**
