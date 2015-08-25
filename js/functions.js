@@ -100,13 +100,13 @@ function scrollTo(elemento, offset, speed){
 **/
 function isScrolledIntoView(elem)
 {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
+	var docViewTop = $(window).scrollTop();
+	var docViewBottom = docViewTop + $(window).height();
 
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
+	var elemTop = $(elem).offset().top;
+	var elemBottom = elemTop + $(elem).height();
 
-    return ( (elemTop <= docViewBottom) && (elemBottom >= docViewTop) );
+	return ( (elemTop <= docViewBottom) && (elemBottom >= docViewTop) );
 }// isScrolledIntoView
 
 /**
@@ -134,6 +134,19 @@ function sendContactEmail( form ){
 	);
 
 }// sendContactEmail
+
+function changeBackgroundImage(element){
+	var total = 3;
+	var rands = new Array();
+
+	for (i=1; i<=total; i++) {
+		console.log(i);
+		setTinterval(function(){
+			console.log(i);
+			$(element).css('background-image', 'url(images/hero-home-'+i+'.jpg)');
+		}, 3000, );
+	};
+}
 
 
 
