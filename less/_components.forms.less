@@ -81,21 +81,21 @@ fieldset{
 .form ::-webkit-search-cancel-button { -webkit-appearance: none; }
 .form input:invalid { -moz-box-shadow: none; box-shadow: none;  }
 .form input::-webkit-input-placeholder,
-.form textarea::-webkit-input-placeholder { color: @secondary; }
+.form textarea::-webkit-input-placeholder { color: fade(@light, 50%); }
 .form input:focus::-webkit-input-placeholder,
-.form textarea:focus::-webkit-input-placeholder { color: @secondary; }
+.form textarea:focus::-webkit-input-placeholder { color: fade(@light, 50%); }
 .form input:-moz-placeholder,
-.form textarea:-moz-placeholder {  color: @secondary; }
+.form textarea:-moz-placeholder { color: fade(@light, 50%); }
 .form input:focus:-moz-placeholder,
-.form textarea:focus:-moz-placeholder { color: @secondary; }
+.form textarea:focus:-moz-placeholder { color: fade(@light, 50%); }
 .form input::-moz-placeholder,
-.form textarea::-moz-placeholder {  color: @secondary; opacity: 1; }
+.form textarea::-moz-placeholder { color: fade(@light, 50%); opacity: 1; }
 .form input:focus::-moz-placeholder,
-.form textarea:focus::-moz-placeholder { color: @secondary; opacity: 1; }
+.form textarea:focus::-moz-placeholder { color: fade(@light, 50%); opacity: 1; }
 .form input:-ms-input-placeholder,
-.form textarea:-ms-input-placeholder {  color: @secondary; }
+.form textarea:-ms-input-placeholder { color: fade(@light, 50%); }
 .form input:focus:-ms-input-placeholder,
-.form textarea:focus:-ms-input-placeholder { color: @secondary; }
+.form textarea:focus:-ms-input-placeholder { color: fade(@light, 50%); }
 
 /* @element general styling :: fonts :: adjust accordingly
 ------------------------------------------------------------- */
@@ -122,8 +122,8 @@ fieldset{
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	-webkit-border-radius:0px;
-	border-radius: 0px;
+
+	.border-radius(0);
 }
 
 .form input[type="search"]::-webkit-search-decoration,
@@ -188,17 +188,19 @@ fieldset{
 .form .gui-textarea,
 .form .select > select,
 .form .select-multiple select{
-	background: @light;
+	width: 100%; height: 42px;
+	border: none;
+	.border-radius(3px);
+	background: @dark;
+	color: @light;
+	text-align: center;
+
 	position: relative;
 	vertical-align: top;
-	border: 1px solid @primary;
 	display: -moz-inline-stack;
 	display: inline-block;
 	*display: inline;
-	color:  @primary;
 	outline:none;
-	height: 42px;
-	width: 100%;
 	*zoom: 1;
 }
 
@@ -260,7 +262,6 @@ fieldset{
 	right: 5px;
 	width: 24px;
 	height: 24px;
-	color: @primary;
 	pointer-events:none;
 	z-index:16;
 }
@@ -329,7 +330,7 @@ fieldset{
 .form .gui-input:focus,
 .form .gui-textarea:focus,
 .form .select > select:focus,
-.form .select-multiple select:focus{ border-color: @primary; color: @primary !important; }
+.form .select-multiple select:focus{ border-color: @primary; color: @light !important; }
 .form .gui-textarea:focus{  height: 120px; }
 .form .select > select:focus { z-index:10; z-index:20\9; }
 .form .gui-input:focus ~ .field-icon i,
@@ -337,7 +338,7 @@ fieldset{
 .form .select-multiple select:focus,
 .form .gui-input:focus ~ .input-hint,
 .form .gui-textarea:focus ~ .input-hint,
-.form .file .gui-file:focus + .gui-input{ border-color: @primary; }
+.form .file .gui-file:focus + .gui-input{ border-color: @light; }
 .form .select > select:focus + .arrow{ color:@primary; }
 
 /* @radio + checkbox option elements
@@ -1204,7 +1205,7 @@ fieldset{
 ------------------------------------------------------*/
 .form .slider-wrapper,
 .form .sliderv-wrapper{
-	background: @intermediate;
+	background: @dark;
 	position:relative;
 }
 

@@ -9,8 +9,7 @@
 	border: none;
 }
 
-.table__row{
-	border-bottom: 1px solid @intermediate;
-
-	&:last-of-type{ border: none; }
+.table__row:nth-child(odd){
+	background: fade(@intermediate, 30%) ;
+	color: @light;
 }
