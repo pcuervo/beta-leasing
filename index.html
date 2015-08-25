@@ -54,24 +54,24 @@
 			<p class="[ chromeframe ]">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
 
-		<nav class="[ xmall-12 ][ padding--top-bottom--small ][ bg-primary ][ color-light ][ text-center ]">
-			<div class="[ xmall-1-5 ][ inline-block align-middle ]">
+		<nav class="[ xmall-12 ][ padding--top-bottom--small ][ border-top-intemediate ][ bg-light ][ color-intermediate ][ text-center ]">
+			<div class="[ xmall-1-5 ][ inline-block align-top ]">
 				<img class="[ svg icon icon--small ]" src="icons/coins.svg">
 				<p class="[ xmall ]">¿Qué es Beta Leasing?</p>
 			</div><div
-				class="[ xmall-1-5 ][ inline-block align-middle ]">
+				class="[ xmall-1-5 ][ inline-block align-top ]">
 				<img class="[ svg icon icon--small ]" src="icons/calculator.svg">
 				<p class="[ xmall ]">Cotizador</p>
 			</div><div
-				class="[ xmall-1-5 ][ inline-block align-middle ]">
+				class="[ xmall-1-5 ][ inline-block align-top ]">
 				<img class="[ svg icon icon--small ]" src="icons/check.svg">
 				<p class="[ xmall ]">Solicitud de crédito</p>
 			</div><div
-				class="[ xmall-1-5 ][ inline-block align-middle ]">
+				class="[ xmall-1-5 ][ inline-block align-top ]">
 				<img class="[ svg icon icon--small ]" src="icons/chats.svg">
 				<p class="[ xmall ]">Preguntas frecuentes</p>
 			</div><div
-				class="[ xmall-1-5 ][ inline-block align-middle ]">
+				class="[ xmall-1-5 ][ inline-block align-top ]">
 				<img class="[ svg icon icon--small ]" src="icons/phone.svg">
 				<p class="[ xmall ]">Contáctanos</p>
 			</div>
@@ -92,9 +92,9 @@
 					<div class="[ screen screen-dark--30 ][ z-index-1 ]"></div>
 					<div class="[ padding--top-bottom ][ relative z-index-2 ]">
 						<div class="[ wrapper ][ text-center ]">
-							<h1 class="[ text-shadow ][ color-light ]">Beta Leasing es tu mejor opción para la renovación de vehículos, maquinaria y equipo, ofreciendo soluciones personalizadas de arrendamiento puro</h1>
+							<h1 class="[ text-shadow ][ color-light ][ xmall-12 medium-8 ][ center block ]">Beta Leasing es tu mejor opción para la renovación de vehículos, maquinaria y equipo, ofreciendo soluciones personalizadas de arrendamiento puro</h1>
 							<a class="[ button button--primary ]" href="#cotizador">simula tu cotización en línea</a>
-							<a class="[ block ][ js-anchor ]" href="#beneficios" >
+							<a class="[ color-light ][ block ][ js-anchor ]" href="#beneficios" >
 								<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
 							</a><!-- arrow -->
 						</div><!-- wrapper -->
@@ -109,15 +109,13 @@
 						<article class="[ color-light ]">
 							<h2 class="[ text-center ]">Beneficios del arrendamiento puro</h2>
 							<div class="[ row ]">
-
-
 								<div class="[ column xmall-12 medium-6 ]">
-									<ul class="[ row ][ list-reset ]">
-										<li class="[ relative ]">
-											<img class="[ svg icon icon--small icon--item ][ circled ][ color-light ]" src="icons/bills.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Rentas fijas</p>
-										</li>
+									<ul class="[ list-reset ][ no-margin ]">
 										<li class="[ relative ]">
 											<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/coins.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Pago inicial mínimo</p>
+										</li>
+										<li class="[ relative ]">
+											<img class="[ svg icon icon--small icon--item ][ circled ][ color-light ]" src="icons/bills.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Rentas fijas</p>
 										</li>
 										<li class="[ relative ]">
 											<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/check.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Duración del contrato definida por el cliente</p>
@@ -128,7 +126,7 @@
 									</ul>
 								</div>
 								<div class="[ column xmall-12 medium-6 ]">
-									<ul class="[ row ][ list-reset ]">
+									<ul class="[ list-reset ][ no-margin ]">
 										<li class="[ relative ]">
 											<img class="[ svg icon icon--small icon--item ][ circled ]" src="icons/graph-down.svg"> <p class="[ inline-block align-middle ][ icon--text ]">Evita la descapitalización y apalancamiento</p>
 										</li>
@@ -150,81 +148,88 @@
 				================================================== -->
 				<section class="[ datos-arrendamiento ][ padding--top-bottom ]">
 					<div class="[ wrapper ]">
+						<h2 class="[ text-center ]">Arrendamiento puro vs. contado</h2>
 						<div class="[ row ]">
 							<article class="[ column xmall-12 medium-6 ][ text-center ][ margin-bottom ]">
-								<h2>Arrendamiento puro vs. contado</h2>
 								<div class="[ xmall-12 xlarge-10 ][ block center ]">
 									<canvas id="myChart"></canvas>
 								</div>
 							</article>
 							<article class="[ column xmall-12 medium-6 ]">
-								<div class="[ row ]">
-									<div class="[ span xmall-4 ]">&nbsp;</div>
-									<div class="[ span xmall-4 ][ bg-secondary ][ padding--small ]">
-										<p class="[ color-light ][ text-center ]"><small>Compra de contado</small></p>
-									</div>
-									<div class="[ span xmall-4 ][ bg-primary ][ padding--small ]">
-										<p class="[ color-light ][ text-center ]"><small>Arrendamiento puro</small></p>
-									</div>
-									<div class="[ clear ]"></div>
-									<div class="[ column xmall-4 ][ padding--small ]">
-										<p><small>Valor del automóvil</small></p>
-									</div>
-									<div class="[ column xmall-8 ][ padding--small ]">
-										<p class="[ text-center ][ color-intermediate ]"><small>$185,256</small></p>
-									</div>
-									<div class="[ clear ]"></div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p>Inversión inicial</p>
-									</div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p class="[ text-center ][ color-intermediate ]">$185,256</p>
-									</div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p class="[ text-center ][ color-intermediate ]">$54,938</p>
-									</div>
-									<div class="[ clear ]"></div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p>Depreciación deducción anual</p>
-									</div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p class="[ text-center ][ color-intermediate ]">$32,500*</p>
-									</div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p class="[ text-center ][ color-intermediate ]">$68,472**</p>
-									</div>
-									<div class="[ clear ]"></div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p>Años</p>
-									</div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p class="[ text-center ]">3</p>
-									</div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p class="[ text-center ]">3</p>
-									</div>
-									<div class="[ clear ]"></div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p>Deducción total</p>
-									</div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p class="[ text-center ][ color-intermediate ]">$97,500</p>
-									</div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p class="[ text-center ][ color-intermediate ]">$205,416</p>
-									</div>
-									<div class="[ clear ]"></div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p>Egreso no deducible</p>
-									</div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p class="[ text-center ][ color-intermediate ]">$79,244</p>
-									</div>
-									<div class="[ column xmall-4 ][ padding ]">
-										<p class="[ text-center ][ color-intermediate ]">$0</p>
-									</div>
-									<div class="[ clear ]"></div>
-								</div>
+								<div class="[ table ][ margin-bottom ]">
+									<div class="[ row ][ table__header ]">
+										<div class="[ span xmall-4 ]">&nbsp;</div>
+										<div class="[ span xmall-4 ][ bg-secondary ][ padding--small ]">
+											<p class="[ color-light ][ text-center ]"><small>Compra de contado</small></p>
+										</div>
+										<div class="[ span xmall-4 ][ bg-primary ][ padding--small ]">
+											<p class="[ color-light ][ text-center ]"><small>Arrendamiento puro</small></p>
+										</div>
+									</div><!-- row -->
+									<div class="[ row ][ table__row ]">
+										<div class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p>Valor del automóvil</p>
+										</div><div
+										class="[ xmall-8 ][ padding--small ][ inline-block align-middle ]">
+											<p class="[ text-center ][ color-intermediate ]">$185,256</p>
+										</div>
+									</div><!-- row -->
+									<div class="[ row ][ table__row ]">
+										<div class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p>Inversión inicial</p>
+										</div><div
+										class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p class="[ text-center ][ color-intermediate ]">$185,256</p>
+										</div><div
+										class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p class="[ text-center ][ color-intermediate ]">$54,938</p>
+										</div>
+									</div><!-- row -->
+									<div class="[ row ][ table__row ]">
+										<div class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p>Depreciación deducción anual</p>
+										</div><div
+										class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p class="[ text-center ][ color-intermediate ]">$32,500*</p>
+										</div><div
+										class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p class="[ text-center ][ color-intermediate ]">$68,472**</p>
+										</div>
+									</div><!-- row -->
+									<div class="[ row ][ table__row ]">
+										<div class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p>Años</p>
+										</div><div
+										class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p class="[ text-center ]">3</p>
+										</div><div
+										class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p class="[ text-center ]">3</p>
+										</div>
+									</div><!-- row -->
+									<div class="[ row ][ table__row ]">
+										<div class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p>Deducción total</p>
+										</div><div
+										class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p class="[ text-center ][ color-intermediate ]">$97,500</p>
+										</div><div
+										class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p class="[ text-center ][ color-intermediate ]">$205,416</p>
+										</div>
+									</div><!-- row -->
+									<div class="[ row ][ table__row ]">
+										<div class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p>Egreso no deducible</p>
+										</div><div
+										class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p class="[ text-center ][ color-intermediate ]">$79,244</p>
+										</div><div
+										class="[ xmall-4 ][ padding--small ][ inline-block align-middle ]">
+											<p class="[ text-center ][ color-intermediate ]">$0</p>
+										</div>
+									</div><!-- row -->
+								</div><!-- table -->
 								<p class="[ no-margin ]"><small>* 25% anual de monto máximo permitido de $130,000.</small></p>
 								<p><small>** Equivalente a una renta mensual de $5,706</small></p>
 							</article>
@@ -262,7 +267,7 @@
 														<option value="maquinaria">Maquinaria</option>
 														<option value="mobiliario">Mobiliario</option>
 													</select>
-													<i class="arrow"></i>
+													<img class="[ svg icon icon--small ]" src="icons/chevron-down.svg">
 												</label>
 											</fieldset>
 											<fieldset class="[ column xmall-4 ][ margin-bottom ]">
@@ -320,7 +325,7 @@
 												</label>
 											</fieldset>
 											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
-												<a class="[ button button-primary ][ js-cycle-next ]">Siguiente</a>
+												<a class="[ button button--primary ][ js-cycle-next ]">Siguiente</a>
 												<p><small>Paso 1 de 2</small></p>
 											</fieldset>
 										</div><!-- row -->
@@ -350,11 +355,11 @@
 											</fieldset>
 											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
 												<p><small>mejorar este texto de detalle de cotización de arrendamiento...</small></p>
-												<button type="submit" class="[ button button-primary ]">Generar PDF</button>
+												<button type="submit" class="[ button button--primary ]">Generar PDF</button>
 											</fieldset>
 											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
-												<a class="[ button button-primary ][ js-cycle-prev ]">Atras</a>
-												<p><small>Paso 1 de 2</small></p>
+												<a class="[ button button--primary ][ js-cycle-prev ]">Atras</a>
+												<p><small>Paso 2 de 2</small></p>
 											</fieldset>
 										</div><!-- row -->
 									</div><!-- cycle-slide -->
@@ -375,15 +380,15 @@
 							<ol>
 								<li>
 									<p>Envía tu solicitud de crédito firmada.</p>
-									<a class="[ button button-primary ]" href="pdf/Solicitud%20de%20Arrendamiento%20Puro%20(Personas%20Morales).pdf" target="_blank">Persona física</a>
-									<a class="[ button button-primary ]" href="pdf/Solicitud%20de%20Arrendamiento%20Puro%20(Personas%20Morales).pdf" target="_blank">Persona moral</a>
+									<a class="[ button button--primary ]" href="pdf/Solicitud%20de%20Arrendamiento%20Puro%20(Personas%20Morales).pdf" target="_blank">Persona física</a>
+									<a class="[ button button--primary ]" href="pdf/Solicitud%20de%20Arrendamiento%20Puro%20(Personas%20Morales).pdf" target="_blank">Persona moral</a>
 								</li>
 								<li>
 									<p class="[ margin-bottom ]">Envía los siguientes documentos:</p>
 									<ul>
 										<li>Estados Financieros con analíticas de los últimos dos ejercicios y del año en curso.</li>
 										<li>Declaraciones anuales correspondientes.</li>
-										<li>Copia de los últimos tres estados de cuenta de cheques.</li>
+										<li>Últimos tres estados de cuenta de cheques.</li>
 										<li>Cédula Fiscal</li>
 										<li>Reporte de buro de crédito, se tramita en www.burodecredito.com.mx</li>
 										<li>Acta Constitutiva, poderes y modificaciones, con datos de inscripción en el RPP.</li>
@@ -407,14 +412,14 @@
 						<article class="[ accordion ]">
 							<h2 class="[ text-center ]">Preguntas frecuentes</h2>
 							<div class="[ row ]">
-								<div class="[ accordion-section ][ column xmall-12 medium-6 ]">
+								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
 									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-1" >
-											<span class="[ toggle ]"></span> ¿Cuál es el límite de renta mensual que se puede deducir sobre carros que no se consideran equipo de trabajo?
+											¿Cuál es el límite de renta mensual que se puede deducir sobre carros que no se consideran equipo de trabajo?
 										</a>
 									</p>
 									<div id="accordion-1" class="[ accordion-section-content ]">
-										<ul>
+										<ul class="[ list-reset ][ no-margin ]">
 											<li>De acuerdo al artículo 28 de la ley del ISR: "Tratándose de arrendamiento puro sólo será deducible, según lo que establece la Ley del Impuesto Sobre la Renta (LISR), hasta $200.00 + IVA diarios para el caso de automóviles"</li>
 											<li>Para todo lo demás que no sean automóviles la ley no establece un límite de renta en cuestión de deducibilidad</li>
 										</ul>
@@ -423,7 +428,7 @@
 								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
 									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-2" >
-											<span class="[ toggle ]"></span> ¿Qué integra el pago inicial?
+											¿Qué integra el pago inicial?
 										</a>
 									</p>
 									<div id="accordion-2" class="[ accordion-section-content ]">
@@ -432,18 +437,8 @@
 								</div>
 								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
 									<p class="[ color-primary ]">
-										<a class="[ accordion-section-title ]" href="#accordion-3" >
-											<span class="[ toggle ]"></span> ¿La opción de compra quién la puede ejercer?
-										</a>
-									</p>
-									<div id="accordion-3" class="[ accordion-section-content ]">
-										<p>La debe de ejercer un tercero al final del contrato ya que si la ejerce el mismo arrendatario, el fisco le pudiera observar que en lugar de ser un arrendamiento puro fue un arrendamiento financiero.</p>
-									</div><!--end .accordion-section-content-->
-								</div>
-								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
-									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-4" >
-											<span class="[ toggle ]"></span> ¿Qué diferencia hay entre arrendamiento puro y financiero?
+											¿Qué diferencia hay entre arrendamiento puro y financiero?
 										</a>
 									</p>
 									<div id="accordion-4" class="[ accordion-section-content ]">
@@ -453,7 +448,7 @@
 								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
 									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-5" >
-											<span class="[ toggle ]"></span> ¿Se puede hacer arrendamiento sobre autos usados?
+											¿Se puede hacer arrendamiento sobre autos usados?
 										</a>
 									</p>
 									<div id="accordion-5" class="[ accordion-section-content ]">
@@ -463,17 +458,17 @@
 								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
 									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-6" >
-											<span class="[ toggle ]"></span> ¿Qué plazos damos en el contrato inicial y cuantos meses más en el refinanciamiento?
+											¿Qué plazos damos en el contrato inicial y cuantos meses más en el refinanciamiento?
 										</a>
 									</p>
 									<div id="accordion-6" class="[ accordion-section-content ]">
-										<p>El contrato inicial puede ser a 12, 24, 36 y 48 meses y al término del contrato el cliente puede refinanciar su valor residual por un plazo de 12 meses más.</p>
+										<p>El contrato inicial puede ser de 12 a 48 meses y al término del contrato el cliente puede solicitar re financiar su valor residual por un plazo de 12 meses más.</p>
 									</div><!--end .accordion-section-content-->
 								</div>
 								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
 									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-7" >
-											<span class="[ toggle ]"></span> ¿Qué días vencen las rentas?
+											¿Qué días vencen las rentas?
 										</a>
 									</p>
 									<div id="accordion-7" class="[ accordion-section-content ]">
@@ -483,7 +478,7 @@
 								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
 									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-8" >
-											<span class="[ toggle ]"></span> ¿Qué tasa de intereses moratorios cobramos?
+											¿Cual es la tasa de intereses moratorios?
 										</a>
 									</p>
 									<div id="accordion-8" class="[ accordion-section-content ]">
@@ -493,7 +488,7 @@
 								<div class="[ accordion-section ][ column xmall-12 medium-6 ][ margin-bottom--small ]">
 									<p class="[ color-primary ]">
 										<a class="[ accordion-section-title ]" href="#accordion-9" >
-											<span class="[ toggle ]"></span> ¿Quién debe pagar las placas, verificación, tenencia, mantenimiento y seguro de los coches arrendados?
+											¿Quién debe pagar las placas, verificación, tenencia, mantenimiento y seguro de los coches arrendados?
 										</a>
 									</p>
 									<div id="accordion-9" class="[ accordion-section-content ]">
@@ -513,7 +508,7 @@
 					<div class="[ padding--top-bottom ][ relative z-index-2 ]">
 						<div class="[ wrapper ][ text-center ]">
 							<div class="[ row ]">
-								<h2>¿Tienes alguna duda? <br> Te podemos ayudar</h2>
+								<h2 class="[ color-light ]">¿Tienes alguna duda? <br /> Te podemos ayudar</h2>
 								<article class="[ form ]">
 									<form class="[ js-contact-form ]">
 										<div class="[ row ]">
@@ -533,7 +528,7 @@
 												</label>
 											</fieldset>
 											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-right ]">
-												<button type="submit" class="[ button button-primary button--large ]">Enviar</button>
+												<button type="submit" class="[ button button--primary button--large ]">Enviar</button>
 											</fieldset>
 										</div>
 									</form>
@@ -555,7 +550,7 @@
 			</div><!-- main -->
 		</div><!-- container -->
 
-		<footer class="[ padding--top-bottom ]">
+		<footer class="[ padding--top ]">
 			<div class="wrapper">
 				<div class="[ row ][ text-center ]">
 					<p><img class="[ svg icon icon--small ]" src="icons/phone.svg">(+55)12345678</p>
@@ -602,7 +597,7 @@
 			var lat = 19.431717;
 			lon = -99.196758,
 			zoom = 18,
-			mapColor = rgb2hex( $('.button-primary').css('background-color') );
+			mapColor = rgb2hex( $('.button--primary').css('background-color') );
 			loadMap( lat, lon, zoom, mapColor );
 
 

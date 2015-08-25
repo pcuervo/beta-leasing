@@ -24,6 +24,7 @@
 body{
 	font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif!important;
 	font-size: 100%;
+	font-weight: 300;
 	color: @dark;
 }
 
@@ -38,51 +39,49 @@ h1, h2, h3, h4, h5, h6{
 	margin-top: 0;
 }
 
-h1, h2{ margin-bottom: (@unit*2); }
-h3, h4, h5, h6{ margin-bottom: @unit; }
+h1{ margin-bottom: (@unit*2); }
+h2, h3, h4, h5, h6{ margin-bottom: @unit; }
 
 h1{
-	.font( 32px, 1.1, 600 );
-	& small{
-		.font( 24px, 1 );
-	}
+	.font( 20px, 1.4, 300 );
+	text-transform: uppercase;
 
 	@media (min-width: @medium){
-		.font( 40px, 1.1, 600 );
-		& small{
-			.font( 30px, 1 );
-		}
+		font-size: 24px;
+		line-height: 1.5;
 	}
 	@media (min-width: @large){
-		.font( 48px, 1.1, 600 );
-		& small{
-			.font( 34px, 1 );
-		}
+		font-size: 28px;
 	}
 }
 
 h2{
-	.font( 26px, 1.1, 600 );
+	.font( 20px, 1.4, 300 );
 	& small{
-		.font( 20px, 1 );
+		font-size: 18px;
+		line-height: 1;
 	}
 
 	@media (min-width: @medium){
-		.font( 32px, 1.1, 600 );
+		font-size: 24px;
+		line-height: 1.1;
 		& small{
-			.font( 24px, 1 );
+			font-size: 22px;
+			line-height: 1;
 		}
 	}
 	@media (min-width: @large){
-		.font( 36px, 1.1, 600 );
+		font-size: 28px;
+		line-height: 1.1;
 		& small{
-			.font( 28px, 1 );
+			font-size: 26px;
+			line-height: 1;
 		}
 	}
 }
 
 h3{
-	.font( 22px, 1.1, 600 );
+	.font( 22px, 1.1, 300 );
 	& small{
 		.font( 18px, 1 );
 	}
@@ -102,7 +101,7 @@ h3{
 }
 
 h4{
-	.font( 20px, 1.1, 600 );
+	.font( 20px, 1.1, 300 );
 	& small{
 		.font( 18px, 1 );
 	}
@@ -168,15 +167,18 @@ h6{
 p, li{
 	margin: 0 0 1em 0;
 
-	.font( 16px, 1.4 );
+	.font( 16px, 1.4, 300 );
 	& small{
-		.font( 12px, 1 );
+		font-size: 12px;
+		line-height: 1;
 	}
 
 	@media (min-width: @medium){
-		.font( 18px, 1.1 );
+		font-size: 18px;
+		line-height: 1.5;
 		& small{
-			.font( 14px, 1 );
+			font-size: 14px;
+			line-height: 1;
 		}
 	}
 }
