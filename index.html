@@ -348,22 +348,22 @@
 										<div class="[ row ]">
 											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
 												<label class="field">
-													<input type="text" name="nombre" class="gui-input" placeholder="Nombre completo">
+													<input type="text" name="nombre" class="[ gui-input ][ required ]" placeholder="Nombre completo">
 												</label>
 											</fieldset>
 											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
 												<label class="field">
-													<input type="text" name="telefono" class="gui-input" placeholder="Teléfono">
+													<input type="text" name="telefono" class="[ gui-input ][ required ]" placeholder="Teléfono">
 												</label>
 											</fieldset>
 											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
 												<label class="field">
-													<input type="text" name="compania" class="gui-input" placeholder="Compañía">
+													<input type="text" name="compania" class="[ gui-input ]" placeholder="Compañía">
 												</label>
 											</fieldset>
 											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
 												<label class="field">
-													<input type="text" name="email" class="gui-input" placeholder="Correo electrónico">
+													<input type="text" name="email" class="[ gui-input ][ required email ]" placeholder="Correo electrónico">
 												</label>
 											</fieldset>
 											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
@@ -650,9 +650,21 @@
 			// });
 
 			$('.js-forma-cotizador').validate({
+
 				submitHandler:function(){
-					// sendMoreInfoEmail();
-					console.log('estamos aquí tomandooooo');
+					sendMoreInfoEmail();
+				}
+			});
+
+			$('input[name="telefono"]').keydown( function(e) {
+
+				if( onlyNumbers(e) ){
+					e.preventDefault();
+					return;
+				}
+				// Allow arrows
+				if(e.keyCode >= 37 && e.keyCode <= 40 ) {
+					return;
 				}
 			});
 
