@@ -136,12 +136,6 @@ function sendContactEmail( form ){
 
 }// sendContactEmail
 
-function changeBackgroundImage(element){
-	var total = 3;
-	var rands = new Array();
-
-	$(element).css('background-image', 'url(images/hero-home-'+total+'.jpg)');
-}
 
 function onlyNumbers( e ) {
 	// Allow: backspace, delete, tab, escape, enter and .
@@ -163,7 +157,6 @@ function onlyNumbers( e ) {
 		return true;
 	}
 }// onlyNumbers
-
 
 
 /*------------------------------------*\

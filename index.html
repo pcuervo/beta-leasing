@@ -598,6 +598,7 @@
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
 		<script src="js/cotizador-beta-leasing.js"></script>
+		<script src="js/rotate-hero-images.js"></script>
 
 		<script type="text/javascript">
 
@@ -620,13 +621,19 @@
 				'digitosDecimales' 	: 2
 			});
 
+			$('.hero-home').rotateHeroImages({
+				totalImages: 	3,
+				imgPrefix: 		'hero-home-',
+				imgFormat: 		'.jpg',
+				imgFolderPath: 	'images/',
+				interval: 		5000
+			});
+
 			var lat = 19.431717;
 			lon = -99.196758,
 			zoom = 18,
 			mapColor = rgb2hex( $('.button--primary').css('background-color') );
 			loadMap( lat, lon, zoom, mapColor );
-
-			changeBackgroundImage('.hero-home');
 
 
 
@@ -643,16 +650,10 @@
 				}
 			});
 
-			// $('.js-forma-cotizador').submit( function(e){
-			// 	e.preventDefault();
-
-			// 	$cotizador.generaPDF();
-			// });
-
 			$('.js-forma-cotizador').validate({
 
 				submitHandler:function(){
-					sendMoreInfoEmail();
+					$cotizador.generaPDF();
 				}
 			});
 
@@ -730,6 +731,12 @@
 				var section = $(this).data('section');
 				scrollTo('.'+section, 0, 250);
 			});
+
+
+
+
+
+
 
 		</script>
 
