@@ -29,7 +29,7 @@ require_once('tcpdf_include.php');
 
 // Get POST variables
 $cliente = $_POST['cliente']; 
-$email = $_POST['email'];
+$email =isset( $_POST['email'] ) ? $_POST['email'] : '-' ; 
 $compania = isset( $_POST['compania'] ) ? $_POST['compania'] : '-' ; 
 $tipo = $_POST['tipo']; 
 $marca = isset( $_POST['marca'] ) ? $_POST['marca'] : '-' ; 
@@ -261,7 +261,7 @@ $pdf->Output( $filename, 'F' );
 
 $pdf_url = '/beta-leasing/cotizaciones/' . $filename;
 
-send_email_cotizacion( $nombre, $email, $compania, $pdf_url );
+//send_email_cotizacion( $nombre, $email, $compania, $pdf_url );
 
 echo $pdf_url;
 
