@@ -254,7 +254,7 @@ $html = <<<EOF
 <p class="[ text-center ]">
 	<small>
 		Cerrada Loma Bonita 33 Piso 3 · Lomas Altas · 11950 México D.F. <br />
-		centas@betaleasing.com · (55) 2325.0453
+		ventas@betaleasing.com · (55) 2325.0453
 	</small>
 </p>
 

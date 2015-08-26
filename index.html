@@ -263,119 +263,124 @@
 								<div class="[ cycle-slideshow ]"
 									data-cycle-fx="scrollHorz"
 									data-cycle-timeout="0"
-									data-cycle-speed="650"
+									data-cycle-speed="450"
 									data-cycle-slides="> .cycle-slide"
 									data-cycle-center-horz="true"
 									data-cycle-center-vert="true"
-									data-cycle-auto-height="calc"
 									data-cycle-log="false"
 								>
-									<div class="[ cycle-slide ][ bg-intermediate ][ xmall-12 ][ no-margin ]">
-										<h3 class="[ text-center ]">Quiero cotizar:</h3>
-										<div class="[ row ]">
-											<fieldset class="[ column xmall-4 ][ margin-bottom ]">
-												<label class="[ field select ]">
-													<select class="[ ellipsis ]" id="tipo" name="tipo">
-														<option value="vehiculo" selected>Vehículo</option>
-														<option value="maquinaria">Maquinaria</option>
-														<option value="mobiliario">Mobiliario</option>
-													</select>
-													<img class="[ svg icon icon--xmall ][ color-light ][ arrow ]" src="icons/chevron-down.svg">
-												</label>
-											</fieldset>
-											<fieldset class="[ column xmall-4 ][ margin-bottom ]">
-												<label class="field">
-													<input type="text" name="marca" class="gui-input" placeholder="Marca">
-												</label>
-											</fieldset>
-											<fieldset class="[ column xmall-4 ][ margin-bottom ]">
-												<label class="field">
-													<input type="text" name="modelo" class="gui-input" placeholder="Modelo">
-												</label>
-											</fieldset>
-											<fieldset class="[ column xmall-8 ][ block center ][ margin-bottom ]">
-												<label class="field">
-													<p class="[ text-center ]"><small>Valor total</small></p>
-													<input type="text" name="valor_total" class="gui-input" placeholder="0.00">
-												</label>
-											</fieldset>
-											<fieldset class="[ column xmall-6 ][ margin-bottom ]">
-												<label class="field">
-													<p class="[ text-center ]"><small>IVA</small></p>
-													<input type="text" name="iva" class="gui-input" placeholder="" value="-" disabled>
-												</label>
-											</fieldset>
-											<fieldset class="[ column xmall-6 ][ margin-bottom ]">
-												<label class="field">
-													<p class="[ text-center ]"><small>Valor factura (sin IVA)</small></p>
-													<input type="text" name="valor_factura" class="gui-input" placeholder="" value="-" disabled>
-												</label>
-											</fieldset>
-											<fieldset class="[ column xmall-12 ][ margin-bottom ]">
-												<p class="[ text-center ]"><small>Plazo en meses</small></p>
-												<div class="[ slider-wrapper ]">
-													<div id="slider-meses"></div>
-												</div><!-- end .slider-wrapper -->
-												<p class="[ row ]"><span class="[ pull-left ][ js-meses ]">12 meses</span></p>
-											</fieldset>
-											<fieldset class="[ column xmall-12 ][ margin-bottom ]">
-												<p class="[ text-center ]"><small>Porcentaje (%) de enganche</small></p>
-												<div class="[ slider-wrapper ]">
-													<div id="slider-enganche"></div>
-												</div><!-- end .slider-wrapper -->
-												<p class="[ row ]"><span class="[ pull-left ][ js-porcentaje-enganche ]">0%</span></p>
-											</fieldset>
-											<fieldset class="[ column xmall-6 ][ margin-bottom ]">
-												<label class="field">
-													<p class="[ text-center ]"><small>Monto total a financiar</small></p>
-													<input type="text" name="monto_financiar" class="gui-input" placeholder="-" disabled>
-												</label>
-											</fieldset>
-											<fieldset class="[ column xmall-6 ][ margin-bottom ]">
-												<label class="field">
-													<p class="[ text-center ]"><small>Renta mensual</small></p>
-													<input type="text" name="renta_mensual" class="gui-input" placeholder="-" disabled>
-												</label>
-											</fieldset>
-											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ][ js-siguiente-fieldset ][ hidden ]">
-												<a class="[ button button--primary ][ js-cycle-next ]">Siguiente</a>
-												<p><small>Paso 1 de 2</small></p>
-											</fieldset>
-										</div><!-- row -->
+									<div class="[ cycle-slide ][ bg-intermediate ][ xmall-12 medium-8 xlarge-6 ]">
+										<div class="[ xmall-12 ]">
+
+
+											<h3 class="[ text-center ]">Quiero cotizar:</h3>
+											<div class="[ row ]">
+												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+													<label class="[ field select ]">
+														<select class="[ ellipsis ]" id="tipo" name="tipo">
+															<option value="vehiculo" selected>Vehículo</option>
+															<option value="maquinaria">Maquinaria</option>
+															<option value="mobiliario">Mobiliario</option>
+														</select>
+														<img class="[ svg icon icon--xmall ][ color-light ][ arrow ]" src="icons/chevron-down.svg">
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+													<label class="field">
+														<input type="text" name="marca" class="gui-input" placeholder="Marca">
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
+													<label class="field">
+														<input type="text" name="modelo" class="gui-input" placeholder="Modelo">
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-8 ][ block center ][ margin-bottom ]">
+													<label class="field">
+														<p class="[ text-center ]"><small>Valor total</small></p>
+														<input type="text" name="valor_total" class="gui-input" placeholder="0.00">
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+													<label class="field">
+														<p class="[ text-center ]"><small>IVA</small></p>
+														<input type="text" name="iva" class="gui-input" placeholder="" value="-" disabled>
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+													<label class="field">
+														<p class="[ text-center ]"><small>Valor factura (sin IVA)</small></p>
+														<input type="text" name="valor_factura" class="gui-input" placeholder="" value="-" disabled>
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-12 ][ margin-bottom ]">
+													<p class="[ text-center ]"><small>Plazo en meses</small></p>
+													<div class="[ slider-wrapper ]">
+														<div id="slider-meses"></div>
+													</div><!-- end .slider-wrapper -->
+													<p class="[ row ]"><span class="[ pull-left ][ js-meses ]">12 meses</span></p>
+												</fieldset>
+												<fieldset class="[ column xmall-12 ][ margin-bottom ]">
+													<p class="[ text-center ]"><small>Porcentaje (%) de enganche</small></p>
+													<div class="[ slider-wrapper ]">
+														<div id="slider-enganche"></div>
+													</div><!-- end .slider-wrapper -->
+													<p class="[ row ]"><span class="[ pull-left ][ js-porcentaje-enganche ]">0%</span></p>
+												</fieldset>
+												<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+													<label class="field">
+														<p class="[ text-center ]"><small>Monto total a financiar</small></p>
+														<input type="text" name="monto_financiar" class="gui-input" placeholder="-" disabled>
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-6 ][ margin-bottom ]">
+													<label class="field">
+														<p class="[ text-center ]"><small>Renta mensual</small></p>
+														<input type="text" name="renta_mensual" class="gui-input" placeholder="-" disabled>
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ][ js-siguiente-fieldset ][ hidden ]">
+													<a class="[ button button--primary ][ js-cycle-next ]">Siguiente</a>
+													<p><small>Paso 1 de 2</small></p>
+												</fieldset>
+											</div><!-- row -->
+										</div>
 									</div><!-- cycle-slide -->
-									<div class="[ cycle-slide ][ bg-intermediate ][ xmall-12 ][ no-margin ]">
-										<h3 class="[ text-center ]">Confirmar información</h3>
-										<div class="[ row ]">
-											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
-												<label class="field">
-													<input type="text" name="nombre" class="[ gui-input ][ required ]" placeholder="Nombre completo">
-												</label>
-											</fieldset>
-											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
-												<label class="field">
-													<input type="text" name="telefono" class="[ gui-input ][ required ]" placeholder="Teléfono">
-												</label>
-											</fieldset>
-											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
-												<label class="field">
-													<input type="text" name="compania" class="[ gui-input ]" placeholder="Compañía">
-												</label>
-											</fieldset>
-											<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
-												<label class="field">
-													<input type="text" name="email" class="[ gui-input ][ required email ]" placeholder="Correo electrónico">
-												</label>
-											</fieldset>
-											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
-												<p><small>Genera tu archivo <strong>PDF</strong> para ver todos los detalles de tu cotización arrendamiento</small></p>
-												<p></p>
-												<button type="submit" class="[ button button--primary ][ js-generar-pdf ]">Generar PDF</button>
-											</fieldset>
-											<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
-												<a class="[ button button--primary ][ js-cycle-prev ]">Atras</a>
-												<p><small>Paso 2 de 2</small></p>
-											</fieldset>
-										</div><!-- row -->
+									<div class="[ cycle-slide ][ bg-intermediate ][ xmall-12 medium-8 xlarge-6 ][ padding--bottom--xxxlarge ]">
+										<div class="[ xmall-12 ]">
+											<h3 class="[ text-center ]">Confirmar información</h3>
+											<div class="[ row ]">
+												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+													<label class="field">
+														<input type="text" name="nombre" class="[ gui-input ][ required ]" placeholder="Nombre completo">
+													</label>
+												</fieldset>
+												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+													<label class="field">
+														<input type="text" name="telefono" class="[ gui-input ][ required ]" placeholder="Teléfono">
+													</label>
+												</fieldset>
+												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+													<label class="field">
+														<input type="text" name="compania" class="[ gui-input ]" placeholder="Compañía">
+													</label>
+												</fieldset>
+												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
+													<label class="field">
+														<input type="text" name="email" class="[ gui-input ][ required email ]" placeholder="Correo electrónico">
+													</label>
+												</fieldset>
+												<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
+													<p><small>Genera tu archivo <strong>PDF</strong> para ver todos los detalles de tu cotización arrendamiento</small></p>
+													<p></p>
+													<button type="submit" class="[ button button--primary ][ js-generar-pdf ]">Generar PDF</button>
+												</fieldset>
+												<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
+													<a class="[ button button--primary ][ js-cycle-prev ]">Atras</a>
+													<p><small>Paso 2 de 2</small></p>
+												</fieldset>
+											</div><!-- row -->
+										</div>
 									</div><!-- cycle-slide -->
 								</div><!-- cycle-slideshow -->
 								<p class="[ color-light ]"><small>Los importes de seguros, impuestos, comisiones y costos de accesorios no están includídos en esta cotización. La presente cotización se emite únicamente con fines informativos y podrá ser objeto de modificaciones. La celebración de cualquier contrato está sujeta a la aprobación de la solicitud de arrendamiento respectiva.</small></p>
