@@ -159,6 +159,8 @@
 			var datos = {};
 
 			datos['cliente'] 			= $('input[name="nombre"]').val();
+			datos['email'] 			= $('input[name="email"]').val();
+			datos['telefono'] 			= $('input[name="telefono"]').val();
 			datos['compania'] 			= $('input[name="compania"]').val();
 			datos['tipo'] 				= $('select[name="tipo"]').val();
 			datos['marca'] 				= $('input[name="marca"]').val();

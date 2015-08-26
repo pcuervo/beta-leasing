@@ -28,23 +28,24 @@
 require_once('tcpdf_include.php');
 
 // Get POST variables
-$cliente = $_POST['cliente']; 
-$email =isset( $_POST['email'] ) ? $_POST['email'] : '-' ; 
-$compania = isset( $_POST['compania'] ) ? $_POST['compania'] : '-' ; 
-$tipo = $_POST['tipo']; 
-$marca = isset( $_POST['marca'] ) ? $_POST['marca'] : '-' ; 
-$modelo = isset( $_POST['modelo'] ) ? $_POST['modelo'] : '-' ; 
-$valor_total = $_POST['valor_total']; 
-$plazo_mensual = $_POST['plazo_mensual']; 
-$renta_mensual_iva = $_POST['renta_mensual_iva']; 
-$pago_inicial = $_POST['pago_inicial']; 
-$valor_comision = $_POST['valor_comision']; 
-$subtotal = $_POST['subtotal']; 
-$iva = $_POST['iva']; 
-$iva_mensual = $_POST['iva_mensual']; 
-$renta_en_deposito = $_POST['renta_en_deposito']; 
-$total_pago_inicial = $_POST['total_pago_inicial']; 
-$valor_residual = $_POST['valor_residual']; 
+$cliente = $_POST['cliente'];
+$email =isset( $_POST['email'] ) ? $_POST['email'] : '-' ;
+$telefono =isset( $_POST['telefono'] ) ? $_POST['telefono'] : '-' ;
+$compania = isset( $_POST['compania'] ) ? $_POST['compania'] : '-' ;
+$tipo = $_POST['tipo'];
+$marca = isset( $_POST['marca'] ) ? $_POST['marca'] : '-' ;
+$modelo = isset( $_POST['modelo'] ) ? $_POST['modelo'] : '-' ;
+$valor_total = $_POST['valor_total'];
+$plazo_mensual = $_POST['plazo_mensual'];
+$renta_mensual_iva = $_POST['renta_mensual_iva'];
+$pago_inicial = $_POST['pago_inicial'];
+$valor_comision = $_POST['valor_comision'];
+$subtotal = $_POST['subtotal'];
+$iva = $_POST['iva'];
+$iva_mensual = $_POST['iva_mensual'];
+$renta_en_deposito = $_POST['renta_en_deposito'];
+$total_pago_inicial = $_POST['total_pago_inicial'];
+$valor_residual = $_POST['valor_residual'];
 
 $filename = time() . '-' . to_slug( $cliente );
 
@@ -62,7 +63,7 @@ $pdf->SetSubject('Cotización');
 $pdf->SetKeywords('PDF, Beta Leasing, cotizador');
 
 // set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, 'Beta Leasing', '# de referencia: ' . $filename );
+$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH );
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
@@ -110,96 +111,124 @@ $pdf->AddPage();
 // define some HTML content with style
 $fecha = date("d/m/Y");
 $html = <<<EOF
-<!-- EXAMPLE OF CSS STYLE -->
 <style>
 	h1 {
-		font-family: times;
-		font-size: 24pt;
-	}
-	p.first {
-		color: #003300;
 		font-family: helvetica;
-		font-size: 12pt;
-	}
-	p.first span {
-		color: #006600;
-		font-style: italic;
-	}
-	p#second {
-		color: rgb(00,63,127);
-		font-family: times;
-		font-size: 12pt;
-		text-align: justify;
-	}
-	p#second > span {
-		background-color: #FFFFAA;
-	}
-	table.first {
-		color: #003300;
-		font-family: helvetica;
-		font-size: 8pt;
-		border-left: 3px solid red;
-		border-right: 3px solid #FF00FF;
-		border-top: 3px solid green;
-		border-bottom: 3px solid blue;
-		background-color: #ccffcc;
-	}
-	td {
-		border: 2px solid blue;
-		background-color: #ffffee;
-	}
-	td.second {
-		border: 2px dashed green;
-	}
-	div.test {
-		color: #CC0000;
-		background-color: #FFFF66;
-		font-family: helvetica;
-		font-size: 10pt;
-		border-style: solid solid solid solid;
-		border-width: 2px 2px 2px 2px;
-		border-color: green #FF00FF blue red;
+		font-size: 20pt;
 		text-align: center;
 	}
-	.lowercase {
-		text-transform: lowercase;
+	p {
+		color: #003300;
+		font-family: helvetica;
+		font-size: 12pt;
 	}
-	.uppercase {
-		text-transform: uppercase;
+
+	table {
+		color: #003300;
+		font-family: helvetica;
+		font-size: 12pt;
 	}
-	.capitalize {
-		text-transform: capitalize;
+	table.border{
+		border: 2px solid #313131;
 	}
+	th{
+		font-size: 16px;
+		font-weigth: bold;
+	}
+	td {
+		padding: 4px;
+		border: none;
+	}
+
+	.text-right{
+		text-align: right;
+	}
+
+	.text-center{
+		text-align: center;
+	}
+
+
 </style>
 
+<p class="[ text-right ]"><small>Fecha: $fecha</small></p>
 <h1>Cotización estimada de arrendamiento puro</h1>
 
-<p>Fecha: $fecha </p>
+<table>
+	<tr>
+		<th><h4>Información cliente</h4></th>
+		<th><h4>Datos de unidad a cotizar</h4></th>
+	</tr>
+	<tr>
+		<td># de referencia: $filename</td>
+		<td>Tipo de unidad: $tipo</td>
+	</tr>
+	<tr>
+		<td>Cliente: $cliente</td>
+		<td>Marca: $marca </td>
+	</tr>
+	<tr>
+		<td>Compañía: $compania</td>
+		<td>Modelo: $modelo</td>
+	</tr>
+	<tr>
+		<td>Teléfono: $telefono</td>
+		<td>Precio de referencia (con IVA): $valor_total</td>
+	</tr>
+	<tr>
+		<td>Email: $email</td>
+		<td></td>
+	</tr>
+</table>
 
-<h2>Información cliente</h2>
-<p>Cliente: $cliente</p>
-<p>Compañía: $compania</p>
+<br />
+<br />
+<br />
 
-<h2>Datos de unidad a cotizar</h2>
-<p>Tipo de unidad: $tipo</p>
-<p>Marca: $marca </p>
-<p>Modelo: $modelo </p>
-
-<p>Precio de referencia (con IVA): $valor_total</p>
-<p>Plazo mensual: $plazo_mensual</p>
-<p>Renta mensual fija (con IVA): $renta_mensual_iva</p>
+<table>
+	<tr>
+		<td><h4>Plazo mensual</h4></td>
+		<td><h4>$plazo_mensual</h4></td>
+	</tr>
+	<tr>
+		<td><h4>Renta mensual fija (con IVA)</h4></td>
+		<td><h4>$renta_mensual_iva</h4></td>
+	</tr>
+</table>
 
 <h2>Pago inicial</h2>
-<p>Pago inicial: $pago_inicial</p>
-<p>Comisión 2%: $valor_comision</p>
-<hr>
-<p>Subtotal: $subtotal</p>
-<p>IVA (16%): $iva</p>
-<hr>
-<p>Renta en depósito: $renta_en_deposito</p>
-
-<p>Total pago inicial: $total_pago_inicial</p>
-<p>Valor residual (sin IVA): $valor_residual</p>
+<table class="[ border ]">
+	<tr>
+		<td>Pago inicial</td>
+		<td>$pago_inicial</td>
+	</tr>
+	<tr>
+		<td>Comisión 2%</td>
+		<td>$valor_comision</td>
+	</tr>
+	<hr>
+	<tr>
+		<td>Subtotal</td>
+		<td>$subtotal</td>
+	</tr>
+	<tr class="[ border-bottom ]">
+		<td>IVA (16%)</td>
+		<td>$iva</td>
+	</tr>
+	<hr>
+	<tr>
+		<td>Renta en depósito</td>
+		<td>$renta_en_deposito</td>
+	</tr>
+	<tr>
+		<td><h4>Total pago inicial</h4></td>
+		<td><h4>$total_pago_inicial</h4></td>
+	</tr>
+	<tr>
+		<td><h4>Valor residual (sin IVA)</h4></td>
+		<td><h4>$valor_residual</h4></td>
+	</tr>
+</table>
 
 <p><small>
 	Notas:
@@ -213,42 +242,28 @@ $html = <<<EOF
 	</ol>
 </small></p>
 
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<p class="[ text-center ]">
+	<small>
+		Cerrada Loma Bonita 33 Piso 3 · Lomas Altas · 11950 México D.F. <br />
+		centas@betaleasing.com · (55) 2325.0453
+	</small>
+</p>
+
 EOF;
 
 // output the HTML content
 $pdf->writeHTML($html, true, false, true, false, '');
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-// add a page
-$pdf->AddPage();
-
-
-$html = "
-	<h1>Tabla de pagos</h1>
-	<p>Cliente: $cliente</p>
-	<table>
-		<tr>
-			<th>Pago</th>
-			<th>Renta</th>
-			<th>IVA</th>
-			<th>Pago Total</th>
-		</tr>";
-
-for ($i=1; $i < intval( $plazo_mensual ) ; $i++) { 
-	$html .= "
-		<tr>
-			<td>$i</td>
-			<td>$renta_en_deposito</td>
-			<td>$iva_mensual</td>
-			<td>$renta_mensual_iva</td>
-		</tr>";
-}
-
-$html .= "</table>";
-
-// output the HTML content
-$pdf->writeHTML($html, true, false, true, false, '');
 
 // reset pointer to the last page
 $pdf->lastPage();
@@ -272,7 +287,7 @@ echo $pdf_url;
 
 // Functions
 function to_slug( $text )
-{ 
+{
 	// replace non letter or digits by -
 	$text = preg_replace('~[^\\pL\d]+~u', '-', $text);
 	// trim
@@ -300,7 +315,7 @@ function send_email_cotizacion( $nombre, $email, $compania, $pdf_url ){
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 	$message = '<html><body>';
 	$message .= '<h3>Datos de contacto</h3>';
-	$message .= '<p>Nombre: '.$nombre.'</p>';	
+	$message .= '<p>Nombre: '.$nombre.'</p>';
 	$message .= '<p>Email: '. $email . '</p>';
 	$message .= '<p>Cotización: '. $pdf_url . '</p>';
 	$message .= '</body></html>';

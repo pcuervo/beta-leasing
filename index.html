@@ -522,11 +522,11 @@
 				==== CONTACTO
 				================================================== -->
 				<section class="[ contacto ][ hero hero-contacto ]">
-					<div class="[ screen screen-dark--40 ][ z-index-1 ]"></div>
+					<div class="[ screen screen-intermediate--80 ][ z-index-1 ]"></div>
 					<div class="[ padding--top-bottom ][ relative z-index-2 ]">
 						<div class="[ wrapper ][ text-center ]">
 							<div class="[ row ]">
-								<h2 class="[ color-light ]">¿Tienes alguna duda? <br /> Te podemos ayudar</h2>
+								<h2 class="[ color-light text-shadow ]">¿Tienes alguna duda? <br /> Te podemos ayudar</h2>
 								<article class="[ form ]">
 									<form class="[ js-contact-form ]">
 										<div class="[ row ]">
@@ -650,8 +650,13 @@
 				}
 			});
 
-			$('.js-forma-cotizador').validate({
+			$('.js-contact-form').validate({
+				submitHandler:function(){
+					sendContactEmail( $(this) );
+				}
+			});
 
+			$('.js-forma-cotizador').validate({
 				submitHandler:function(){
 					$cotizador.generaPDF();
 				}
@@ -712,11 +717,6 @@
 				}
 
 				e.preventDefault();
-			});
-
-			$('.js-contact-form').submit( function(e){
-				e.preventDefault();
-				sendContactEmail( $(this) );
 			});
 
 			$('.js-cycle-next').on('click', function(){
