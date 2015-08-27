@@ -47,7 +47,7 @@ $renta_en_deposito = $_POST['renta_en_deposito'];
 $total_pago_inicial = $_POST['total_pago_inicial'];
 $valor_residual = $_POST['valor_residual'];
 
-$filename = time() . '-' . to_slug( $cliente );
+$numero_referencia = time() . '-' . to_slug( $cliente );
 
 
 
@@ -274,12 +274,12 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$filename .= '.pdf';
+$filename = $numero_referencia . '.pdf';
 $pdf->Output( $filename, 'F' );
 
-$pdf_url = '/beta-leasing/cotizaciones/' . $filename;
+$pdf_url = 'http://localhost.dev:8888/beta-leasing/cotizaciones/' . $filename;
 
-//send_email_cotizacion( $nombre, $email, $compania, $pdf_url );
+send_email_cotizacion( $cliente, $email, $telefono, $compania, $pdf_url, $numero_referencia );
 
 echo $pdf_url;
 
@@ -307,20 +307,39 @@ function to_slug( $text )
 	return $text;
 }// to_slug
 
-function send_email_cotizacion( $nombre, $email, $compania, $pdf_url ){
+function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url, $numero_referencia ){
 
-	$from_email = 'ventas@betaleasing.com';
+	// Correo a Beta Leasing
+	$from_email = 'no-reply@betaleasing.com';
 	$to_email = 'miguel@pcuervo.com';
-
-	$subject = $nombre . ' ha creado su cotización a través de www.betaleasing.com: ';
-	$headers = 'From: Nombre <' . $from_email . '>' . "\r\n";
+	$subject = $nombre . ' ha creado su cotización a través de betaleasing.com ';
+	$headers = 'From: ' . $nombre . ' <' . $from_email . '>' . "\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 	$message = '<html><body>';
 	$message .= '<h3>Datos de contacto</h3>';
 	$message .= '<p>Nombre: '.$nombre.'</p>';
 	$message .= '<p>Email: '. $email . '</p>';
-	$message .= '<p>Cotización: '. $pdf_url . '</p>';
+	$message .= '<p>Teléfono: '. $telefono . '</p>';
+	$message .= '<p>Número de referencia: '. $numero_referencia . '</p>';
+	$message .= '<a href="' . $pdf_url . '">Ver cotización</a>';
+	$message = '<img src="http://pcuervo.com/beta-leasing/images/beta-leasing.png"><br>';
+	$message .= '</body></html>';
+
+	mail($to_email, $subject, $message, $headers );
+
+	// Correo a cliente
+	$from_email = 'ventas@betaleasing.com';
+	$to_email = $email;
+	$subject = 'Has creado una cotización a través de www.betaleasing.com: ';
+	$headers = 'From: Ventas BetaLeasing <' . $from_email . '>' . "\r\n";
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+	$message = '<html><body>';
+	$message .= '<h3>¡Gracias por tu interés en nuestro servicio!</h3>';
+	$message .= '<p>Estimad@ ' .$nombre. ':</p>';
+	$message .= '<p>Muy pronto nos pondremos en contacto contigo. Por el momento puedes descargar tu cotización en el <a href="' . $pdf_url . '">siguiente enlace</a></p>';
+	$message = '<img src="http://pcuervo.com/beta-leasing/images/beta-leasing.png"><br>';
 	$message .= '</body></html>';
 
 	mail($to_email, $subject, $message, $headers );

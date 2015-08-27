@@ -25,6 +25,8 @@ function loadMap( lat, lon, zoom, mapColor){
 		map = new google.maps.Map(document.getElementById('map-canvas'), {
 			scrollwheel: false,
 			zoom: zoom,
+			scrollwheel: false,
+			draggable: false,
 			mapTypeIds: [ 'map_style' ],
 			center: { lat: lat, lng: lon }
 		});
