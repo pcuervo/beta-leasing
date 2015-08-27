@@ -254,12 +254,11 @@
 				<!-- =================================================
 				==== COTIZADOR
 				================================================== -->
-				<section class="[ cotizador ][ bg-intermediate ][ padding--top--large ][ color-light ]">
+				<section class="[ cotizador ][ bg-intermediate ][ padding--top-bottom--large ][ color-light ]">
 					<div class="[ wrapper ]">
 						<h2 class="[ text-center ]">Cotizador</h2>
 						<article class="[ form ][ xmall-12 ]">
 							<form class="[ js-forma-cotizador ]" id="form-ui">
-
 								<div class="[ cycle-slideshow ]"
 									data-cycle-fx="scrollHorz"
 									data-cycle-timeout="0"
@@ -269,10 +268,8 @@
 									data-cycle-center-vert="true"
 									data-cycle-log="false"
 								>
-									<div class="[ cycle-slide ][ bg-intermediate ][ xmall-12 medium-8 xlarge-6 ]">
+									<div class="[ cycle-slide ][ bg-intermediate ][ xmall-12 medium-8 ]">
 										<div class="[ xmall-12 ]">
-
-
 											<h3 class="[ text-center ]">Quiero cotizar:</h3>
 											<div class="[ row ]">
 												<fieldset class="[ column xmall-4 ][ margin-bottom ]">
@@ -346,39 +343,42 @@
 											</div><!-- row -->
 										</div>
 									</div><!-- cycle-slide -->
-									<div class="[ cycle-slide ][ bg-intermediate ][ xmall-12 medium-8 xlarge-6 ][ padding--bottom--xxxlarge ]">
+									<div class="[ cycle-slide ][ bg-intermediate ][ xmall-12 medium-8 height-full ]">
 										<div class="[ xmall-12 ]">
 											<h3 class="[ text-center ]">Confirmar información</h3>
 											<div class="[ row ]">
-												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
-													<label class="field">
-														<input type="text" name="nombre" class="[ gui-input ][ required ]" placeholder="Nombre completo">
-													</label>
-												</fieldset>
-												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
-													<label class="field">
-														<input type="text" name="telefono" class="[ gui-input ][ required ]" placeholder="Teléfono">
-													</label>
-												</fieldset>
-												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
-													<label class="field">
-														<input type="text" name="compania" class="[ gui-input ]" placeholder="Compañía">
-													</label>
-												</fieldset>
-												<fieldset class="[ xmall-8 ][ margin-bottom ][ center ]">
-													<label class="field">
-														<input type="text" name="email" class="[ gui-input ][ required email ]" placeholder="Correo electrónico">
-													</label>
-												</fieldset>
-												<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
-													<p><small>Genera tu archivo <strong>PDF</strong> para ver todos los detalles de tu cotización arrendamiento</small></p>
-													<p></p>
-													<button type="submit" class="[ button button--primary ][ js-generar-pdf ]">Generar PDF</button>
-												</fieldset>
-												<fieldset class="[ column xmall-12 ][ margin-bottom ][ text-center ]">
-													<a class="[ button button--primary ][ js-cycle-prev ]">Atras</a>
-													<p><small>Paso 2 de 2</small></p>
-												</fieldset>
+												<div class="[ column xmall-12 medium-6 ]">
+													<fieldset class="[ xmall-12 ][ margin-bottom ][ center ]">
+														<label class="field">
+															<input type="text" name="nombre" class="[ gui-input ][ required ]" placeholder="Nombre completo">
+														</label>
+													</fieldset>
+													<fieldset class="[ xmall-12 ][ margin-bottom ][ center ]">
+														<label class="field">
+															<input type="text" name="telefono" class="[ gui-input ][ required ]" placeholder="Teléfono">
+														</label>
+													</fieldset>
+													<fieldset class="[ xmall-12 ][ margin-bottom ][ center ]">
+														<label class="field">
+															<input type="text" name="compania" class="[ gui-input ]" placeholder="Compañía">
+														</label>
+													</fieldset>
+													<fieldset class="[ xmall-12 ][ margin-bottom ][ center ]">
+														<label class="field">
+															<input type="text" name="email" class="[ gui-input ][ required email ]" placeholder="Correo electrónico">
+														</label>
+													</fieldset>
+												</div>
+												<div class="[ column xmall-12 medium-6 ]">
+													<fieldset class="[ xmall-12 ][ margin-bottom ][ text-center ]">
+														<p>Genera tu archivo <strong>PDF</strong> para ver todos los detalles de tu cotización arrendamiento</p>
+														<p></p><button type="submit" class="[ button button--primary button--large ][ js-generar-pdf ]">Generar PDF</button>
+													</fieldset>
+													<fieldset class="[ xmall-12 ][ margin-bottom ][ text-center ]">
+														<a class="[ button button--primary ][ js-cycle-prev ]">Atras</a>
+														<p><small>Paso 2 de 2</small></p>
+													</fieldset>
+												</div>
 											</div><!-- row -->
 										</div>
 									</div><!-- cycle-slide -->
@@ -528,9 +528,9 @@
 				<!-- =================================================
 				==== CONTACTO
 				================================================== -->
-				<section class="[ contacto ][ hero hero-contacto ]">
+				<section class="[ contacto ][ hero hero-contacto ][ padding--top-bottom--large ]">
 					<div class="[ screen screen-intermediate--80 ][ z-index-1 ]"></div>
-					<div class="[ padding--top-bottom ][ relative z-index-2 ]">
+					<div class="[ relative z-index-2 ]">
 						<div class="[ wrapper ][ text-center ]">
 							<div class="[ row ]">
 								<h2 class="[ color-light text-shadow ]">¿Tienes alguna duda? Te podemos ayudar</h2>
