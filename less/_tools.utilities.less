@@ -159,6 +159,10 @@
 .padding--bottom{ padding-bottom: @unit; }
 .padding--bottom--small{ padding-bottom: (@unit/2); }
 .padding--bottom--large{ padding-bottom: (@unit*2); }
+.padding--bottom--xlarge{ padding-bottom: (@unit*3); }
+.padding--bottom--xxlarge{ padding-bottom: (@unit*4); }
+.padding--bottom--xxxlarge{ padding-bottom: (@unit*5); }
+
 
 .padding--top-bottom{ padding-top: @unit; padding-bottom: @unit; }
 .padding--top-bottom--small{ padding-top: (@unit/2); padding-bottom: (@unit/2); }
@@ -268,6 +272,10 @@
 	#TEXT
 \*------------------------------------*/
 
+.text-shadow{
+	.text-shadow();
+}
+
 /**
  * Alignment
 **/
@@ -304,10 +312,22 @@
  * Solid
 **/
 .screen-dark--30{
-	background: rgba(31, 37, 50, 0.3);
+	background: fade(@dark, 30%);
 }
 .screen-dark--40{
-	background: rgba(31, 37, 50, 0.4);
+	background: fade(@dark, 40%);
+}
+
+.screen-primary--10{
+	background: fade(@primary, 10%);
+}
+
+.screen-intermediate--50{
+	background: fade(@intermediate, 50%);
+}
+
+.screen-intermediate--80{
+	background: fade(@intermediate, 80%);
 }
 
 /*------------------------------------*\

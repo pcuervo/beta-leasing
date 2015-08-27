@@ -16,6 +16,7 @@ fieldset{
 */
 
 
+
 /* @form wrappers
 ---------------------------------- */
 .form { }
@@ -175,15 +176,8 @@ fieldset{
 }
 
 .form .checkbox,
-.form .radio,
-.form .button{
+.form .radio{
 	.transition(all 0.1s ease-in-out);
-}
-
-.form .button{
-	margin: 0; border-color: @primary;
-	line-height: 1.4;
-	background-color: @primary; color: @light;
 }
 
 .form .select > select,
@@ -1783,4 +1777,9 @@ fieldset{
 	.form .bdl { border-left:0;  }
 	.form .bdr { border-right:0; }
 	.form .align-right{ text-align: left; }
+}
+
+label.error{
+	color: @danger;
+	.text-shadow(0px 1px 1px rgba(0,0,0, 1));
 }

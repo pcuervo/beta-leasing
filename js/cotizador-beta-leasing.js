@@ -88,7 +88,7 @@
 
 			//console.log( data );
 			$.post( 'php/cotizacion_pdf.php', data, function( response ) {
-				$( '.js-generar-pdf' ).after( '<a class="[ button button--primary ]" target="_blank" href="'+response+'">ver PDF</a>' );
+				$( '.js-generar-pdf' ).after( '<a class="[ button button--secondary button--medium ]" target="_blank" href="'+response+'">ver PDF</a><p class="[ text-center ][ margin-bottom ]">Gracias por tu interés en nuestro servicio. Tu cotización ha sido enviada por correo en formato PDF.</p>' );
 				$( '.js-generar-pdf' ).remove();
 				//console.log( response );
 			});
@@ -159,6 +159,8 @@
 			var datos = {};
 
 			datos['cliente'] 			= $('input[name="nombre"]').val();
+			datos['email'] 			= $('input[name="email"]').val();
+			datos['telefono'] 			= $('input[name="telefono"]').val();
 			datos['compania'] 			= $('input[name="compania"]').val();
 			datos['tipo'] 				= $('select[name="tipo"]').val();
 			datos['marca'] 				= $('input[name="marca"]').val();

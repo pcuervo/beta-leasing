@@ -1,8 +1,15 @@
 .hero{
-	min-height: 70vh;
 	background-size: cover; background-position: center center;
 	position: relative;
 	.transition;
+}
+
+/*------------------------------------*\
+	#HERO IMAGES
+\*------------------------------------*/
+.hero-home{
+	background-image: url('../images/hero-home-1.jpg');
+	min-height: 70vh;
 
 	@media (orientation: landscape){
 		min-height: 65vh;
@@ -11,21 +18,9 @@
 	@media (min-width: @xlarge) and (orientation: landscape){
 		min-height: 80vh;
 	}
-}
 
-/*------------------------------------*\
-	#HERO IMAGES
-\*------------------------------------*/
-.hero-home{
-	background-image: url('../images/hero-home-1.jpg');
-	@media (min-width: @large){
-		background-image: url('../images/hero-home-1@2x.jpg');
-	}
 }
 
 .hero-contacto{
 	background-image: url('../images/hero-contact.jpg');
-	@media (min-width: @large){
-		background-image: url('../images/hero-contact@2x.jpg');
-	}
 }

@@ -33,20 +33,20 @@
 		***********************************/
 
 		/**
-		 * Change hero background image. 
+		 * Change hero background image.
 		 * @param string imgNumber
 		**/
 		function changeBackgroundImage( imgNumber ) {
-		    var imageUrl = opts.imgFolderPath + opts.imgPrefix + imgNumber + opts.imgFormat;
-		    $hero.css('background-image', 'url("' + imageUrl + '")');
+			var imageUrl = opts.imgFolderPath + opts.imgPrefix + imgNumber + opts.imgFormat;
+			$hero.css('background-image', 'url("' + imageUrl + '")');
 		}
 
 		/**
 		 * Slider timing to change the background image.
 		**/
 		function sliderTiming() {
-		    currentImgIndex === opts.totalImages ? currentImgIndex = 1 : currentImgIndex = currentImgIndex+1;
-		    changeBackgroundImage( currentImgIndex );
+			currentImgIndex === opts.totalImages ? currentImgIndex = 1 : currentImgIndex = currentImgIndex+1;
+			changeBackgroundImage( currentImgIndex );
 		}// sliderTiming
 
 	};
