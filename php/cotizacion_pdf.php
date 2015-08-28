@@ -323,7 +323,7 @@ function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url
 	$message .= '<p>Teléfono: '. $telefono . '</p>';
 	$message .= '<p>Número de referencia: '. $numero_referencia . '</p>';
 	$message .= '<a href="' . $pdf_url . '">Ver cotización</a>';
-	$message = '<img src="http://pcuervo.com/beta-leasing/images/beta-leasing.png"><br>';
+	$message .= '<img src="http://pcuervo.com/beta-leasing/images/beta-leasing.png"><br>';
 	$message .= '</body></html>';
 
 	mail($to_email, $subject, $message, $headers );
@@ -339,7 +339,7 @@ function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url
 	$message .= '<h3>¡Gracias por tu interés en nuestro servicio!</h3>';
 	$message .= '<p>Estimad@ ' .$nombre. ':</p>';
 	$message .= '<p>Muy pronto nos pondremos en contacto contigo. Por el momento puedes descargar tu cotización en el <a href="' . $pdf_url . '">siguiente enlace</a></p>';
-	$message = '<img src="http://pcuervo.com/beta-leasing/images/beta-leasing.png"><br>';
+	$message .= '<img src="http://pcuervo.com/beta-leasing/images/beta-leasing.png"><br>';
 	$message .= '</body></html>';
 
 	mail($to_email, $subject, $message, $headers );
