@@ -318,7 +318,7 @@ function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 	$message = '<html><body>';
 	$message .= '<h3>Datos de contacto</h3>';
-	$message .= '<p>Nombre: '.$nombre.'</p>';
+	$message .= '<p>Nombre: '. $nombre .'</p>';
 	$message .= '<p>Email: '. $email . '</p>';
 	$message .= '<p>Teléfono: '. $telefono . '</p>';
 	$message .= '<p>Número de referencia: '. $numero_referencia . '</p>';

@@ -533,7 +533,7 @@
 					<div class="[ relative z-index-2 ]">
 						<div class="[ wrapper ][ text-center ]">
 							<div class="[ row ]">
-								<h2 class="[ color-light text-shadow ]">¿Tienes alguna duda? Te podemos ayudar</h2>
+								<h2 class="[ text-shadow ][ color-light ]">¿Tienes alguna duda? Te podemos ayudar</h2>
 								<article class="[ form ]">
 									<form class="[ js-contact-form ]">
 										<div class="[ xmall-12 medium-8 large-6 center ]">
@@ -544,17 +544,17 @@
 											</fieldset>
 											<fieldset class="[ margin-bottom ]">
 												<label class="field">
-													<input type="text" name="email" class="[ gui-input gui-light ][ required email ]" placeholder="Correo electrónico">
+													<input type="text" name="email-contacto" class="[ gui-input gui-light ][ required email ]" placeholder="Correo electrónico">
 												</label>
 											</fieldset>
 											<fieldset class="[ margin-bottom ]">
 												<label class="field">
-													<input type="text" name="telefono" class="[ gui-input gui-light ][ required ]" placeholder="Teléfono">
+													<input type="text" name="telefono-contacto" class="[ gui-input gui-light ][ required ]" placeholder="Teléfono">
 												</label>
 											</fieldset>
 											<fieldset class="[ margin-bottom ]">
 												<label class="field">
-													<textarea class="[ gui-textarea gui-light ][ required ]" name="mensaje" placeholder="Mensaje"></textarea>
+													<textarea class="[ gui-textarea gui-light ][ required ]" name="mensaje-contacto" placeholder="Mensaje"></textarea>
 												</label>
 											</fieldset>
 											<fieldset class="[ margin-bottom ][ text-center ]">
@@ -673,7 +673,7 @@
 
 			$('.js-contact-form').validate({
 				submitHandler:function(){
-					sendContactEmail( $(this) );
+					sendContactEmail( '.js-contact-form' );
 				}
 			});
 
