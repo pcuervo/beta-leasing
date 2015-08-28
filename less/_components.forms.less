@@ -353,6 +353,20 @@ fieldset{
 .form .file .gui-file:focus + .gui-input{ border-color: @light; }
 .form .select > select:focus + .arrow{ color:@primary; }
 
+.form .gui-light.gui-input:focus,
+.form .gui-light.gui-textarea:focus,
+.form .select > select:focus,
+.form .select-multiple select:focus{ border-color: @dark; color: @dark !important; }
+.form .gui-light.gui-textarea:focus{  height: 120px; }
+.form .select > select:focus { z-index:10; z-index:20\9; }
+.form .gui-light.gui-input:focus ~ .field-icon i,
+.form .gui-light.gui-textarea:focus ~ .field-icon i{ color:@dark; }
+.form .select-multiple select:focus,
+.form .gui-light.gui-input:focus ~ .input-hint,
+.form .gui-light.gui-textarea:focus ~ .input-hint,
+.form .file .gui-light.gui-file:focus + .gui-input{ border-color: @dark; }
+.form .select > select:focus + .arrow{ color:@primary; }
+
 /* @radio + checkbox option elements
 ----------------------------------------------------- */
 .form .option {

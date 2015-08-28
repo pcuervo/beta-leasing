@@ -112,13 +112,15 @@ $pdf->AddPage();
 $fecha = date("d/m/Y");
 $html = <<<EOF
 <style>
+	*{ color: #000000; }
+
 	h1 {
 		font-family: helvetica;
 		font-size: 20pt;
 		text-align: center;
 	}
 	p {
-		color: #003300;
+		color: #000000;
 		font-family: helvetica;
 		font-size: 12pt;
 	}
@@ -140,18 +142,23 @@ $html = <<<EOF
 		border: none;
 	}
 
-	.text-right{
-		text-align: right;
-	}
+	.text-right{ text-align: right; }
+	.text-left{ text-align: left; }
+	.text-center{ text-align: center; }
 
-	.text-center{
-		text-align: center;
-	}
+	.pull-right{ float: right; }
+	.pull-left{ float: left; }
 
 
 </style>
 
-<p class="[ text-right ]"><small>Fecha: $fecha</small></p>
+<table>
+	<tr>
+		<th><small># de referencia: $filename</small></th>
+		<th><span class="[ text-right ]"><small>Fecha: $fecha</small></span></th>
+	</tr>
+</table>
+
 <h1>Cotización estimada de arrendamiento puro</h1>
 
 <table>
@@ -160,24 +167,20 @@ $html = <<<EOF
 		<th><h4>Datos de unidad a cotizar</h4></th>
 	</tr>
 	<tr>
-		<td># de referencia: $numero_referencia</td>
+		<td>Cliente: $cliente</td>
 		<td>Tipo de unidad: $tipo</td>
 	</tr>
 	<tr>
-		<td>Cliente: $cliente</td>
+		<td>Compañía: $compania</td>
 		<td>Marca: $marca </td>
 	</tr>
 	<tr>
-		<td>Compañía: $compania</td>
+		<td>Teléfono: $telefono</td>
 		<td>Modelo: $modelo</td>
 	</tr>
 	<tr>
-		<td>Teléfono: $telefono</td>
-		<td>Precio de referencia (con IVA): $valor_total</td>
-	</tr>
-	<tr>
 		<td>Email: $email</td>
-		<td></td>
+		<td>Precio de referencia (con IVA): $valor_total</td>
 	</tr>
 </table>
 
