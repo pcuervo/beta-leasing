@@ -343,7 +343,6 @@ fieldset{
 .form .gui-textarea:focus,
 .form .select > select:focus,
 .form .select-multiple select:focus{ border-color: @primary; color: @light !important; }
-.form .gui-textarea:focus{  height: 120px; }
 .form .select > select:focus { z-index:10; z-index:20\9; }
 .form .gui-input:focus ~ .field-icon i,
 .form .gui-textarea:focus ~ .field-icon i{ color:@primary; }
@@ -355,9 +354,9 @@ fieldset{
 
 .form .gui-light.gui-input:focus,
 .form .gui-light.gui-textarea:focus,
-.form .select > select:focus,
-.form .select-multiple select:focus{ border-color: @dark; color: @dark !important; }
-.form .gui-light.gui-textarea:focus{  height: 120px; }
+.form .select > select.gui-light:focus,
+.form .select-multiple select.gui-light:focus{ border-color: @dark; color: @dark !important; }
+.form .gu
 .form .select > select:focus { z-index:10; z-index:20\9; }
 .form .gui-light.gui-input:focus ~ .field-icon i,
 .form .gui-light.gui-textarea:focus ~ .field-icon i{ color:@dark; }

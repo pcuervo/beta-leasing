@@ -123,7 +123,7 @@ function sendContactEmail( form ){
 		'php/send_contact_email.php',
 		data,
 		function( response ){
-			console.log(response);
+			//console.log(response);
 			var jsonResponse = $.parseJSON( response );
 
 			if( jsonResponse.error === 1) {
