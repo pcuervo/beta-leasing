@@ -130,7 +130,7 @@ function sendContactEmail( form ){
 				showContactErrorHTML( jsonResponse.message );
 				return;
 			}
-
+			$('.contacto h2').empty();
 			$( form ).empty();
 			$( form ).append( getContactSuccessHTML( jsonResponse.message ) );
 		}

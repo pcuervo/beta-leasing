@@ -554,7 +554,7 @@
 											</fieldset>
 											<fieldset class="[ margin-bottom ]">
 												<label class="field">
-													<textarea class="[ gui-textarea gui-light ][ required ]" name="mensaje" placeholder="Mensaje"></textarea>
+													<textarea class="[ gui-textarea gui-light ][ required ]" name="mensaje-contacto" placeholder="Mensaje"></textarea>
 												</label>
 											</fieldset>
 											<fieldset class="[ margin-bottom ][ text-center ]">
@@ -673,7 +673,7 @@
 
 			$('.js-contact-form').validate({
 				submitHandler:function(){
-					sendContactEmail( $(this) );
+					sendContactEmail( '.js-contact-form' );
 				}
 			});
 
