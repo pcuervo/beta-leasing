@@ -86,11 +86,10 @@
 		this.generaPDF = function() {
 			var data = getDatos();
 
-			//console.log( data );
+			$('.js-calculator-submission').empty().html('<img class="[ block center ]" src="images/loader.gif" alt="">');
 			$.post( 'php/cotizacion_pdf.php', data, function( response ) {
-				$( '.js-generar-pdf' ).after( '<a class="[ button button--secondary button--medium ]" target="_blank" href="'+response+'">ver PDF</a><p class="[ text-center ][ margin-bottom ]">Gracias por tu interés en nuestro servicio. Tu cotización ha sido enviada por correo en formato PDF.</p>' );
-				$( '.js-generar-pdf' ).remove();
-				//console.log( response );
+				$('.js-calculator-back').remove();
+				$( '.js-calculator-submission' ).html( '<a class="[ button button--secondary button--medium ]" target="_blank" href="'+response+'">ver PDF</a><p class="[ text-center ][ margin-bottom ]">Gracias por tu interés en nuestro servicio. Tu cotización ha sido enviada por correo en formato PDF.</p>' );
 			});
 
 		}// generaPDF
