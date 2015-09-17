@@ -47,7 +47,7 @@ $renta_en_deposito = $_POST['renta_en_deposito'];
 $total_pago_inicial = $_POST['total_pago_inicial'];
 $valor_residual = $_POST['valor_residual'];
 
-$numero_referencia = time() . '-' . to_slug( $cliente );
+$clave_referencia = time() . '-' . to_slug( $cliente );
 
 
 
@@ -274,12 +274,12 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$filename = $numero_referencia . '.pdf';
+$filename = $clave_referencia . '.pdf';
 $pdf->Output( $filename, 'F' );
 
 $pdf_url = 'http://pcuervo.com/beta-leasing/cotizaciones/' . $filename;
 
-send_email_cotizacion( $cliente, $email, $telefono, $compania, $pdf_url, $numero_referencia );
+send_email_cotizacion( $cliente, $email, $telefono, $compania, $pdf_url, $clave_referencia );
 
 echo $pdf_url;
 
@@ -307,7 +307,7 @@ function to_slug( $text )
 	return $text;
 }// to_slug
 
-function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url, $numero_referencia ){
+function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url, $clave_referencia ){
 
 	// Correo a Beta Leasing
 	$from_email = 'no-reply@betaleasing.com';
@@ -321,7 +321,7 @@ function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url
 	$message .= '<p>Nombre: '. $nombre .'</p>';
 	$message .= '<p>Email: '. $email . '</p>';
 	$message .= '<p>Teléfono: '. $telefono . '</p>';
-	$message .= '<p>Número de referencia: '. $numero_referencia . '</p>';
+	$message .= '<p>Clave de referencia: '. $clave_referencia . '</p>';
 	$message .= '<a href="' . $pdf_url . '">Ver cotización</a>';
 	$message .= '<img src="http://pcuervo.com/beta-leasing/images/beta-leasing.png"><br>';
 	$message .= '</body></html>';

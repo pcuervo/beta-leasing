@@ -215,7 +215,7 @@
 		}
 
 		function getTasaMensual(){
-			return 0.26 / 12;
+			return 0.20 / 12;
 		}
 
 		function getValorResidual(){
