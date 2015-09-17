@@ -87,9 +87,10 @@
 			var data = getDatos();
 
 			$('<img class="[ block center ][ js-loader ]" src="images/loader.gif" alt="">').insertAfter('.js-calculator-submission');
+			$('.js-calculator-message').remove();
 			$.post( 'php/cotizacion_pdf.php', data, function( response ) {
 				$('.js-loader').remove();
-				$( '<a class="[ button button--secondary button--medium ]" target="_blank" href="'+response+'">ver PDF</a><p class="[ margin-bottom ]">Gracias por tu interés en nuestro servicio. Tu cotización ha sido enviada por correo en formato PDF.</p>' ).insertAfter('.js-calculator-submission');
+				$( '<div class="[ js-calculator-message ]"><a class="[ button button--secondary button--medium ]" target="_blank" href="'+response+'">ver PDF</a><p class="[ margin-bottom ]">Gracias por tu interés en nuestro servicio. Tu cotización ha sido enviada por correo en formato PDF.</p></div>' ).insertAfter('.js-calculator-submission');
 			});
 
 		}// generaPDF
