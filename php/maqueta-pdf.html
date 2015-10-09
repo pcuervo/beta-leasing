@@ -1,0 +1,193 @@
+<style>
+	*{ color: #000000; }
+
+	h1 {
+		font-family: helvetica;
+		font-size: 20pt;
+		text-align: center;
+	}
+	p {
+		color: #000000;
+		font-family: helvetica;
+		font-size: 12pt;
+	}
+
+	table {
+		color: #003300;
+		font-family: helvetica;
+		font-size: 12pt;
+	}
+	table.border{
+		border: 2px solid #313131;
+	}
+	th{
+		font-size: 16px;
+		font-weigth: bold;
+	}
+	td {
+		padding: 4px;
+		border: none;
+	}
+
+	.text-right{ text-align: right; }
+	.text-left{ text-align: left; }
+	.text-center{ text-align: center; }
+
+	.pull-right{ float: right; }
+	.pull-left{ float: left; }
+
+	.margin-bottom{ margin-bottom: 20px; }
+	.margin-bottom--large{ margin-bottom: 40px; }
+
+
+</style>
+
+<h1>Cotización de arrendamiento puro</h1>
+<h3 class="[ text-center ][ margin-bottom ]">BIEN: <?php ?></h3>
+
+<table class="[ margin-bottom ]">
+	<tr>
+		<th><small>Cotización #: $filename</small></th>
+		<th><span class="[ text-right ]"><small>Fecha: $fecha</small></span></th>
+	</tr>
+</table>
+
+<table class="[ border ][ margin-bottom ]">
+	<tr>
+		<th><h4  class="[ text-right ]">Información del cliente</h4></th>
+	</tr>
+	<tr>
+		<td>Empresa: $compania</td>
+	</tr>
+	<tr>
+		<td>Contacto: $cliente</td>
+	</tr>
+	<tr>
+		<td>Teléfono: $telefono:</td>
+	</tr>
+	<tr>
+		<td>Correo electrónico: $email</td>
+	</tr>
+</table>
+
+<table class="[ border ][ margin-bottom ]">
+	<tr>
+		<th><h4  class="[ text-right ]">Información $variable</h4></th>
+	</tr>
+	<tr>
+		<td>Marca: $marca </td>
+		<td>Modelo: $modelo</td>
+	</tr>
+	<tr>
+		<td>Año: $anio</td>
+		<td>Valor Factura (con IVA): $valor_total</td>
+	</tr>
+</table>
+
+<table class="[ border ][ margin-bottom ]">
+	<tr>
+		<th><h4  class="[ text-right ]">Información del arrendamiento</h4></th>
+	</tr>
+	<tr>
+		<td class="[ text-right ]"><strong>Plazo</strong></td>
+		<td><strong>$plazo_mensual</strong></td>
+	</tr>
+	<tr>
+		<td class="[ text-right ]"><strong>Renta mensual</strong></td>
+		<td><strong>$renta_mensual_iva</strong></td>
+	</tr>
+	<tr>
+		<td> </td>
+	</tr>
+	<tr>
+		<td class="[ text-right ]">Pago inicial</td>
+		<td>$pago_inicial</td>
+	</tr>
+	<tr>
+		<td class="[ text-right ]">Comisión 2%</td>
+		<td>$valor_comision</td>
+	</tr>
+	<tr>
+		<td class="[ text-right ]">Subtotal</td>
+		<td>$subtotal</td>
+	</tr>
+	<tr class="[  ]">
+		<td class="[ text-right ]">IVA (16%)</td>
+		<td>$iva</td>
+	</tr>
+	<tr>
+		<td> </td>
+	</tr>
+	<tr>
+		<td>Renta en depósito</td>
+		<td>$renta_en_deposito</td>
+	</tr>
+	<tr>
+		<td><strong>Total pago inicial</strong></td>
+		<td><strong>$total_pago_inicial</strong></td>
+	</tr>
+	<tr>
+		<td> </td>
+	</tr>
+	<tr>
+		<td><strong>Valor residual (sin IVA)</strong></td>
+		<td><strong>$valor_residual</strong></td>
+	</tr>
+</table>
+
+<table class="[ border ][ margin-bottom ]">
+	<tr>
+		<th><h4  class="[ text-right ]">$variable y Costo Real</h4></th>
+	</tr>
+	<tr>
+		<td class="[ text-right ]"><strong>Total renta + Pago inicial</strong></td>
+		<td><strong>$plazo_mensual</strong></td>
+	</tr>
+	<tr>
+		<td> </td>
+	</tr>
+	<tr>
+		<td class="[ text-right ]">Ahorro fiscal I.S.R. 30%</td>
+		<td>$pago_inicial</td>
+	</tr>
+	<tr>
+		<td class="[ text-right ]">Ahorro fiscal P.T.U. 10%</td>
+		<td>$valor_comision</td>
+	</tr>
+	<tr>
+		<td class="[ text-right ]">Ahorro fiscal I.V.A.</td>
+		<td>$subtotal</td>
+	</tr>
+	<tr>
+		<td> </td>
+	</tr>
+	<tr>
+		<td>Valor residual</td>
+		<td>$renta_en_deposito</td>
+	</tr>
+	<tr>
+		<td><strong>Costo real</strong></td>
+		<td><strong>$total_pago_inicial</strong></td>
+	</tr>
+</table>
+
+
+<p><small>
+	Notas: Los importes de seguros, impuestos, comisiones y costos de accesorios no están incluidos en esta cotización. La presente cotización se emite únicamente con fines informativos y podrá ser objeto de modificaciones. La celebración de cualquier contrato está sujeta a la aprobación de la solicitud de arrendamiento respectiva. El beneficio fiscal y costo real esta sujeto a la situación particular de cada cliente.
+</small></p>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<p class="[ text-center ]">
+	<small>
+		Cerrada Loma Bonita 33 Piso 3 · Lomas Altas · 11950 México D.F. <br />
+		ventas@betaleasing.com · (55) 2325.0453
+	</small>
+</p>

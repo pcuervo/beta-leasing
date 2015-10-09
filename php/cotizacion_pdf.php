@@ -152,14 +152,14 @@ $html = <<<EOF
 
 </style>
 
+<h1>Cotización de arrendamiento puro</h1>
+
 <table>
 	<tr>
 		<th><small># de referencia: $filename</small></th>
 		<th><span class="[ text-right ]"><small>Fecha: $fecha</small></span></th>
 	</tr>
 </table>
-
-<h1>Cotización estimada de arrendamiento puro</h1>
 
 <table>
 	<tr>
