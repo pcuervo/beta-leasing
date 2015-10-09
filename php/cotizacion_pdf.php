@@ -47,6 +47,15 @@ $renta_en_deposito = $_POST['renta_en_deposito'];
 $total_pago_inicial = $_POST['total_pago_inicial'];
 $valor_residual = $_POST['valor_residual'];
 
+// Beneficio fiscal y costo real estiamdo
+$total_rentas_y_pago_inicial = 36 * $renta_mensual_iva + $subtotal + $iva;
+$ahorro_fiscal_isr = $total_rentas_y_pago_inicial * 0.3 * -1;
+$ahorro_fiscal_ptu = $total_rentas_y_pago_inicial * 0.1 * -1;
+$ahorro_fiscal_iva = $total_rentas_y_pago_inicial * 0.16 * -1;
+$costo_real = $total_rentas_y_pago_inicial + $ahorro_fiscal_iva + $ahorro_fiscal_ptu + $ahorro_fiscal_isr + $valor_residual;
+
+
+
 $clave_referencia = time() . '-' . to_slug( $cliente );
 
 
