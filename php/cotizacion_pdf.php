@@ -286,7 +286,7 @@ $pdf->lastPage();
 $filename = $clave_referencia . '.pdf';
 $pdf->Output( $filename, 'F' );
 
-$pdf_url = 'http://localhost.dev:8888/beta-leasing/cotizaciones/' . $filename;
+$pdf_url = 'http://pcuervo.com/beta-leasing/cotizaciones/' . $filename;
 
 send_email_cotizacion( $cliente, $email, $telefono, $compania, $pdf_url, $clave_referencia );
 
@@ -318,6 +318,8 @@ function to_slug( $text )
 
 function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url, $clave_referencia ){
 
+	$nombre = utf8_decode ( $nombre );
+
 	// Correo a Beta Leasing
 	$from_email = 'no-reply@betaleasing.com';
 	$to_email = 'miguel@pcuervo.com';
@@ -345,9 +347,9 @@ function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 	$message = '<html><body>';
-	$message .= '<h3>¡Gracias por tu interés en nuestro servicio!</h3>';
+	$message .= '<h3>&#161;Gracias por tu inter&eacute;s en nuestro servicio!</h3>';
 	$message .= '<p>Estimad@ ' .$nombre. ':</p>';
-	$message .= '<p>Muy pronto nos pondremos en contacto contigo. Por el momento puedes descargar tu cotización en el <a href="' . $pdf_url . '">siguiente enlace</a></p>';
+	$message .= '<p>Muy pronto nos pondremos en contacto contigo. Por el momento puedes descargar tu cotizaci&oacute;n en el <a href="' . $pdf_url . '">siguiente enlace</a>.</p>';
 	$message .= '<img src="http://pcuervo.com/beta-leasing/images/beta-leasing.png"><br>';
 	$message .= '</body></html>';
 

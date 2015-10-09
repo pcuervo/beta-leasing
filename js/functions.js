@@ -47,23 +47,23 @@ function createChart(){
 		labels: ["Mes 1", "Mes 6", "Mes 11", "Mes 16", "Mes 21", "Mes 26", "Mes 31", "Mes 36"],
 		datasets: [
 			{
-				label: "Arrendamiento puro",
-				fillColor: "rgba(3, 2, 115,0.2)",
-				strokeColor: "rgba(3, 2, 115,1)",
-				pointColor: "rgba(3, 2, 115,1)",
-				pointStrokeColor: "#fff",
-				pointHighlightFill: "#fff",
-				pointHighlightStroke: "rgba(3, 2, 115,1)",
-				data: [2708.3, 16250, 29791.6, 43333.3, 56875, 70416.6, 83958.3, 97500]
-			},
-			{
 				label: "Comprado de contado",
-				fillColor: "rgba(127, 179, 237,0.2)",
+				fillColor: "rgba(127, 179, 237,0)",
 				strokeColor: "rgba(151,187,205,1)",
 				pointColor: "rgba(127, 179, 237,1)",
 				pointStrokeColor: "#fff",
 				pointHighlightFill: "#fff",
 				pointHighlightStroke: "rgba(151,187,205,1)",
+				data: [2708, 16248, 29788, 43328, 56868, 70408, 83948, 97500]
+			},
+			{
+				label: "Arrendamiento puro",
+				fillColor: "rgba(3, 2, 115,0)",
+				strokeColor: "rgba(3, 2, 115,1)",
+				pointColor: "rgba(3, 2, 115,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(3, 2, 115,1)",
 				data: [5706, 34236, 62766, 91296, 119826, 148356, 176886, 205416]
 			}
 		]
@@ -72,6 +72,9 @@ function createChart(){
 	var myLineChart = new Chart(ctx).Line(data, {
 		bezierCurve: false,
 		responsive: true,
+
+		 scaleGridLineColor : "rgba(0,0,0,.07)",
+		scaleShowVerticalLines: false,
 
 		scaleOverride: true,
 		scaleSteps: 5,
