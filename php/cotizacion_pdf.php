@@ -35,6 +35,7 @@ $compania = isset( $_POST['compania'] ) ? $_POST['compania'] : '-' ;
 $tipo = $_POST['tipo'];
 $marca = isset( $_POST['marca'] ) ? $_POST['marca'] : '-' ;
 $modelo = isset( $_POST['modelo'] ) ? $_POST['modelo'] : '-' ;
+$ano = isset( $_POST['ano'] ) ? $_POST['ano'] : '-' ;
 $valor_total = $_POST['valor_total'];
 $plazo_mensual = $_POST['plazo_mensual'];
 $renta_mensual_iva = $_POST['renta_mensual_iva'];
@@ -46,6 +47,7 @@ $iva_mensual = $_POST['iva_mensual'];
 $renta_en_deposito = $_POST['renta_en_deposito'];
 $total_pago_inicial = $_POST['total_pago_inicial'];
 $valor_residual = $_POST['valor_residual'];
+
 
 // Beneficio fiscal y costo real estiamdo
 $total_rentas_y_pago_inicial = 36 * $renta_mensual_iva + $subtotal + $iva;
