@@ -54,6 +54,19 @@ $ahorro_fiscal_ptu = $total_rentas_y_pago_inicial * 0.1 * -1;
 $ahorro_fiscal_iva = $total_rentas_y_pago_inicial * 0.16 * -1;
 $costo_real = $total_rentas_y_pago_inicial + $ahorro_fiscal_iva + $ahorro_fiscal_ptu + $ahorro_fiscal_isr + $valor_residual;
 
+// Textos variables
+if ( $tipo == 'vehiculo' ){
+	$titulo_informacion = 'del Automóvil';
+	$titulo_beneficio = 'Beneficio Fiscal y Costo Real Estimado';
+}
+if ( $tipo == 'maquinaria' ){
+	$titulo_informacion = 'de la Maquinaria';
+	$titulo_beneficio = 'Beneficio Fiscal y Costo Real Estimado';
+}
+if ( $tipo == 'mobiliario' ){
+	$titulo_informacion = 'del Mobiliario / Equipo';
+	$titulo_beneficio = 'Ahorro Fiscal y Costo Real';
+}
 
 
 $clave_referencia = time() . '-' . to_slug( $cliente );
@@ -134,6 +147,8 @@ $html = <<<EOF
 		font-size: 12pt;
 	}
 
+	span{ display: block; }
+
 	table {
 		color: #003300;
 		font-family: helvetica;
@@ -158,100 +173,161 @@ $html = <<<EOF
 	.pull-right{ float: right; }
 	.pull-left{ float: left; }
 
+	.margin-bottom{ margin-bottom: 20px; }
+	.margin-bottom--large{ margin-bottom: 40px; }
+
+	.color-negative{ color: #f0151c; }
+
 
 </style>
 
 <h1>Cotización de arrendamiento puro</h1>
+<h3 class="[ text-center ]">BIEN: $tipo</h3>
 
-<table>
+<br />
+
+<table class="">
 	<tr>
-		<th><small># de referencia: $filename</small></th>
-		<th><span class="[ text-right ]"><small>Fecha: $fecha</small></span></th>
+		<th>Cotización #: $filename</th>
+		<th><span class="[ text-right ]">Fecha: $fecha</span></th>
 	</tr>
 </table>
 
-<table>
+<br />
+
+<table class="[ border ]">
 	<tr>
-		<th><h4>Información cliente</h4></th>
-		<th><h4>Datos de unidad a cotizar</h4></th>
+		<th><h4 class="[ text-center ]">Información del cliente</h4></th>
 	</tr>
 	<tr>
-		<td>Cliente: $cliente</td>
-		<td>Tipo de unidad: $tipo</td>
+		<td>Empresa: $compania</td>
 	</tr>
 	<tr>
-		<td>Compañía: $compania</td>
-		<td>Marca: $marca </td>
+		<td>Contacto: $cliente</td>
 	</tr>
 	<tr>
 		<td>Teléfono: $telefono</td>
+	</tr>
+	<tr>
+		<td>Correo electrónico: $email</td>
+	</tr>
+</table>
+
+<table class="[ border ]">
+	<tr>
+		<td>
+			<span class="[ text-center ]">
+				<strong>Información $titulo_informacion </strong>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>Marca: $marca </td>
 		<td>Modelo: $modelo</td>
 	</tr>
 	<tr>
-		<td>Email: $email</td>
-		<td>Precio de referencia (con IVA): $valor_total</td>
+		<td>Año: $ano</td>
+		<td>Valor Factura: $valor_total</td>
 	</tr>
 </table>
 
-<br />
-<br />
-<br />
-
-<table>
-	<tr>
-		<td><h4>Plazo mensual</h4></td>
-		<td><h4>$plazo_mensual</h4></td>
-	</tr>
-	<tr>
-		<td><h4>Renta mensual fija (con IVA)</h4></td>
-		<td><h4>$renta_mensual_iva</h4></td>
-	</tr>
-</table>
-
-<h2>Pago inicial</h2>
 <table class="[ border ]">
 	<tr>
-		<td>Pago inicial</td>
+		<td><span class="[ text-center ]"><strong>Información del arrendamiento</strong></span></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><span class="[ text-right ]"><strong>Plazo</strong></span></td>
+		<td><strong>$plazo_mensual</strong></td>
+	</tr>
+	<tr>
+		<td><span class="[ text-right ]"><strong>Renta mensual</strong></span></td>
+		<td><strong>$renta_mensual_iva</strong></td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td><span class="[ text-right ]">Pago inicial</span></td>
 		<td>$pago_inicial</td>
 	</tr>
 	<tr>
-		<td>Comisión 2%</td>
+		<td><span class="[ text-right ]">Comisión 2%</span></td>
 		<td>$valor_comision</td>
 	</tr>
-	<hr>
 	<tr>
-		<td>Subtotal</td>
+		<td><span class="[ text-right ]">Subtotal</span></td>
 		<td>$subtotal</td>
 	</tr>
-	<tr class="[ border-bottom ]">
-		<td>IVA (16%)</td>
+	<tr class="[  ]">
+		<td><span class="[ text-right ]">IVA (16%)</span></td>
 		<td>$iva</td>
 	</tr>
-	<hr>
 	<tr>
-		<td>Renta en depósito</td>
+		<td> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td><span class="[ text-right ]">Renta en depósito</span></td>
 		<td>$renta_en_deposito</td>
 	</tr>
 	<tr>
-		<td><h4>Total pago inicial</h4></td>
-		<td><h4>$total_pago_inicial</h4></td>
+		<td><span class="[ text-right ]"><strong>Total pago inicial</strong></span></td>
+		<td><strong>$total_pago_inicial</strong></td>
 	</tr>
 	<tr>
-		<td><h4>Valor residual (sin IVA)</h4></td>
-		<td><h4>$valor_residual</h4></td>
+		<td> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td><span class="[ text-right ]"><strong>Valor residual (sin IVA)</strong></span></td>
+		<td><strong>$valor_residual</strong></td>
 	</tr>
 </table>
 
+<table class="[ border ]">
+	<tr>
+		<td><h4  class="[ text-right ]">$titulo_beneficio</h4></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><span class="[ text-right ]"><strong>Total renta + Pago inicial</strong></span></td>
+		<td><strong>$total_rentas_y_pago_inicial</strong></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><span class="[ text-right ]">Ahorro fiscal I.S.R. 30%</span></td>
+		<td><span class="[ color-negative ]">$ahorro_fiscal_isr</span></td>
+	</tr>
+	<tr>
+		<td><span class="[ text-right ]">Ahorro fiscal P.T.U. 10%</span></td>
+		<td><span class="[ color-negative ]">$ahorro_fiscal_ptu</span></td>
+	</tr>
+	<tr>
+		<td><span class="[ text-right ]">Ahorro fiscal I.V.A.</span></td>
+		<td><span class="[ color-negative ]">$ahorro_fiscal_iva</span></td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td><span class="[ text-right ]">Valor residual</span></td>
+		<td>$valor_residual</td>
+	</tr>
+	<tr>
+		<td><span class="[ text-right ]"><strong>Costo real</strong></span></td>
+		<td><strong>$costo_real</strong></td>
+	</tr>
+</table>
+
+
 <p><small>
-	Notas:
-	<ol>
-		<li>Las Rentas se pagarán mensualmente en las fechas establecidas en el Anexo de Arrendamiento.</li>
-		<li>Esta cotización podrá ser modificada por el Arrendador hasta la firma del Contrato y Anexo de Arrendamiento.</li>
-		<li>Los costos del seguro y localizador podrán ser pagados por el Arrendatario por anticipado o en pagos mensuales.</li>
-		<li>La obtención de los permisos, licencias, placas o registros que se requieran para poseer o usar el Bien Arrendado, asi como el pago de tenencias, contribuciones, impuestos o costos inherentes al mantenimiento del Bien Arrendado serán responsabilidad del Arrendatario.</li>
-		<li>El depósito en garantía será reembolsable en términos del Contrato Maestro de Arrendamiento Puro.</li>
-		<li>La aceptación de esta cotización por el cliente constituye una obligación para firmar el Contrato de Arrendamiento y Anexos. En caso de no presentarse el Arrendatario, Obligado Solidario, Aval o Depositario a celebrar el Contrato o Anexo respectivo en la fecha y lugar señalado para tales efectos por el Arrendador; el Arrendatario se obliga a reembolsar al Arrendador cualquier gasto, desembolso o erogación en la que haya incurrido para adquirir el(los) bien(es) señalado(s) en esta Cotización. </li>
-	</ol>
+	Notas: Los importes de seguros, impuestos, comisiones y costos de accesorios no están incluidos en esta cotización. La presente cotización se emite únicamente con fines informativos y podrá ser objeto de modificaciones. La celebración de cualquier contrato está sujeta a la aprobación de la solicitud de arrendamiento respectiva. El beneficio fiscal y costo real esta sujeto a la situación particular de cada cliente.
 </small></p>
 
 <br />
@@ -286,7 +362,11 @@ $pdf->lastPage();
 $filename = $clave_referencia . '.pdf';
 $pdf->Output( $filename, 'F' );
 
-$pdf_url = 'http://pcuervo.com/beta-leasing/cotizaciones/' . $filename;
+//Servidor
+//$pdf_url = 'http://pcuervo.com/beta-leasing/cotizaciones/' . $filename;
+
+//Local
+$pdf_url = 'http://localhost:8888/beta-leasing/cotizaciones/' . $filename;
 
 send_email_cotizacion( $cliente, $email, $telefono, $compania, $pdf_url, $clave_referencia );
 
