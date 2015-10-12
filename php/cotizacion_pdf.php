@@ -136,13 +136,21 @@ $pdf->AddPage();
 $fecha = date("d/m/Y");
 $html = <<<EOF
 <style>
-	*{ color: #000000; }
+	*{
+		font-family: Verdana,Geneva,sans-serif;
+		color: #000000;
+	}
 
-	h1 {
-		font-family: helvetica;
-		font-size: 20pt;
+	h1, h3, h4{
 		text-align: center;
 	}
+
+	h1 { font-size: 20pt; }
+
+	h3{ font-size: 18pt; }
+
+	h4{ font-size: 16pt; }
+
 	p {
 		color: #000000;
 		font-family: helvetica;
@@ -180,15 +188,15 @@ $html = <<<EOF
 
 	.color-negative{ color: #f0151c; }
 
-
 </style>
 
 <h1>Cotización de arrendamiento puro</h1>
 <h3 class="[ text-center ]">BIEN: $tipo</h3>
 
 <br />
+<br />
 
-<table class="">
+<table>
 	<tr>
 		<th>Cotización #: $filename</th>
 		<th><span class="[ text-right ]">Fecha: $fecha</span></th>
@@ -196,10 +204,11 @@ $html = <<<EOF
 </table>
 
 <br />
+<br />
 
 <table class="[ border ]">
 	<tr>
-		<th><h4 class="[ text-center ]">Información del cliente</h4></th>
+		<th><strong>Información del cliente</strong></th>
 	</tr>
 	<tr>
 		<td>Empresa: $compania</td>
@@ -215,14 +224,13 @@ $html = <<<EOF
 	</tr>
 </table>
 
+<br />
+<br />
+
+<h4 class="[ text-center ]">
+	Información $titulo_informacion
+</h4>
 <table class="[ border ]">
-	<tr>
-		<td>
-			<span class="[ text-center ]">
-				<strong>Información $titulo_informacion </strong>
-			</span>
-		</td>
-	</tr>
 	<tr>
 		<td>Marca: $marca </td>
 		<td>Modelo: $modelo</td>
@@ -233,11 +241,14 @@ $html = <<<EOF
 	</tr>
 </table>
 
+<br />
+<br />
+
+<h4 class="[ text-center ]">
+	Información del arrendamiento
+</h4>
+
 <table class="[ border ]">
-	<tr>
-		<td><span class="[ text-center ]"><strong>Información del arrendamiento</strong></span></td>
-		<td></td>
-	</tr>
 	<tr>
 		<td><span class="[ text-right ]"><strong>Plazo</strong></span></td>
 		<td><strong>$plazo_mensual</strong></td>
@@ -288,11 +299,14 @@ $html = <<<EOF
 	</tr>
 </table>
 
+<br />
+<br />
+
+<h4 class="[ text-center ]">
+	$titulo_beneficio
+</h4>
+
 <table class="[ border ]">
-	<tr>
-		<td><h4  class="[ text-right ]">$titulo_beneficio</h4></td>
-		<td></td>
-	</tr>
 	<tr>
 		<td><span class="[ text-right ]"><strong>Total renta + Pago inicial</strong></span></td>
 		<td><strong>$total_rentas_y_pago_inicial</strong></td>
