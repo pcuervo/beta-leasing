@@ -1,16 +1,33 @@
-<style>
-	*{ color: #000000; }
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PDF</title>
+</head>
+<body>
 
-	h1 {
-		font-family: helvetica;
-		font-size: 20pt;
+<style>
+	*{
+		font-family: Verdana,Geneva,sans-serif;
+		color: #000000;
+	}
+
+	h1, h3, h4{
 		text-align: center;
 	}
+
+	h1 { font-size: 20pt; }
+
+	h3{ font-size: 18pt; }
+
+	h4{ font-size: 16pt; }
+
 	p {
 		color: #000000;
 		font-family: helvetica;
 		font-size: 12pt;
 	}
+
+	span{ display: block; }
 
 	table {
 		color: #003300;
@@ -41,22 +58,27 @@
 
 	.color-negative{ color: #f0151c; }
 
-
 </style>
 
 <h1>Cotización de arrendamiento puro</h1>
-<h3 class="[ text-center ][ margin-bottom ]">BIEN: <?php ?></h3>
+<h3 class="[ text-center ]">BIEN: $tipo</h3>
 
-<table class="[ margin-bottom ]">
+<br />
+<br />
+
+<table>
 	<tr>
 		<th>Cotización #: $filename</th>
 		<th><span class="[ text-right ]">Fecha: $fecha</span></th>
 	</tr>
 </table>
 
-<table class="[ border ][ margin-bottom ]">
+<br />
+<br />
+
+<table class="[ border ]">
 	<tr>
-		<th><h4 class="[ text-center ]">Información del cliente</h4></th>
+		<th><strong>Información del cliente</strong></th>
 	</tr>
 	<tr>
 		<td>Empresa: $compania</td>
@@ -65,17 +87,20 @@
 		<td>Contacto: $cliente</td>
 	</tr>
 	<tr>
-		<td>Teléfono: $telefono:</td>
+		<td>Teléfono: $telefono</td>
 	</tr>
 	<tr>
 		<td>Correo electrónico: $email</td>
 	</tr>
 </table>
 
-<table class="[ border ][ margin-bottom ]">
-	<tr>
-		<th><span class="[ text-center ]"><strong>Información $variable</strong></span></th>
-	</tr>
+<br />
+<br />
+
+<h4 class="[ text-center ]">
+	Información $titulo_informacion
+</h4>
+<table class="[ border ]">
 	<tr>
 		<td>Marca: $marca </td>
 		<td>Modelo: $modelo</td>
@@ -86,10 +111,14 @@
 	</tr>
 </table>
 
-<table class="[ border ][ margin-bottom ]">
-	<tr>
-		<th><span class="[ text-center ]"><strong>Información del arrendamiento</strong></span></th>
-	</tr>
+<br />
+<br />
+
+<h4 class="[ text-center ]">
+	Información del arrendamiento
+</h4>
+
+<table class="[ border ]">
 	<tr>
 		<td><span class="[ text-right ]"><strong>Plazo</strong></span></td>
 		<td><strong>$plazo_mensual</strong></td>
@@ -99,6 +128,7 @@
 		<td><strong>$renta_mensual_iva</strong></td>
 	</tr>
 	<tr>
+		<td> </td>
 		<td> </td>
 	</tr>
 	<tr>
@@ -119,6 +149,7 @@
 	</tr>
 	<tr>
 		<td> </td>
+		<td> </td>
 	</tr>
 	<tr>
 		<td><span class="[ text-right ]">Renta en depósito</span></td>
@@ -130,6 +161,7 @@
 	</tr>
 	<tr>
 		<td> </td>
+		<td> </td>
 	</tr>
 	<tr>
 		<td><span class="[ text-right ]"><strong>Valor residual (sin IVA)</strong></span></td>
@@ -137,16 +169,21 @@
 	</tr>
 </table>
 
-<table class="[ border ][ margin-bottom ]">
-	<tr>
-		<th><h4  class="[ text-right ]">$variable y Costo Real</h4></th>
-	</tr>
+<br />
+<br />
+
+<h4 class="[ text-center ]">
+	$titulo_beneficio
+</h4>
+
+<table class="[ border ]">
 	<tr>
 		<td><span class="[ text-right ]"><strong>Total renta + Pago inicial</strong></span></td>
 		<td><strong>$total_rentas_y_pago_inicial</strong></td>
 	</tr>
 	<tr>
-		<td> </td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td><span class="[ text-right ]">Ahorro fiscal I.S.R. 30%</span></td>
@@ -161,6 +198,7 @@
 		<td><span class="[ color-negative ]">$ahorro_fiscal_iva</span></td>
 	</tr>
 	<tr>
+		<td> </td>
 		<td> </td>
 	</tr>
 	<tr>
@@ -193,3 +231,6 @@
 		ventas@betaleasing.com · (55) 2325.0453
 	</small>
 </p>
+
+</body>
+</html>
