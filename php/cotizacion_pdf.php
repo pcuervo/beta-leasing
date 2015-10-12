@@ -425,7 +425,7 @@ function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url
 	// Correo a Beta Leasing
 	$from_email = 'no-reply@betaleasing.com';
 	$to_email = 'miguel@pcuervo.com';
-	$subject = $nombre . ' ha creado su cotización a través de betaleasing.com ';
+	$subject = $nombre . ' ha creado su cotizaci&oacute;n a trav&eacute;s de betaleasing.com ';
 	$headers = 'From: ' . $nombre . ' <' . $from_email . '>' . "\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -433,9 +433,9 @@ function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url
 	$message .= '<h3>Datos de contacto</h3>';
 	$message .= '<p>Nombre: '. $nombre .'</p>';
 	$message .= '<p>Email: '. $email . '</p>';
-	$message .= '<p>Teléfono: '. $telefono . '</p>';
+	$message .= '<p>Tel&eacute;fono: '. $telefono . '</p>';
 	$message .= '<p>Clave de referencia: '. $clave_referencia . '</p>';
-	$message .= '<a href="' . $pdf_url . '">Ver cotización</a>';
+	$message .= '<a href="' . $pdf_url . '">Ver cotizaci&oacute;n</a>';
 	$message .= '<img src="http://pcuervo.com/beta-leasing/images/beta-leasing.png"><br>';
 	$message .= '</body></html>';
 
@@ -444,7 +444,7 @@ function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url
 	// Correo a cliente
 	$from_email = 'ventas@betaleasing.com';
 	$to_email = $email;
-	$subject = 'Has creado una cotización a través de www.betaleasing.com: ';
+	$subject = 'Has creado una cotizaci&oacute;n a trav&eacute;s de www.betaleasing.com: ';
 	$headers = 'From: Ventas BetaLeasing <' . $from_email . '>' . "\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
