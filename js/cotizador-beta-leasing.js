@@ -166,6 +166,7 @@
 			datos['marca'] 				= $('input[name="marca"]').val();
             datos['modelo']             = $('input[name="modelo"]').val();
 			datos['ano'] 	            = $('input[name="ano"]').val();
+            console.log(datos['ano']);
 			datos['valor_total'] 		= formatoDinero( getValorTotal() );
 			datos['plazo_mensual'] 		= getPlazoMeses();
 			datos['renta_mensual_iva'] 	= formatoDinero( getRentaMensualIVA() );
