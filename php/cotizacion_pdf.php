@@ -122,7 +122,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
-$pdf->SetFont('helvetica', '', 10);
+$pdf->SetFont('Helvetica', '', 10);
 
 // add a page
 $pdf->AddPage();
@@ -143,42 +143,41 @@ $fecha = date("d/m/Y");
 $html = <<<EOF
 <style>
 	*{
-		font-family: Verdana,Geneva,sans-serif;
+		font-family: 'Helvetica', Verdana,Geneva,sans-serif;
 		color: #000000;
 	}
 
-	h1, h3, h4{
+	h1, h2, h3{
 		text-align: center;
 	}
 
-	h1 { font-size: 20pt; }
+	h1 {
+		margin: 0;
+		font-size: 16px;
+	}
 
-	h3{ font-size: 18pt; }
+	h2{ font-size: 14px; }
 
-	h4{ font-size: 16pt; }
+	h3{ font-size: 12px; }
 
 	p {
 		color: #000000;
 		font-family: helvetica;
-		font-size: 12pt;
+		font-size: 12px;
 	}
 
 	span{ display: block; }
 
 	table {
-		color: #003300;
-		font-family: helvetica;
-		font-size: 12pt;
+		font-size: 12px;
 	}
 	table.border{
-		border: 2px solid #313131;
+		border: 1px solid #313131;
 	}
-	th{
-		font-size: 16px;
-		font-weigth: bold;
-	}
+
 	td {
 		padding: 4px;
+		border-spacing: 10px;
 		border: none;
 	}
 
@@ -197,25 +196,21 @@ $html = <<<EOF
 </style>
 
 <h1>Cotización de arrendamiento puro</h1>
-<h3 class="[ text-center ]">BIEN: $tipo</h3>
-
-<br />
-<br />
+<h2 class="[ text-center ]">BIEN: $tipo</h2>
 
 <table>
 	<tr>
-		<th>Clave referencia: $clave_referencia</th>
-		<th><span class="[ text-right ]">Fecha: $fecha</span></th>
+		<th><small>Cotización #: $filename</small></th>
+		<th><span class="[ text-right ]"><small>Fecha: $fecha</small></span></th>
 	</tr>
 </table>
 
 <br />
-<br />
 
+<h3 class="[ text-center ]">
+	Información del cliente
+</h3>
 <table class="[ border ]">
-	<tr>
-		<th><strong>Información del cliente</strong></th>
-	</tr>
 	<tr>
 		<td>Empresa: $compania</td>
 	</tr>
@@ -231,11 +226,10 @@ $html = <<<EOF
 </table>
 
 <br />
-<br />
 
-<h4 class="[ text-center ]">
+<h3 class="[ text-center ]">
 	Información $titulo_informacion
-</h4>
+</h3>
 <table class="[ border ]">
 	<tr>
 		<td>Marca: $marca </td>
@@ -248,11 +242,10 @@ $html = <<<EOF
 </table>
 
 <br />
-<br />
 
-<h4 class="[ text-center ]">
+<h3 class="[ text-center ]">
 	Información del arrendamiento
-</h4>
+</h3>
 
 <table class="[ border ]">
 	<tr>
@@ -306,11 +299,10 @@ $html = <<<EOF
 </table>
 
 <br />
-<br />
 
-<h4 class="[ text-center ]">
+<h3 class="[ text-center ]">
 	$titulo_beneficio
-</h4>
+</h3>
 
 <table class="[ border ]">
 	<tr>
@@ -347,19 +339,9 @@ $html = <<<EOF
 	</tr>
 </table>
 
+<br />
 
-<p><small>
-	Notas: Los importes de seguros, impuestos, comisiones y costos de accesorios no están incluidos en esta cotización. La presente cotización se emite únicamente con fines informativos y podrá ser objeto de modificaciones. La celebración de cualquier contrato está sujeta a la aprobación de la solicitud de arrendamiento respectiva. El beneficio fiscal y costo real esta sujeto a la situación particular de cada cliente.
-</small></p>
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+<p><small>Notas: Los importes de seguros, impuestos, comisiones y costos de accesorios no están incluidos en esta cotización. La presente cotización se emite únicamente con fines informativos y podrá ser objeto de modificaciones. La celebración de cualquier contrato está sujeta a la aprobación de la solicitud de arrendamiento respectiva. El beneficio fiscal y costo real esta sujeto a la situación particular de cada cliente.</small></p>
 
 <p class="[ text-center ]">
 	<small>
