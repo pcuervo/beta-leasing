@@ -50,11 +50,17 @@ $valor_residual = $_POST['valor_residual'];
 
 
 // Beneficio fiscal y costo real estiamdo
-$total_rentas_y_pago_inicial = 36 * $renta_mensual_iva + $subtotal + $iva;
+$total_rentas_y_pago_inicial = 36 * sanitize_money_string( $renta_mensual_iva ) + sanitize_money_string( $subtotal ) + sanitize_money_string( $iva );
 $ahorro_fiscal_isr = $total_rentas_y_pago_inicial * 0.3 * -1;
 $ahorro_fiscal_ptu = $total_rentas_y_pago_inicial * 0.1 * -1;
 $ahorro_fiscal_iva = $total_rentas_y_pago_inicial * 0.16 * -1;
-$costo_real = $total_rentas_y_pago_inicial + $ahorro_fiscal_iva + $ahorro_fiscal_ptu + $ahorro_fiscal_isr + $valor_residual;
+$costo_real = $total_rentas_y_pago_inicial + $ahorro_fiscal_iva + $ahorro_fiscal_ptu + $ahorro_fiscal_isr + sanitize_money_string( $valor_residual );
+// Agregar formato de dinero
+$total_rentas_y_pago_inicial = "$" . number_format( $total_rentas_y_pago_inicial, 2, ",", "." );
+$ahorro_fiscal_isr = "-$" . number_format( abs( $ahorro_fiscal_isr ), 2, ",", "." );
+$ahorro_fiscal_ptu = "-$" . number_format( abs( $ahorro_fiscal_ptu ), 2, ",", "." );
+$ahorro_fiscal_iva = "-$" . number_format( abs( $ahorro_fiscal_iva ), 2, ",", "." );
+$costo_real = "$" . number_format( $costo_real, 2, ".", "," );
 
 // Textos variables
 if ( $tipo == 'vehiculo' ){
@@ -190,7 +196,7 @@ $html = <<<EOF
 
 <table class="">
 	<tr>
-		<th>Cotización #: $filename</th>
+		<th>Clave referencia: $clave_referencia</th>
 		<th><span class="[ text-right ]">Fecha: $fecha</span></th>
 	</tr>
 </table>
@@ -438,3 +444,7 @@ function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url
 	mail($to_email, $subject, $message, $headers );
 
 }// send_email_cotizacion
+
+function sanitize_money_string( $amount ){
+	return floatval( str_replace(',', '', str_replace('$', '', $amount ) ) );
+}
