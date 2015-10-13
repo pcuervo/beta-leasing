@@ -47,6 +47,7 @@ $iva_mensual = $_POST['iva_mensual'];
 $renta_en_deposito = $_POST['renta_en_deposito'];
 $total_pago_inicial = $_POST['total_pago_inicial'];
 $valor_residual = $_POST['valor_residual'];
+$valor_residual_iva = "$" . number_format( sanitize_money_string( $renta_mensual_iva ) * 1.16, 2, ".", ","  );
 
 
 // Beneficio fiscal y costo real estiamdo
@@ -56,15 +57,15 @@ $ahorro_fiscal_ptu = $total_rentas_y_pago_inicial * 0.1 * -1;
 $ahorro_fiscal_iva = $total_rentas_y_pago_inicial * 0.16 * -1;
 $costo_real = $total_rentas_y_pago_inicial + $ahorro_fiscal_iva + $ahorro_fiscal_ptu + $ahorro_fiscal_isr + sanitize_money_string( $valor_residual );
 // Agregar formato de dinero
-$total_rentas_y_pago_inicial = "$" . number_format( $total_rentas_y_pago_inicial, 2, ",", "." );
-$ahorro_fiscal_isr = "-$" . number_format( abs( $ahorro_fiscal_isr ), 2, ",", "." );
-$ahorro_fiscal_ptu = "-$" . number_format( abs( $ahorro_fiscal_ptu ), 2, ",", "." );
-$ahorro_fiscal_iva = "-$" . number_format( abs( $ahorro_fiscal_iva ), 2, ",", "." );
+$total_rentas_y_pago_inicial = "$" . number_format( $total_rentas_y_pago_inicial, 2, ".", "," );
+$ahorro_fiscal_isr = "-$" . number_format( abs( $ahorro_fiscal_isr ), 2, ".", "," );
+$ahorro_fiscal_ptu = "-$" . number_format( abs( $ahorro_fiscal_ptu ), 2, ".", "," );
+$ahorro_fiscal_iva = "-$" . number_format( abs( $ahorro_fiscal_iva ), 2, ".", "," );
 $costo_real = "$" . number_format( $costo_real, 2, ".", "," );
 
 // Textos variables
 if ( $tipo == 'vehiculo' ){
-	$titulo_informacion = 'del Automóvil';
+	$titulo_informacion = 'del vehículo';
 	$titulo_beneficio = 'Beneficio Fiscal y Costo Real Estimado';
 }
 if ( $tipo == 'maquinaria' ){
@@ -88,7 +89,7 @@ $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Beta Leasing');
-$pdf->SetTitle('Cotización de arrendamiento puro');
+$pdf->SetTitle('Cotización de Arrendamiento Puro');
 $pdf->SetSubject('Cotización');
 $pdf->SetKeywords('PDF, Beta Leasing, cotizador');
 
@@ -194,9 +195,9 @@ $html = <<<EOF
 	.color-negative{ color: #f0151c; }
 
 </style>
-
-<h1>Cotización de arrendamiento puro</h1>
-<h2 class="[ text-center ]">BIEN: $tipo</h2>
+ 
+<h1>Cotización de Arrendamiento Puro</h1>
+<h2 class="[ text-center ]">Bien: $tipo</h2>
 
 <table>
 	<tr>
@@ -346,7 +347,7 @@ $html = <<<EOF
 <p class="[ text-center ]">
 	<small>
 		Cerrada Loma Bonita 33 Piso 3 · Lomas Altas · 11950 México D.F. <br />
-		ventas@betaleasing.com · (55) 2325.0453
+		ventas@betaleasing.com · (55)​ 7045-4671
 	</small>
 </p>
 
