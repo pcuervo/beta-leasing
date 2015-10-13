@@ -368,10 +368,11 @@ $filename = $clave_referencia . '.pdf';
 $pdf->Output( $filename, 'F' );
 
 //Servidor
-//$pdf_url = 'http://pcuervo.com/beta-leasing/cotizaciones/' . $filename;
+$pdf_url = 'http://betaleasing.com.mx/cotizaciones/' . $filename;
 
 //Local
-$pdf_url = 'http://localhost:8888/beta-leasing/cotizaciones/' . $filename;
+// $pdf_url = 'http://localhost:8888/beta-leasing/cotizaciones/' . $filename;
+
 
 send_email_cotizacion( $cliente, $email, $telefono, $compania, $pdf_url, $clave_referencia );
 
