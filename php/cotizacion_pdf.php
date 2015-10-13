@@ -200,7 +200,7 @@ $html = <<<EOF
 
 <table>
 	<tr>
-		<th><small>Cotización #: $filename</small></th>
+		<th><small>Clave de referencia: $clave_referencia</small></th>
 		<th><span class="[ text-right ]"><small>Fecha: $fecha</small></span></th>
 	</tr>
 </table>
@@ -407,7 +407,7 @@ function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url
 	// Correo a Beta Leasing
 	$from_email = 'no-reply@betaleasing.com';
 	$to_email = 'miguel@pcuervo.com';
-	$subject = $nombre . ' ha creado su cotizaci&oacute;n a trav&eacute;s de betaleasing.com ';
+	$subject = $nombre . ' ha creado su cotización a través de betaleasing.com ';
 	$headers = 'From: ' . $nombre . ' <' . $from_email . '>' . "\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -415,29 +415,29 @@ function send_email_cotizacion( $nombre, $email, $telefono,  $compania, $pdf_url
 	$message .= '<h3>Datos de contacto</h3>';
 	$message .= '<p>Nombre: '. $nombre .'</p>';
 	$message .= '<p>Email: '. $email . '</p>';
-	$message .= '<p>Tel&eacute;fono: '. $telefono . '</p>';
+	$message .= '<p>Teléfono: '. $telefono . '</p>';
 	$message .= '<p>Clave de referencia: '. $clave_referencia . '</p>';
-	$message .= '<a href="' . $pdf_url . '">Ver cotizaci&oacute;n</a>';
-	$message .= '<img src="http://pcuervo.com/beta-leasing/images/beta-leasing.png"><br>';
+	$message .= '<a href="' . $pdf_url . '">Ver cotización</a>';
+	$message .= '<img src="http://betaleasing.com.mx/images/beta-leasing.png"><br>';
 	$message .= '</body></html>';
 
-	mail($to_email, $subject, $message, $headers );
+	mail($to_email, utf8_decode( $subject ), utf8_decode( $message ), $headers );
 
 	// Correo a cliente
 	$from_email = 'ventas@betaleasing.com';
 	$to_email = $email;
-	$subject = 'Has creado una cotizaci&oacute;n a trav&eacute;s de www.betaleasing.com: ';
+	$subject = 'Has creado una cotización a través de www.betaleasing.com: ';
 	$headers = 'From: Ventas BetaLeasing <' . $from_email . '>' . "\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 	$message = '<html><body>';
-	$message .= '<h3>&#161;Gracias por tu inter&eacute;s en nuestro servicio!</h3>';
+	$message .= '<h3>&#161;Gracias por tu interés en nuestro servicio!</h3>';
 	$message .= '<p>Estimad@ ' .$nombre. ':</p>';
-	$message .= '<p>Muy pronto nos pondremos en contacto contigo. Por el momento puedes descargar tu cotizaci&oacute;n en el <a href="' . $pdf_url . '">siguiente enlace</a>.</p>';
-	$message .= '<img src="http://pcuervo.com/beta-leasing/images/beta-leasing.png"><br>';
+	$message .= '<p>Muy pronto nos pondremos en contacto contigo. Por el momento puedes descargar tu cotización en el <a href="' . $pdf_url . '">siguiente enlace</a>.</p>';
+	$message .= '<img src="http://betaleasing.com.mx/images/beta-leasing.png"><br>';
 	$message .= '</body></html>';
 
-	mail($to_email, $subject, $message, $headers );
+	mail($to_email, utf8_decode( $subject ), utf8_decode( $message ), $headers );
 
 }// send_email_cotizacion
 
